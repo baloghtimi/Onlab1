@@ -7,7 +7,6 @@ import org.eclipse.viatra.query.runtime.api.ViatraQueryEngine;
 import org.eclipse.viatra.query.runtime.api.impl.BaseGeneratedPatternGroup;
 import org.eclipse.viatra.query.runtime.exception.ViatraQueryException;
 import org.mondo.collaboration.security.increment.policy.AttributeenabledMatcher;
-import org.mondo.collaboration.security.increment.policy.ContainsMatcher;
 import org.mondo.collaboration.security.increment.policy.LockParameterValuesMatcher;
 import org.mondo.collaboration.security.increment.policy.ObjectAllMatcher;
 import org.mondo.collaboration.security.increment.policy.ObjectAllObjectsMatcher;
@@ -33,7 +32,6 @@ import org.mondo.collaboration.security.increment.policy.ReferenceitsParamsMatch
 import org.mondo.collaboration.security.increment.policy.ReferenceitsTimersMatcher;
 import org.mondo.collaboration.security.increment.policy.ReferenceitsVariablesMatcher;
 import org.mondo.collaboration.security.increment.policy.util.AttributeenabledQuerySpecification;
-import org.mondo.collaboration.security.increment.policy.util.ContainsQuerySpecification;
 import org.mondo.collaboration.security.increment.policy.util.LockParameterValuesQuerySpecification;
 import org.mondo.collaboration.security.increment.policy.util.ObjectAllObjectsQuerySpecification;
 import org.mondo.collaboration.security.increment.policy.util.ObjectAllObjectsWithoutRootQuerySpecification;
@@ -67,7 +65,6 @@ import org.mondo.collaboration.security.increment.policy.util.ReferenceitsVariab
  * in order to achieve better performance than one-by-one on-demand matcher initialization.
  * 
  * <p> From package org.mondo.collaboration.security.increment.policy, the group contains the definition of the following patterns: <ul>
- * <li>contains</li>
  * <li>objectAll</li>
  * <li>objectRoot</li>
  * <li>objectRootWithId</li>
@@ -117,7 +114,6 @@ public final class Policy extends BaseGeneratedPatternGroup {
   private static Policy INSTANCE;
   
   private Policy() throws ViatraQueryException {
-    querySpecifications.add(ContainsQuerySpecification.instance());
     querySpecifications.add(ObjectAllQuerySpecification.instance());
     querySpecifications.add(ObjectRootQuerySpecification.instance());
     querySpecifications.add(ObjectRootWithIdQuerySpecification.instance());
@@ -143,14 +139,6 @@ public final class Policy extends BaseGeneratedPatternGroup {
     querySpecifications.add(LockParameterValuesQuerySpecification.instance());
     querySpecifications.add(ObjectAllObjectsWithoutRootQuerySpecification.instance());
     querySpecifications.add(ObjectAllObjectsQuerySpecification.instance());
-  }
-  
-  public ContainsQuerySpecification getContains() throws ViatraQueryException {
-    return ContainsQuerySpecification.instance();
-  }
-  
-  public ContainsMatcher getContains(final ViatraQueryEngine engine) throws ViatraQueryException {
-    return ContainsMatcher.on(engine);
   }
   
   public ObjectAllQuerySpecification getObjectAll() throws ViatraQueryException {

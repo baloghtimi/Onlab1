@@ -1,5 +1,5 @@
 /**
- * Generated from platform:/resource/org.mondo.collaboration.security.increment/src/org/mondo/collaboration/security/increment/policy/policy_gen.vql
+ * Generated from platform:/resource/org.mondo.collaboration.security.increment/src/org/mondo/collaboration/security/increment/policy/policy_domination_same_priority.vql
  */
 package org.mondo.collaboration.security.increment.policy;
 
@@ -9,8 +9,8 @@ import java.util.Objects;
 import org.eclipse.viatra.query.runtime.api.IPatternMatch;
 import org.eclipse.viatra.query.runtime.api.impl.BasePatternMatch;
 import org.eclipse.viatra.query.runtime.exception.ViatraQueryException;
+import org.mondo.collaboration.policy.rules.AccessibilityLevel;
 import org.mondo.collaboration.security.increment.policy.util.ResolutionQuerySpecification;
-import org.mondo.collaboration.security.increment.vocabulary.AccessibilityLevel;
 
 /**
  * Pattern-specific match representation of the org.mondo.collaboration.security.increment.policy.resolution pattern,

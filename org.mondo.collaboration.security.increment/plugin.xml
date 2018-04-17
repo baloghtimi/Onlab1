@@ -1,38 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><plugin>
-  <extension point="org.eclipse.ui.handlers">
-    <handler class="org.mondo.collaboration.policy.ui.RulesExecutableExtensionFactory:org.mondo.collaboration.policy.ui.handler.GenerationHandler" commandId="org.mondo.collaboration.policy.ui.handler.GenerationCommand"/>
-  </extension>
-  <extension point="org.eclipse.ui.commands">
-    <command id="org.mondo.collaboration.policy.ui.handler.GenerationCommand" name="Generate Patterns"/>
-  </extension>
-  <extension point="org.eclipse.ui.menus">
-    <menuContribution locationURI="menu:#TextEditorContext?after=org.eclipse.xtext.ui.editor.outline.QuickOutline">
-      <command commandId="org.mondo.collaboration.policy.ui.handler.GenerationCommand" style="push"/>
-    </menuContribution>
-  </extension>
-  <extension id="org.mondo.collaboration.security.increment.policy.Judgement" point="org.eclipse.viatra.query.runtime.queryspecification">
-    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:org.mondo.collaboration.security.increment.policy.Judgement" id="org.mondo.collaboration.security.increment.policy.Judgement">
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.effectiveJudgement"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.judgement_at_0"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.judgement_at_1"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.judgement_at_2"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.relaxedJudgement_at_0"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.relaxedJudgement_at_1"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.effectiveJudgement_at_0"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.effectiveJudgement_at_1"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.effectiveJudgement_at_2"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.domination_of_0"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.domination_of_1"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.domination_by_1"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.domination_by_2"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.strongConsequence_at_0"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.strongConsequence_at_1"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.strongConsequence_at_2"/>
-    </group>
-  </extension>
   <extension id="org.mondo.collaboration.security.increment.policy.Policy" point="org.eclipse.viatra.query.runtime.queryspecification">
     <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:org.mondo.collaboration.security.increment.policy.Policy" id="org.mondo.collaboration.security.increment.policy.Policy">
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.contains"/>
       <query-specification fqn="org.mondo.collaboration.security.increment.policy.objectAll"/>
       <query-specification fqn="org.mondo.collaboration.security.increment.policy.objectRoot"/>
       <query-specification fqn="org.mondo.collaboration.security.increment.policy.objectRootWithId"/>
@@ -60,13 +28,66 @@
       <query-specification fqn="org.mondo.collaboration.security.increment.policy.objectAllObjects"/>
     </group>
   </extension>
-  <extension id="org.mondo.collaboration.security.increment.policy.Policy_gen" point="org.eclipse.viatra.query.runtime.queryspecification">
-    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:org.mondo.collaboration.security.increment.policy.Policy_gen" id="org.mondo.collaboration.security.increment.policy.Policy_gen">
+  <extension id="org.mondo.collaboration.security.increment.policy.Policy_consequence" point="org.eclipse.viatra.query.runtime.queryspecification">
+    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:org.mondo.collaboration.security.increment.policy.Policy_consequence" id="org.mondo.collaboration.security.increment.policy.Policy_consequence">
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.strongConsequenceOnObject_at_1"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.strongConsequenceOnAttribute_at_1"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.strongConsequenceOnReference_at_1"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.weakConsequenceOnAttribute"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.weakConsequenceOnReference"/>
+    </group>
+  </extension>
+  <extension id="org.mondo.collaboration.security.increment.policy.Policy_domination" point="org.eclipse.viatra.query.runtime.queryspecification">
+    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:org.mondo.collaboration.security.increment.policy.Policy_domination" id="org.mondo.collaboration.security.increment.policy.Policy_domination">
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.dominationOnObject_of_0"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.dominationOnAttribute_of_0"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.dominationOnReference_of_0"/>
+    </group>
+  </extension>
+  <extension id="org.mondo.collaboration.security.increment.policy.Policy_domination_higher_priority" point="org.eclipse.viatra.query.runtime.queryspecification">
+    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:org.mondo.collaboration.security.increment.policy.Policy_domination_higher_priority" id="org.mondo.collaboration.security.increment.policy.Policy_domination_higher_priority">
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.dominationOnObject_of_default"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.dominationOnAttribute_of_default"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.dominationOnAttribute_of_weak"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.dominationOnReference_of_default"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.dominationOnReference_of_weak"/>
+    </group>
+  </extension>
+  <extension id="org.mondo.collaboration.security.increment.policy.Policy_domination_same_priority" point="org.eclipse.viatra.query.runtime.queryspecification">
+    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:org.mondo.collaboration.security.increment.policy.Policy_domination_same_priority" id="org.mondo.collaboration.security.increment.policy.Policy_domination_same_priority">
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.resolution"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.dominatedExplicitJudgementOnObject_at_1"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.dominatedExplicitJudgementOnAttribute_at_1"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.dominatedExplicitJudgementOnReference_at_1"/>
+    </group>
+  </extension>
+  <extension id="org.mondo.collaboration.security.increment.policy.Policy_effective_judgement" point="org.eclipse.viatra.query.runtime.queryspecification">
+    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:org.mondo.collaboration.security.increment.policy.Policy_effective_judgement" id="org.mondo.collaboration.security.increment.policy.Policy_effective_judgement">
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.effectiveJudgementOnObject"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.effectiveJudgementOnObject_at_default"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.effectiveJudgementOnObject_at_1"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.effectiveJudgementOnAttribute"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.effectiveJudgementOnAttribute_at_default"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.effectiveJudgementOnAttribute_at_weak"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.effectiveJudgementOnAttribute_at_1"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.effectiveJudgementOnReference"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.effectiveJudgementOnReference_at_default"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.effectiveJudgementOnReference_at_weak"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.effectiveJudgementOnReference_at_1"/>
+    </group>
+  </extension>
+  <extension id="org.mondo.collaboration.security.increment.policy.Policy_explicit_judgement" point="org.eclipse.viatra.query.runtime.queryspecification">
+    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:org.mondo.collaboration.security.increment.policy.Policy_explicit_judgement" id="org.mondo.collaboration.security.increment.policy.Policy_explicit_judgement">
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.explicitJudgementOnObject"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.explicitJudgementOnAttribute"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.explicitJudgementOnReference"/>
+    </group>
+  </extension>
+  <extension id="org.mondo.collaboration.security.increment.policy.Policy_helper_pattern" point="org.eclipse.viatra.query.runtime.queryspecification">
+    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:org.mondo.collaboration.security.increment.policy.Policy_helper_pattern" id="org.mondo.collaboration.security.increment.policy.Policy_helper_pattern">
       <query-specification fqn="org.mondo.collaboration.security.increment.policy.readWriteOperation"/>
       <query-specification fqn="org.mondo.collaboration.security.increment.policy.restrictRootAsset"/>
       <query-specification fqn="org.mondo.collaboration.security.increment.policy.restrictRootUser"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.enableRootAsset"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.enableRootUser"/>
       <query-specification fqn="org.mondo.collaboration.security.increment.policy.enableIOAsset"/>
       <query-specification fqn="org.mondo.collaboration.security.increment.policy.enableIOUser"/>
       <query-specification fqn="org.mondo.collaboration.security.increment.policy.restrictNotIOAsset"/>
@@ -74,18 +95,36 @@
       <query-specification fqn="org.mondo.collaboration.security.increment.policy.restrictIOAsset"/>
       <query-specification fqn="org.mondo.collaboration.security.increment.policy.restrictIOUser"/>
       <query-specification fqn="org.mondo.collaboration.security.increment.policy.allUsers"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.explicitJudgement"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.effectiveJudgement"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.judgement_at_0"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.judgement_at_1"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.relaxedJudgement_at_0"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.effectiveJudgement_at_0"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.effectiveJudgement_at_1"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.domination_of_0"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.domination_by_1"/>
+    </group>
+  </extension>
+  <extension id="org.mondo.collaboration.security.increment.policy.Policy_judgement" point="org.eclipse.viatra.query.runtime.queryspecification">
+    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:org.mondo.collaboration.security.increment.policy.Policy_judgement" id="org.mondo.collaboration.security.increment.policy.Policy_judgement">
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.judgementOnObject_at_0"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.judgementOnObject_at_1"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.judgementOnAttribute_at_0"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.judgementOnAttribute_at_1"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.judgementOnReference_at_0"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.judgementOnReference_at_1"/>
+    </group>
+  </extension>
+  <extension id="org.mondo.collaboration.security.increment.policy.Policy_resolved_judgement" point="org.eclipse.viatra.query.runtime.queryspecification">
+    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:org.mondo.collaboration.security.increment.policy.Policy_resolved_judgement" id="org.mondo.collaboration.security.increment.policy.Policy_resolved_judgement">
       <query-specification fqn="org.mondo.collaboration.security.increment.policy.resolution"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.strongConsequence_at_0"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.strongConsequence_at_1"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.dominatedExplicitJudgementOnObject_at_0"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.dominatedExplicitJudgementOnObject_at_1"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.dominatedExplicitJudgementOnAttribute_at_0"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.dominatedExplicitJudgementOnAttribute_at_1"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.dominatedExplicitJudgementOnReference_at_0"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.dominatedExplicitJudgementOnReference_at_1"/>
+    </group>
+  </extension>
+  <extension id="org.mondo.collaboration.security.increment.policy.WindturbineS_gen" point="org.eclipse.viatra.query.runtime.queryspecification">
+    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:org.mondo.collaboration.security.increment.policy.WindturbineS_gen" id="org.mondo.collaboration.security.increment.policy.WindturbineS_gen">
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.attributeAsset"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.referenceAsset"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.containmentReference"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.idAttribute"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.contains"/>
     </group>
   </extension>
 </plugin>

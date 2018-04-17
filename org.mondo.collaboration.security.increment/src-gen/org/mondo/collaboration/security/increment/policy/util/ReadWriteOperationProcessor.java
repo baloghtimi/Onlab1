@@ -1,11 +1,11 @@
 /**
- * Generated from platform:/resource/org.mondo.collaboration.security.increment/src/org/mondo/collaboration/security/increment/policy/policy_gen.vql
+ * Generated from platform:/resource/org.mondo.collaboration.security.increment/src/org/mondo/collaboration/security/increment/policy/policy_helper_pattern.vql
  */
 package org.mondo.collaboration.security.increment.policy.util;
 
 import org.eclipse.viatra.query.runtime.api.IMatchProcessor;
+import org.mondo.collaboration.policy.rules.OperationType;
 import org.mondo.collaboration.security.increment.policy.ReadWriteOperationMatch;
-import org.mondo.collaboration.security.increment.vocabulary.OperationType;
 
 /**
  * A match processor tailored for the org.mondo.collaboration.security.increment.policy.readWriteOperation pattern.

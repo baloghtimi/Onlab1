@@ -1,5 +1,5 @@
 /**
- * Generated from platform:/resource/org.mondo.collaboration.security.increment/src/org/mondo/collaboration/security/increment/policy/policy_gen.vql
+ * Generated from platform:/resource/org.mondo.collaboration.security.increment/src/org/mondo/collaboration/security/increment/policy/policy_helper_pattern.vql
  */
 package org.mondo.collaboration.security.increment.policy;
 
@@ -14,9 +14,9 @@ import org.eclipse.viatra.query.runtime.api.impl.BaseMatcher;
 import org.eclipse.viatra.query.runtime.exception.ViatraQueryException;
 import org.eclipse.viatra.query.runtime.matchers.tuple.Tuple;
 import org.eclipse.viatra.query.runtime.util.ViatraQueryLoggingUtil;
+import org.mondo.collaboration.policy.rules.OperationType;
 import org.mondo.collaboration.security.increment.policy.ReadWriteOperationMatch;
 import org.mondo.collaboration.security.increment.policy.util.ReadWriteOperationQuerySpecification;
-import org.mondo.collaboration.security.increment.vocabulary.OperationType;
 
 /**
  * Generated pattern matcher API of the org.mondo.collaboration.security.increment.policy.readWriteOperation pattern,

@@ -1,11 +1,11 @@
 /**
- * Generated from platform:/resource/org.mondo.collaboration.security.increment/src/org/mondo/collaboration/security/increment/policy/policy_gen.vql
+ * Generated from platform:/resource/org.mondo.collaboration.security.increment/src/org/mondo/collaboration/security/increment/policy/policy_domination_same_priority.vql
  */
 package org.mondo.collaboration.security.increment.policy.util;
 
 import org.eclipse.viatra.query.runtime.api.IMatchProcessor;
+import org.mondo.collaboration.policy.rules.AccessibilityLevel;
 import org.mondo.collaboration.security.increment.policy.ResolutionMatch;
-import org.mondo.collaboration.security.increment.vocabulary.AccessibilityLevel;
 
 /**
  * A match processor tailored for the org.mondo.collaboration.security.increment.policy.resolution pattern.

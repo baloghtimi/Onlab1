@@ -1,5 +1,5 @@
 /**
- * Generated from platform:/resource/org.mondo.collaboration.security.increment/src/org/mondo/collaboration/security/increment/policy/policy_gen.vql
+ * Generated from platform:/resource/org.mondo.collaboration.security.increment/src/org/mondo/collaboration/security/increment/policy/policy_domination_same_priority.vql
  */
 package org.mondo.collaboration.security.increment.policy;
 
@@ -14,9 +14,9 @@ import org.eclipse.viatra.query.runtime.api.impl.BaseMatcher;
 import org.eclipse.viatra.query.runtime.exception.ViatraQueryException;
 import org.eclipse.viatra.query.runtime.matchers.tuple.Tuple;
 import org.eclipse.viatra.query.runtime.util.ViatraQueryLoggingUtil;
+import org.mondo.collaboration.policy.rules.AccessibilityLevel;
 import org.mondo.collaboration.security.increment.policy.ResolutionMatch;
 import org.mondo.collaboration.security.increment.policy.util.ResolutionQuerySpecification;
-import org.mondo.collaboration.security.increment.vocabulary.AccessibilityLevel;
 
 /**
  * Generated pattern matcher API of the org.mondo.collaboration.security.increment.policy.resolution pattern,
@@ -31,7 +31,13 @@ import org.mondo.collaboration.security.increment.vocabulary.AccessibilityLevel;
  * <code><pre>
  * pattern resolution(dominatedAccess, prevailingAccess)
  * {
+ *     dominatedAccess == AccessibilityLevel::ALLOW;
+ *     prevailingAccess == AccessibilityLevel::DENY;
+ * } or {
  * 	dominatedAccess == AccessibilityLevel::ALLOW;
+ * 	prevailingAccess == AccessibilityLevel::OBFUSCATE;
+ * } or {
+ * 	dominatedAccess == AccessibilityLevel::OBFUSCATE;
  * 	prevailingAccess == AccessibilityLevel::DENY;
  * }
  * </pre></code>

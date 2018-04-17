@@ -1,5 +1,5 @@
 /**
- * Generated from platform:/resource/org.mondo.collaboration.security.increment/src/org/mondo/collaboration/security/increment/policy/policy_gen.vql
+ * Generated from platform:/resource/org.mondo.collaboration.security.increment/src/org/mondo/collaboration/security/increment/policy/policy_helper_pattern.vql
  */
 package org.mondo.collaboration.security.increment.policy.util;
 
@@ -132,7 +132,7 @@ public final class RestrictIOAssetQuerySpecification extends BaseGeneratedEMFQue
               body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
                  new ExportedParameter(body, var_object, parameter_pObject)
               ));
-              // 	find objectIO(object)
+              //     	    find objectIO(object)
               new PositivePatternCall(body, new FlatTuple(var_object), ObjectIOQuerySpecification.instance().getInternalQueryRepresentation());
               bodies.add(body);
           }

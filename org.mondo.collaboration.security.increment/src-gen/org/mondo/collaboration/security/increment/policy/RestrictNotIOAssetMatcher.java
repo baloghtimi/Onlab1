@@ -1,5 +1,5 @@
 /**
- * Generated from platform:/resource/org.mondo.collaboration.security.increment/src/org/mondo/collaboration/security/increment/policy/policy_gen.vql
+ * Generated from platform:/resource/org.mondo.collaboration.security.increment/src/org/mondo/collaboration/security/increment/policy/policy_helper_pattern.vql
  */
 package org.mondo.collaboration.security.increment.policy;
 
@@ -29,8 +29,8 @@ import org.mondo.collaboration.security.increment.policy.util.RestrictNotIOAsset
  * 
  * <p>Original source:
  * <code><pre>
- * pattern restrictNotIOAsset(object: EObject) {
- * 	find objectNotIO(object);
+ * pattern restrictNotIOAsset(object : EObject) {
+ *     	    find objectNotIO(object);
  * }
  * </pre></code>
  * 

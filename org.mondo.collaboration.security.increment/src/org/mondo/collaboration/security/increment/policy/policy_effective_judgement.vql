@@ -1,0 +1,75 @@
+package org.mondo.collaboration.security.increment.policy
+
+import "http://www.eclipse.org/emf/2002/Ecore"
+import "http://www.mondo.org/collaboration/policy/Rules"
+import "http://WTSpec4M/5.0M"
+
+pattern effectiveJudgementOnObject(user: java String, object: EObject, operation, access)
+{
+	find effectiveJudgementOnObject_at_default(user, object, operation, access);
+} or {
+	find effectiveJudgementOnObject_at_1(user, object, operation, access);
+}
+
+pattern effectiveJudgementOnObject_at_default(user: java String, object: EObject, operation, access)
+{
+	find judgementOnObject_at_default(user, object, operation, access);
+	neg find dominationOnObject_of_default(user, object, operation);
+}
+
+pattern effectiveJudgementOnObject_at_1(user: java String, object: EObject, operation, access)
+{
+    find judgementOnObject_at_1(user, object, operation, access);
+}
+
+pattern effectiveJudgementOnAttribute(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation, access)
+{
+	find effectiveJudgementOnAttribute_at_default(user, source, value, attribute, operation, access);
+} or {
+	find effectiveJudgementOnAttribute_at_weak(user, source, value, attribute, operation, access);
+} or {
+    find effectiveJudgementOnAttribute_at_1(user, source, value, attribute, operation, access);
+}
+
+pattern effectiveJudgementOnAttribute_at_default(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation, access)
+{
+	find judgementOnAttribute_at_default(user, source, value, attribute, operation, access);
+	neg find dominationOnAttribute_of_default(user, source, value, attribute, operation);
+}
+
+pattern effectiveJudgementOnAttribute_at_weak(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation, access)
+{
+    find judgementOnAttribute_at_weak(user, source, value, attribute, operation, access);
+    neg find dominationOnAttribute_of_weak(user, source, value, attribute, operation);
+}
+
+pattern effectiveJudgementOnAttribute_at_1(user: java String, source: EObject, value: java Object, attribute:EAttribute, operation, access)
+{
+    find judgementOnAttribute_at_1(user, source, value, attribute, operation, access);
+}
+    
+pattern effectiveJudgementOnReference(user: java String, source: EObject, target: EObject, reference:EReference, operation, access) 
+{
+	find effectiveJudgementOnReference_at_default(user, source, target, reference, operation, access);
+} or {
+	find effectiveJudgementOnReference_at_weak(user, source, target, reference, operation, access);
+} or {
+    find effectiveJudgementOnReference_at_1(user, source, target, reference, operation, access);
+}
+
+pattern effectiveJudgementOnReference_at_default(user: java String, source: EObject, target: EObject, reference:EReference, operation, access)
+{
+    find judgementOnReference_at_default(user, source, target, reference, operation, access);
+    neg find dominationOnReference_of_default(user, source, target, reference, operation);
+}
+
+pattern effectiveJudgementOnReference_at_weak(user: java String, source: EObject, target: EObject, reference:EReference, operation, access)
+{
+    find judgementOnReference_at_weak(user, source, target, reference, operation, access);
+    neg find dominationOnReference_of_weak(user, source, target, reference, operation);
+}
+
+pattern effectiveJudgementOnReference_at_1(user: java String, source: EObject, target: EObject, reference:EReference, operation, access)
+{
+    find judgementOnReference_at_1(user, source, target, reference, operation, access);
+}

@@ -1,5 +1,5 @@
 /**
- * Generated from platform:/resource/org.mondo.collaboration.security.increment/src/org/mondo/collaboration/security/increment/policy/policy_gen.vql
+ * Generated from platform:/resource/org.mondo.collaboration.security.increment/src/org/mondo/collaboration/security/increment/policy/policy_domination_same_priority.vql
  */
 package org.mondo.collaboration.security.increment.policy.util;
 
@@ -66,7 +66,7 @@ public final class ResolutionQuerySpecification extends BaseGeneratedEMFQuerySpe
   
   @Override
   public ResolutionMatch newMatch(final Object... parameters) {
-    return ResolutionMatch.newMatch((org.mondo.collaboration.security.increment.vocabulary.AccessibilityLevel) parameters[0], (org.mondo.collaboration.security.increment.vocabulary.AccessibilityLevel) parameters[1]);
+    return ResolutionMatch.newMatch((org.mondo.collaboration.policy.rules.AccessibilityLevel) parameters[0], (org.mondo.collaboration.policy.rules.AccessibilityLevel) parameters[1]);
   }
   
   /**
@@ -98,9 +98,9 @@ public final class ResolutionQuerySpecification extends BaseGeneratedEMFQuerySpe
   private static class GeneratedPQuery extends BaseGeneratedEMFPQuery {
     private final static ResolutionQuerySpecification.GeneratedPQuery INSTANCE = new GeneratedPQuery();
     
-    private final PParameter parameter_pDominatedAccess = new PParameter("dominatedAccess", "org.mondo.collaboration.security.increment.vocabulary.AccessibilityLevel", (IInputKey)null, PParameterDirection.INOUT);
+    private final PParameter parameter_pDominatedAccess = new PParameter("dominatedAccess", "org.mondo.collaboration.policy.rules.AccessibilityLevel", (IInputKey)null, PParameterDirection.INOUT);
     
-    private final PParameter parameter_pPrevailingAccess = new PParameter("prevailingAccess", "org.mondo.collaboration.security.increment.vocabulary.AccessibilityLevel", (IInputKey)null, PParameterDirection.INOUT);
+    private final PParameter parameter_pPrevailingAccess = new PParameter("prevailingAccess", "org.mondo.collaboration.policy.rules.AccessibilityLevel", (IInputKey)null, PParameterDirection.INOUT);
     
     private final List<PParameter> parameters = Arrays.asList(parameter_pDominatedAccess, parameter_pPrevailingAccess);
     
@@ -130,13 +130,49 @@ public final class ResolutionQuerySpecification extends BaseGeneratedEMFQuerySpe
              new ExportedParameter(body, var_dominatedAccess, parameter_pDominatedAccess),
              new ExportedParameter(body, var_prevailingAccess, parameter_pPrevailingAccess)
           ));
+          //     dominatedAccess == AccessibilityLevel::ALLOW
+          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
+          new ConstantValue(body, var__virtual_0_, org.mondo.collaboration.policy.rules.AccessibilityLevel.get("allow"));
+          new Equality(body, var_dominatedAccess, var__virtual_0_);
+          //     prevailingAccess == AccessibilityLevel::DENY
+          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
+          new ConstantValue(body, var__virtual_1_, org.mondo.collaboration.policy.rules.AccessibilityLevel.get("deny"));
+          new Equality(body, var_prevailingAccess, var__virtual_1_);
+          bodies.add(body);
+      }
+      {
+          PBody body = new PBody(this);
+          PVariable var_dominatedAccess = body.getOrCreateVariableByName("dominatedAccess");
+          PVariable var_prevailingAccess = body.getOrCreateVariableByName("prevailingAccess");
+          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+             new ExportedParameter(body, var_dominatedAccess, parameter_pDominatedAccess),
+             new ExportedParameter(body, var_prevailingAccess, parameter_pPrevailingAccess)
+          ));
           // 	dominatedAccess == AccessibilityLevel::ALLOW
           PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new ConstantValue(body, var__virtual_0_, org.mondo.collaboration.security.increment.vocabulary.AccessibilityLevel.get("ALLOW"));
+          new ConstantValue(body, var__virtual_0_, org.mondo.collaboration.policy.rules.AccessibilityLevel.get("allow"));
+          new Equality(body, var_dominatedAccess, var__virtual_0_);
+          // 	prevailingAccess == AccessibilityLevel::OBFUSCATE
+          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
+          new ConstantValue(body, var__virtual_1_, org.mondo.collaboration.policy.rules.AccessibilityLevel.get("obfuscate"));
+          new Equality(body, var_prevailingAccess, var__virtual_1_);
+          bodies.add(body);
+      }
+      {
+          PBody body = new PBody(this);
+          PVariable var_dominatedAccess = body.getOrCreateVariableByName("dominatedAccess");
+          PVariable var_prevailingAccess = body.getOrCreateVariableByName("prevailingAccess");
+          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+             new ExportedParameter(body, var_dominatedAccess, parameter_pDominatedAccess),
+             new ExportedParameter(body, var_prevailingAccess, parameter_pPrevailingAccess)
+          ));
+          // 	dominatedAccess == AccessibilityLevel::OBFUSCATE
+          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
+          new ConstantValue(body, var__virtual_0_, org.mondo.collaboration.policy.rules.AccessibilityLevel.get("obfuscate"));
           new Equality(body, var_dominatedAccess, var__virtual_0_);
           // 	prevailingAccess == AccessibilityLevel::DENY
           PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, org.mondo.collaboration.security.increment.vocabulary.AccessibilityLevel.get("DENY"));
+          new ConstantValue(body, var__virtual_1_, org.mondo.collaboration.policy.rules.AccessibilityLevel.get("deny"));
           new Equality(body, var_prevailingAccess, var__virtual_1_);
           bodies.add(body);
       }

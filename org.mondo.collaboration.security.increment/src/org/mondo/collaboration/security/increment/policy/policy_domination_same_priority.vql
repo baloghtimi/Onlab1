@@ -1,0 +1,38 @@
+package org.mondo.collaboration.security.increment.policy
+
+import "http://www.eclipse.org/emf/2002/Ecore"
+import "http://www.mondo.org/collaboration/policy/Rules"
+import "http://WTSpec4M/5.0M"
+
+pattern resolution(dominatedAccess, prevailingAccess)
+{
+    dominatedAccess == AccessibilityLevel::ALLOW;
+    prevailingAccess == AccessibilityLevel::DENY;
+} or {
+	dominatedAccess == AccessibilityLevel::ALLOW;
+	prevailingAccess == AccessibilityLevel::OBFUSCATE;
+} or {
+	dominatedAccess == AccessibilityLevel::OBFUSCATE;
+	prevailingAccess == AccessibilityLevel::DENY;
+}
+
+pattern dominatedExplicitJudgementOnObject_at_1(user: java String, object: EObject, operation, dominatedAccess) 
+{
+    find explicitJudgementOnObject(user, object, operation, dominatedAccess, 1);
+    find explicitJudgementOnObject(user, object, operation, prevailingAccess, 1);
+    find resolution(dominatedAccess, prevailingAccess);
+}
+
+pattern dominatedExplicitJudgementOnAttribute_at_1(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation, prevailingAccess) 
+{
+    find explicitJudgementOnAttribute(user, source, value, attribute, operation, dominatedAccess, 1);
+    find explicitJudgementOnAttribute(user, source, value, attribute, operation, prevailingAccess, 1);
+    find resolution(dominatedAccess, prevailingAccess);
+}
+    
+pattern dominatedExplicitJudgementOnReference_at_1(user: java String, source: EObject, target: EObject, reference: EReference, operation, prevailingAccess) 
+{
+    find explicitJudgementOnReference(user, source, target, reference, operation, dominatedAccess, 1);
+        find explicitJudgementOnReference(user, source, target, reference, operation, prevailingAccess, 1);
+    find resolution(dominatedAccess, prevailingAccess);
+}

@@ -3,27 +3,30 @@
  */
 package org.mondo.collaboration.policy.generator
 
+import WTSpec4M.WT
+import java.util.ArrayList
+import java.util.List
+import java.util.TreeSet
+import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.resource.Resource
+import org.eclipse.viatra.query.patternlanguage.patternLanguage.Variable
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import org.mondo.collaboration.policy.rules.Model
-import org.mondo.collaboration.policy.rules.Rule
-import org.mondo.collaboration.policy.rules.Policy
-import org.mondo.collaboration.policy.rules.OperationType
 import org.mondo.collaboration.policy.rules.AccessibilityLevel
-import org.eclipse.viatra.query.patternlanguage.patternLanguage.Variable
-import java.util.List
-import org.mondo.collaboration.policy.rules.Binding
-import java.util.ArrayList
-import org.mondo.collaboration.policy.rules.ObjectFact
 import org.mondo.collaboration.policy.rules.AttributeFact
-import org.mondo.collaboration.policy.rules.ReferenceFact
-import org.mondo.collaboration.policy.rules.User
+import org.mondo.collaboration.policy.rules.Binding
 import org.mondo.collaboration.policy.rules.Group
-import org.mondo.collaboration.policy.rules.Role
-import java.util.TreeSet
+import org.mondo.collaboration.policy.rules.Model
+import org.mondo.collaboration.policy.rules.ObjectFact
+import org.mondo.collaboration.policy.rules.OperationType
+import org.mondo.collaboration.policy.rules.Policy
+import org.mondo.collaboration.policy.rules.ReferenceFact
 import org.mondo.collaboration.policy.rules.ResolutionType
+import org.mondo.collaboration.policy.rules.Role
+import org.mondo.collaboration.policy.rules.Rule
+import org.mondo.collaboration.policy.rules.User
+import org.eclipse.emf.ecore.EClass
 
 /**
  * Generates code from your model files on save.
@@ -33,9 +36,20 @@ import org.mondo.collaboration.policy.rules.ResolutionType
 class RulesGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		val model = resource.contents.head as Model;
-		val priorities = model.priorities;
-		fsa.generateFile(resource.className+"_gen.vql", generateVQL(model, priorities));
+		if(resource.contents.head instanceof Model) {
+			val model = resource.contents.head as Model;
+		    val priorities = model.priorities;
+		    fsa.generateFile(resource.className+"_helper_pattern.vql", generateHelperPattern(model));
+		    fsa.generateFile(resource.className+"_explicit_judgement.vql", generateExplicitJudgementPattern(model));
+		    fsa.generateFile(resource.className+"_effective_judgement.vql", generateEffectiveJudgementPattern(priorities));
+		    fsa.generateFile(resource.className+"_judgement.vql", generateJudgementAtPattern(priorities));
+		    fsa.generateFile(resource.className+"_domination_higher_priority.vql", generateDominationHigherPriorityPattern(model, priorities));
+		    fsa.generateFile(resource.className+"_domination_same_priority.vql", generateDominationSamePriorityPattern(model, priorities));
+		    fsa.generateFile(resource.className+"_consequence.vql", generateConsequencePattern(priorities));
+		}
+		if(resource.contents.head instanceof WT) {
+			fsa.generateFile(resource.className+"_gen.vql", generateModelVQL(resource));
+		}
 	}
 	
 	def className(Resource resource) {
@@ -43,173 +57,649 @@ class RulesGenerator extends AbstractGenerator {
 		return name.substring(0, name.indexOf('.'))
 	}
 	
-	def generateVQL(Model model, Iterable<Integer> priorities) '''
-package org.mondo.collaboration.security.increment.policy
-	
-import "http://www.eclipse.org/emf/2002/Ecore"
-import "http://mondo.org/collaboration/security/increment/vocabulary"
+	def generateImport() '''
+    package org.mondo.collaboration.security.increment.policy
 
-pattern readWriteOperation(operation) = {
-	operation == OperationType::READ;
-} or {
-	operation == OperationType::WRITE;
-}
+    import "http://www.eclipse.org/emf/2002/Ecore"
+    import "http://www.mondo.org/collaboration/policy/Rules"
+    import "http://WTSpec4M/5.0M"
+    '''	
 
-«FOR rule: model.policy.rules SEPARATOR "\n\n" AFTER "\n"»
-pattern «rule.name»Asset(«rule.objectAsset»: EObject) {
-	find «rule.pattern.name»(«FOR bind: rule.bindList SEPARATOR ", " AFTER ");"»«bind»«ENDFOR»
-}
+    def generateHelperPattern(Model model) '''
+    «generateImport»
+    
+    pattern readWriteOperation(operation) = {
+    	operation == OperationType::READ;
+    } or {
+    	operation == OperationType::WRITE;
+    }
+    
+    «FOR rule: model.policy.rules SEPARATOR "\n\n" AFTER "\n"»
+        «rule.generateAssetHelperPattern»
+        «rule.generateUserHelperPattern»
+    «ENDFOR»
+    
+    pattern allUsers(user: java String) {
+    	«FOR user: model.roles.usersOfRoleList SEPARATOR "\n} or {"»
+    	user == "«user.name»";
+    	«ENDFOR»
+    }
+    '''
+    
+    def generateExplicitJudgementPattern(Model model) '''
+    «generateImport»
+    
+    pattern explicitJudgementOnObject(user : java String, object : EObject, operation, access, priority : java Integer)
+    {
+    	
+    «FOR rule : model.policy.rules»
+        «IF rule.asset instanceof ObjectFact»
+            «rule.generateRulePatternOnObject»
+            
+            } or {
+            
+        «ENDIF»
+    «ENDFOR»
+    «model.policy.generateDefaultPatternOnObject»
+    }
+    
+    pattern explicitJudgementOnAttribute(user : java String, source : EObject, value: java Object, attribute : EAttribute, operation, access, priority: java Integer)
+    {
+    	
+    «FOR rule : model.policy.rules»
+        «IF rule.asset instanceof AttributeFact»
+            «rule.generateRulePatternOnAttribute»
+            
+            } or {
+            
+        «ENDIF»
+    «ENDFOR»
+    «model.policy.generateDefaultPatternOnAttribute»
+    }
+    
+    pattern explicitJudgementOnReference(user : java String, source : EObject, target : EObject, reference : EReference, operation, access, priority: java Integer)
+    {
+    	
+    «FOR rule : model.policy.rules»
+        «IF rule.asset instanceof ReferenceFact»
+            «rule.generateRulePatternOnReference»
+            
+            } or {
+            
+        «ENDIF»
+    «ENDFOR»
+    «model.policy.generateDefaultPatternOnReference»
+    }
+    '''
 
-pattern «rule.name»User(user: java String) {
-	«FOR user: rule.roles.usersOfRoleList SEPARATOR "\n} or {" AFTER "}"»
-	user == "«user.name»";
-	«ENDFOR»
-«ENDFOR»
-
-pattern allUsers(user: java String) {
-	«FOR user: model.roles.usersOfRoleList SEPARATOR "\n} or {" AFTER "}"»
-	user == "«user.name»";
-	«ENDFOR»
-
-pattern explicitJudgement(user: java String, asset: EObject, operation, access, priority: java Integer)
-{
-	
-«FOR rule: model.policy.rules SEPARATOR "\n\n} or {\n" AFTER "\n} or {\n"»
-«rule.generateRulePattern»
-«ENDFOR»
-
-«model.policy.generateDefaultPattern»
-}
-
-pattern effectiveJudgement(user: java String, asset: EObject, operation, access) 
-{
-	«FOR prio: priorities SEPARATOR "\n} or {" »
-	find effectiveJudgement_at_«prio»(user, asset, operation, access);
-	«ENDFOR»
-}
-
-«FOR prio: priorities»
-pattern judgement_at_«prio»(user: java String, asset: EObject, operation, access) 
-{
-	find explicitJudgement(user, asset, operation, access, «prio»);
-«IF prio != priorities.maxBy[it]»
-} or {
-	find relaxedJudgement_at_«prio»(user, asset, operation, access);
-«ENDIF»
-} or {
-	find strongConsequence_at_«prio»(user, asset, operation, access, _domAsset, _domOp, _domAccess);
-	«FOR domPrio: priorities»«IF domPrio >= prio»
-//} or {
-//	find weakConsequence_at_«prio»_of_«domPrio»(user, asset, operation, access, _domAsset, _domOp, _domAccess);
-	«ENDIF»«ENDFOR»
-}
-«ENDFOR»
-
-«FOR prio: priorities»«IF prio != priorities.maxBy[it]»
-pattern relaxedJudgement_at_«prio»(user: java String, asset: EObject, operation, access)
-{
-	find judgement_at_«prio»(user, asset, operation, dominatedAccess);
-	find domination_of_«prio»(user, asset, operation, _dominatedAccess, access);
-}
-«ENDIF»«ENDFOR»
-
-«FOR prio: priorities»
-pattern effectiveJudgement_at_«prio»(user: java String, asset: EObject, operation, access) 
-{
-	find judgement_at_«prio»(user, asset, operation, access);
-	«IF prio != priorities.maxBy[it]»
-	neg find domination_of_«prio»(user, asset, operation, access, _prevailingAccess);
-	«ENDIF»
-} 
-«ENDFOR»
-
-«FOR prio: priorities»«IF prio != priorities.maxBy[it]»
-pattern domination_of_«prio»(user: java String, asset: EObject, operation, dominatedAccess, prevailingAccess) 
-{
-	«FOR prevailingPrio: priorities.filter[it > prio] SEPARATOR "\n} or {" »
-	find domination_by_«prevailingPrio»(user, asset, operation, dominatedAccess, prevailingAccess);
-	«ENDFOR»
-} 
-«ENDIF»«ENDFOR»
-
-«FOR prevailingPrio: priorities»«IF prevailingPrio != priorities.minBy[it]»
-pattern domination_by_«prevailingPrio»(user: java String, asset: EObject, operation, dominatedAccess, prevailingAccess) 
-{
-	find effectiveJudgement_at_«prevailingPrio»(user, asset, operation, prevailingAccess);
-	find resolution(dominatedAccess, prevailingAccess);
-}  
-«ENDIF»«ENDFOR»
-
-pattern resolution(dominatedAccess, prevailingAccess)
-{
-	«IF model.policy.resolution == ResolutionType.RESTRICTIVE»
-	dominatedAccess == AccessibilityLevel::ALLOW;
-	prevailingAccess == AccessibilityLevel::DENY;
-	«ENDIF»
-	«IF model.policy.resolution == ResolutionType.PERMISSIVE»
-	dominatedAccess == AccessibilityLevel::DENY;
-	prevailingAccess == AccessibilityLevel::ALLOW;
-	«ENDIF»
-}
-
-«FOR prio: priorities»
-pattern strongConsequence_at_«prio»(user: java String,
-	depAsset: EObject, depOp, depAccess, 
-	domAsset: EObject, domOp, domAccess) 
-{
-	// type II, read vs write
-	find effectiveJudgement_at_«prio»(user, domAsset, domOp, domAccess);
-	depAsset == domAsset;
-	domOp == OperationType::WRITE; depOp == OperationType::READ;
-	domAccess == AccessibilityLevel::ALLOW; depAccess == AccessibilityLevel::ALLOW; 
-} or {
-	// type II, read vs write
-	find effectiveJudgement_at_«prio»(user, domAsset, domOp, domAccess);
-	depAsset == domAsset;
-	domOp == OperationType::READ; depOp == OperationType::WRITE;
-	domAccess == AccessibilityLevel::DENY; depAccess == AccessibilityLevel::DENY; 
-} or {
-	// type III, read vs containment
-	find effectiveJudgement_at_«prio»(user, domAsset, domOp, domAccess);
-	find contains(depAsset, domAsset);
-	domOp == OperationType::READ; depOp == OperationType::READ;
-	domAccess == AccessibilityLevel::ALLOW; depAccess == AccessibilityLevel::ALLOW; 
-} or {
-	// type III, read vs containment
-	find effectiveJudgement_at_«prio»(user, domAsset, domOp, domAccess);
-	find contains(domAsset, depAsset);
-	domOp == OperationType::READ; depOp == OperationType::READ;
-	domAccess == AccessibilityLevel::DENY; depAccess == AccessibilityLevel::DENY; 
-}
-«ENDFOR»
-
-//pattern weakConsequence(user: java String,
-//	depAsset: EObject, depOp: java SecurityOperation, depBound: java Enumerator, 
-//	dir: java BoundDirection, depPrio: java Integer,
-//	domAsset: EObject, domOp: java SecurityOperation, domBound: java Enumerator,
-//	domPrio: java Integer) 
-//{
-//	depPrio == 1;
-//	// TODO implement; not needed for example
-//}
-'''	
-
-    def generateRulePattern(Rule rule) '''
+    def generateAssetHelperPattern(Rule rule) '''
+    «IF rule.asset instanceof ObjectFact»
+        «val object = rule.asset as ObjectFact»
+        pattern «rule.name»Asset(«object.variable.name» : EObject) {
+    	    find «rule.pattern.name»(«FOR bind: rule.bindList SEPARATOR ", " AFTER ");"»«bind»«ENDFOR»
+        }
+    «ENDIF»
+    «IF rule.asset instanceof AttributeFact»
+        «val attribute = rule.asset as AttributeFact»
+        pattern «rule.name»Asset(«attribute.variable.name» : EObject, value: java Object, attribute : EAttribute) {
+        	find «rule.pattern.name»(«FOR bind: rule.bindList SEPARATOR ", " AFTER ");"»«bind»«ENDFOR»
+        	find attributeAsset(«attribute.variable.name», value, attribute);
+        	EAttribute.name(attribute, "«attribute.attribute.name»");
+        }
+    «ENDIF»
+    «IF rule.asset instanceof ReferenceFact»
+        «val reference = rule.asset as ReferenceFact»
+        pattern «rule.name»Asset(«reference.sourceVar» : EObject, «reference.targetVar» : EObject, reference : EReference) {
+            find «rule.pattern.name»(«FOR bind: rule.bindList SEPARATOR ", " AFTER ");"»«bind»«ENDFOR»
+            find attributeAsset(«reference.sourceVar», «reference.targetVar», reference);
+            EReference.name(reference, "«reference.reference.name»");
+        }
+    «ENDIF»
+    '''
+    
+    def generateUserHelperPattern(Rule rule) '''
+    pattern «rule.name»User(user: java String) {
+    	«FOR user: rule.roles.usersOfRoleList SEPARATOR "\n} or {" AFTER "}"»
+    	user == "«user.name»";
+    	«ENDFOR»
+    '''
+    
+    def generateRulePatternOnObject(Rule rule) '''
     //  rule «rule.name»
-        find «rule.name»Asset(asset);
+        find «rule.name»Asset(object);
         find «rule.name»User(user);
         «rule.operation.generateOperationType»
         «rule.access.generateAccessibilityLevel»
         priority == «rule.priority»;
     '''
 
-    def generateDefaultPattern(Policy policy) '''
+    def generateDefaultPatternOnObject(Policy policy) '''
     //  rule default
-        find objectAllObjects(asset);
+        find objectAllObjects(object);
         find allUsers(user);
         «policy.operation.generateOperationType»
         «policy.access.generateAccessibilityLevel»
-        priority == 0;
+        priority == eval(-1);
+    '''
+    
+    def generateRulePatternOnAttribute(Rule rule) '''
+    //  rule «rule.name»
+        find «rule.name»Asset(source, value, attribute);
+        find «rule.name»User(user);
+        «rule.operation.generateOperationType»
+        «rule.access.generateAccessibilityLevel»
+        priority == «rule.priority»;
+    '''
+
+    def generateDefaultPatternOnAttribute(Policy policy) '''
+    //  rule default
+        find attributeAsset(source, value, attribute);
+        find allUsers(user);
+        «policy.operation.generateOperationType»
+        «policy.access.generateAccessibilityLevel»
+        priority == eval(-1);
+    '''
+    
+    def generateRulePatternOnReference(Rule rule) '''
+    //  rule «rule.name»
+        find «rule.name»Asset(source, target, reference);
+        find «rule.name»User(user);
+        «rule.operation.generateOperationType»
+        «rule.access.generateAccessibilityLevel»
+        priority == «rule.priority»;
+    '''
+
+    def generateDefaultPatternOnReference(Policy policy) '''
+    //  rule default
+        find referenceAsset(source, target, reference);
+        find allUsers(user);
+        «policy.operation.generateOperationType»
+        «policy.access.generateAccessibilityLevel»
+        priority == eval(-1);
+    '''
+    
+    def generateEffectiveJudgementPattern(TreeSet<Integer> priorities) '''
+    «generateImport»
+    
+    pattern effectiveJudgementOnObject(user: java String, object: EObject, operation, access)
+    {
+    	find effectiveJudgementOnObject_at_default(user, object, operation, access);
+    } or {
+    	«FOR prio: priorities SEPARATOR "\n} or {"»
+    	find effectiveJudgementOnObject_at_«prio»(user, object, operation, access);
+    	«ENDFOR»
+    }
+    
+    pattern effectiveJudgementOnObject_at_default(user: java String, object: EObject, operation, access)
+    {
+    	find judgementOnObject_at_default(user, object, operation, access);
+    	neg find dominationOnObject_of_default(user, object, operation);
+    }
+    
+    «FOR prio: priorities SEPARATOR "\n"»
+    pattern effectiveJudgementOnObject_at_«prio»(user: java String, object: EObject, operation, access)
+    {
+        find judgementOnObject_at_«prio»(user, object, operation, access);
+        «IF prio != priorities.maxBy[it]»
+        	neg find dominationOnObject_of_«prio»(user, object, operation);
+        «ENDIF»
+    }
+    «ENDFOR»
+    
+    pattern effectiveJudgementOnAttribute(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation, access)
+    {
+    	find effectiveJudgementOnAttribute_at_default(user, source, value, attribute, operation, access);
+    } or {
+    	find effectiveJudgementOnAttribute_at_weak(user, source, value, attribute, operation, access);
+    } or {
+        «FOR prio: priorities SEPARATOR "\n} or {" »
+        find effectiveJudgementOnAttribute_at_«prio»(user, source, value, attribute, operation, access);
+        «ENDFOR»
+    }
+    
+    pattern effectiveJudgementOnAttribute_at_default(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation, access)
+    {
+    	find judgementOnAttribute_at_default(user, source, value, attribute, operation, access);
+    	neg find dominationOnAttribute_of_default(user, source, value, attribute, operation);
+    }
+    
+    pattern effectiveJudgementOnAttribute_at_weak(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation, access)
+    {
+        find judgementOnAttribute_at_weak(user, source, value, attribute, operation, access);
+        neg find dominationOnAttribute_of_weak(user, source, value, attribute, operation);
+    }
+    
+    «FOR prio: priorities»
+    pattern effectiveJudgementOnAttribute_at_«prio»(user: java String, source: EObject, value: java Object, attribute:EAttribute, operation, access)
+    {
+        find judgementOnAttribute_at_«prio»(user, source, value, attribute, operation, access);
+        «IF prio != priorities.maxBy[it]»
+        	neg find dominationOnAttribute_of_«prio»(user, source, value, attribute, operation);
+        «ENDIF»
+    }
+    «ENDFOR»
+        
+    pattern effectiveJudgementOnReference(user: java String, source: EObject, target: EObject, reference:EReference, operation, access) 
+    {
+    	find effectiveJudgementOnReference_at_default(user, source, target, reference, operation, access);
+    } or {
+    	find effectiveJudgementOnReference_at_weak(user, source, target, reference, operation, access);
+    } or {
+        «FOR prio: priorities SEPARATOR "\n} or {" »
+        find effectiveJudgementOnReference_at_«prio»(user, source, target, reference, operation, access);
+        «ENDFOR»
+    }
+    
+    pattern effectiveJudgementOnReference_at_default(user: java String, source: EObject, target: EObject, reference:EReference, operation, access)
+    {
+        find judgementOnReference_at_default(user, source, target, reference, operation, access);
+        neg find dominationOnReference_of_default(user, source, target, reference, operation);
+    }
+    
+    pattern effectiveJudgementOnReference_at_weak(user: java String, source: EObject, target: EObject, reference:EReference, operation, access)
+    {
+        find judgementOnReference_at_weak(user, source, target, reference, operation, access);
+        neg find dominationOnReference_of_weak(user, source, target, reference, operation);
+    }
+    
+    «FOR prio: priorities»
+    pattern effectiveJudgementOnReference_at_«prio»(user: java String, source: EObject, target: EObject, reference:EReference, operation, access)
+    {
+        find judgementOnReference_at_«prio»(user, source, target, reference, operation, access);
+        «IF prio != priorities.maxBy[it]»
+        	neg find dominationOnReference_of_«prio»(user, source, target, reference, operation);
+        «ENDIF»
+    }
+    «ENDFOR»
+    '''
+    
+    def generateDominationHigherPriorityPattern(Model model, TreeSet<Integer> priorities) '''
+    «generateImport»
+    
+    pattern dominationOnObject_of_default(user: java String, object: EObject, operation)
+    {
+        «FOR prio: priorities SEPARATOR "\n} or {" »
+    	find effectiveJudgementOnObject_at_«prio»(user, object, operation, _access);
+    	«ENDFOR»
+    }
+        
+    «FOR prio: priorities»«IF prio != priorities.maxBy[it]»
+        pattern dominationOnObject_of_«prio»(user: java String, object: EObject, operation) 
+        {
+        	«FOR prevailingPrio: priorities.filter[it > prio] SEPARATOR "\n} or {" »
+        	find effectiveJudgementOnObject_at_«prevailingPrio»(user, object, operation, _access);
+        	«ENDFOR»
+        } 
+        «ENDIF»«ENDFOR»
+        
+    pattern dominationOnAttribute_of_default(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation)
+    {
+    	find effectiveJudgementOnAttribute_at_weak(user, source, value, attribute, operation, _access);
+    } or {
+        «FOR prio: priorities SEPARATOR "\n} or {" »
+        find effectiveJudgementOnAttribute_at_«prio»(user, source, value, attribute, operation, _access);
+        «ENDFOR»
+    }
+    
+    pattern dominationOnAttribute_of_weak(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation)
+    {
+        «FOR prio: priorities SEPARATOR "\n} or {" »
+            find effectiveJudgementOnAttribute_at_«prio»(user, source, value, attribute, operation, _access);
+        «ENDFOR»
+    }
+        
+    «FOR prio: priorities»«IF prio != priorities.maxBy[it]»
+        pattern dominationOnAttribute_of_«prio»(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation) 
+        {
+            «FOR prevailingPrio: priorities.filter[it > prio] SEPARATOR "\n} or {" »
+            find effectiveJudgementOnAttribute_at_«prevailingPrio»(user, source, value, attribute, operation, _access);
+            «ENDFOR»
+        } 
+        «ENDIF»«ENDFOR»
+          
+    pattern dominationOnReference_of_default(user: java String, source: EObject, target: EObject, reference: EReference, operation)
+    {
+       find effectiveJudgementOnReference_at_weak(user, source, target, reference, operation, _access);
+    } or {
+        «FOR prio: priorities SEPARATOR "\n} or {" »
+        find effectiveJudgementOnReference_at_«prio»(user, source, target, reference, operation, _access);
+        «ENDFOR»
+    }
+         
+    pattern dominationOnReference_of_weak(user: java String, source: EObject, target: EObject, reference: EReference, operation)
+    {
+        «FOR prio: priorities SEPARATOR "\n} or {" »
+            find effectiveJudgementOnReference_at_«prio»(user, source, target, reference, operation, _access);
+        «ENDFOR»
+    }     
+       
+    «FOR prio: priorities»«IF prio != priorities.maxBy[it]»
+        pattern dominationOnReference_of_«prio»(user: java String, source: EObject, target: EObject, reference: EReference, operation) 
+        {
+            «FOR prevailingPrio: priorities.filter[it > prio] SEPARATOR "\n} or {" »
+            find effectiveJudgementOnReference_at_«prevailingPrio»(user, source, target, reference, operation, _access);
+            «ENDFOR»
+        } 
+        «ENDIF»«ENDFOR»
+    '''
+    
+    def generateDominationSamePriorityPattern(Model model, TreeSet<Integer> priorities) '''
+    «generateImport»
+    
+    «model.generateResolutionPattern»
+    
+    «FOR prio: priorities»
+    pattern dominatedExplicitJudgementOnObject_at_«prio»(user: java String, object: EObject, operation, dominatedAccess) 
+    {
+        find explicitJudgementOnObject(user, object, operation, dominatedAccess, «prio»);
+        find explicitJudgementOnObject(user, object, operation, prevailingAccess, «prio»);
+        find resolution(dominatedAccess, prevailingAccess);
+    }
+    «ENDFOR»
+    
+    «FOR prio: priorities»
+    pattern dominatedExplicitJudgementOnAttribute_at_«prio»(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation, prevailingAccess) 
+    {
+        find explicitJudgementOnAttribute(user, source, value, attribute, operation, dominatedAccess, «prio»);
+        find explicitJudgementOnAttribute(user, source, value, attribute, operation, prevailingAccess, «prio»);
+        find resolution(dominatedAccess, prevailingAccess);
+    }
+    «ENDFOR»
+        
+    «FOR prio: priorities»
+    pattern dominatedExplicitJudgementOnReference_at_«prio»(user: java String, source: EObject, target: EObject, reference: EReference, operation, prevailingAccess) 
+    {
+        find explicitJudgementOnReference(user, source, target, reference, operation, dominatedAccess, «prio»);
+            find explicitJudgementOnReference(user, source, target, reference, operation, prevailingAccess, «prio»);
+        find resolution(dominatedAccess, prevailingAccess);
+    }
+    «ENDFOR»    
+    '''
+    
+    def generateJudgementAtPattern(TreeSet<Integer> priorities) '''
+    «generateImport»
+    
+    «generateJudgementAtDefaultPattern»
+    
+    «generateJudgementAtWeakPattern»
+    
+    «FOR prio: priorities SEPARATOR "\n"»
+    «prio.generateJudgementAtPrioPattern»
+    «ENDFOR»
+    '''
+    
+    def generateJudgementAtDefaultPattern() ''' 
+    pattern judgementOnObject_at_default(user: java String, object: EObject, operation, access)
+    {
+        find explicitJudgementOnObject(user, object, operation, access, eval(-1));
+    }
+    
+    pattern judgementOnAttribute_at_default(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation, access)
+    {
+        find explicitJudgementOnAttribute(user, source, value, attribute, operation, access, eval(-1));
+    }
+    
+    pattern judgementOnReference_at_default(user: java String, source: EObject, target: EObject, reference: EReference, operation, access)
+    {
+        find explicitJudgementOnReference(user, source, target, reference, operation, access, eval(-1));
+    }
+    '''
+    
+    def generateJudgementAtWeakPattern() '''
+    pattern judgementOnAttribute_at_weak(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation, access)
+    {
+       find weakConsequenceOnAttribute(user, source, value, attribute, operation, access);
+    }
+        
+    pattern judgementOnReference_at_weak(user: java String, source: EObject, target: EObject, reference: EReference, operation, access)
+    {
+        find weakConsequenceOnReference(user, source, target, reference, operation, access);
+    }
+    '''
+    
+    def generateJudgementAtPrioPattern(Integer prio) '''
+    pattern judgementOnObject_at_«prio»(user: java String, object: EObject, operation, access)
+    {
+        find explicitJudgementOnObject(user, object, operation, access, «prio»);
+        neg find dominatedExplicitJudgementOnObject_at_«prio»(user, object, operation, access);
+    } or {
+        find strongConsequenceOnObject_at_«prio»(user, object, operation, access);
+«««        «FOR domPrio: priorities»«IF domPrio >= prio»
+«««    //} or {
+«««    //	find weakConsequence_at_«prio»_of_«domPrio»(user, asset, operation, access, _domAsset, _domOp, _domAccess);
+«««         «ENDIF»«ENDFOR»
+    }
+        
+    pattern judgementOnAttribute_at_«prio»(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation, access)
+    {
+        find explicitJudgementOnAttribute(user, source, value, attribute, operation, access, «prio»);
+        neg find dominatedExplicitJudgementOnObject_at_«prio»(user, object, operation, access);
+    } or {
+        find strongConsequenceOnAttribute_at_«prio»(user, source, value, attribute, operation, access);
+«««        «FOR domPrio: priorities»«IF domPrio >= prio»
+«««    //} or {
+«««    //	find weakConsequence_at_«prio»_of_«domPrio»(user, asset, operation, access, _domAsset, _domOp, _domAccess);
+«««        «ENDIF»«ENDFOR»
+    }
+            
+    pattern judgementOnReference_at_«prio»(user: java String, source: EObject, target: EObject, reference: EReference, operation, access)
+    {
+        find explicitJudgementOnReference(user, source, target, reference, operation, access, «prio»);
+        neg find dominatedExplicitJudgementOnAttribute_at_«prio»(user, source, value, attribute, operation, access);
+    } or {
+        find strongConsequenceOnReference_at_«prio»(user, source, target, reference, operation, access);
+«««        «FOR domPrio: priorities»«IF domPrio >= prio»
+«««    //} or {
+«««    //	find weakConsequence_at_«prio»_of_«domPrio»(user, asset, operation, access, _domAsset, _domOp, _domAccess);
+«««        «ENDIF»«ENDFOR»
+    }
+    '''
+    
+    def generateResolutionPattern(Model model) '''
+    pattern resolution(dominatedAccess, prevailingAccess)
+    {
+        «IF model.policy.resolution == ResolutionType.RESTRICTIVE»
+        dominatedAccess == AccessibilityLevel::ALLOW;
+        prevailingAccess == AccessibilityLevel::DENY;
+    } or {
+    	dominatedAccess == AccessibilityLevel::ALLOW;
+    	prevailingAccess == AccessibilityLevel::OBFUSCATE;
+    } or {
+    	dominatedAccess == AccessibilityLevel::OBFUSCATE;
+    	prevailingAccess == AccessibilityLevel::DENY;
+        «ENDIF»
+        «IF model.policy.resolution == ResolutionType.PERMISSIVE»
+        dominatedAccess == AccessibilityLevel::DENY;
+        prevailingAccess == AccessibilityLevel::ALLOW;
+    } or {
+        dominatedAccess == AccessibilityLevel::DENY;
+        prevailingAccess == AccessibilityLevel::OBFUSCATE;
+    } or {
+        dominatedAccess == AccessibilityLevel::OBFUSCATE;
+        prevailingAccess == AccessibilityLevel::ALLOW;
+        «ENDIF» 
+    }
+    '''
+    
+    def generateConsequencePattern(TreeSet<Integer> priorities) '''
+    «generateImport»
+    
+    «FOR prio: priorities»
+    «prio.generateStrongConsequenceOnObject»
+    
+    «prio.generateStrongConsequenceOnAttribute»
+    
+    «prio.generateStrongConsequenceOnReference»
+    «ENDFOR»
+    
+    «priorities.generateWeakConsequenceOnAttribute»
+            
+    «priorities.generateWeakConsequenceOnReference»
+    '''
+    
+    def generateStrongConsequenceOnObject(Integer prio) '''
+    pattern strongConsequenceOnObject_at_«prio»(user: java String, object: EObject, operation, access)
+    {
+    	// allow W -> allow R, object -> object
+    	find effectiveJudgementOnObject_at_«prio»(user, object, OperationType::WRITE, AccessibilityLevel::ALLOW);
+    	operation == OperationType::READ;
+    	access == AccessibilityLevel::ALLOW;
+    } or {
+    	// deny R -> deny W, object -> object
+    	find effectiveJudgementOnObject_at_«prio»(user, object, OperationType::READ, AccessibilityLevel::DENY);
+    	operation == OperationType::WRITE;
+    	access == AccessibilityLevel::DENY;
+    } or {
+    	// allow R -> obfuscate R, child -> parent
+    	find effectiveJudgementOnObject_at_«prio»(user, child, OperationType::READ, AccessibilityLevel::ALLOW);
+    	find contains(object, child);
+    	neg find effectiveJudgementOnObject_at_«prio»(user, object, OperationType::READ, AccessibilityLevel::ALLOW);
+    	operation == OperationType::READ;
+    	access == AccessibilityLevel::OBFUSCATE;
+    } or {
+    	// allow R -> obfuscate R, attribute -> source
+    	find effectiveJudgementOnAttribute_at_«prio»(user, object, _value, _attribute, OperationType::READ, AccessibilityLevel::ALLOW);
+    	neg find effectiveJudgementOnObject_at_«prio»(user, object, OperationType::READ, AccessibilityLevel::ALLOW);
+    	operation == OperationType::READ;
+    	access == AccessibilityLevel::OBFUSCATE;
+    } or {
+        // deny R, ID attribute -> source
+        find effectiveJudgementOnAttribute_at_«prio»(user, object, anyValue, anyAttribute, OperationType::READ, AccessibilityLevel::DENY);
+        find idAttribute(object, anyValue, anyAttribute);
+        operation == OperationType::READ;
+        access == AccessibilityLevel::DENY;
+    } or {
+        // allow R -> obfuscate R, reference -> source
+        find effectiveJudgementOnReference_at_«prio»(user, object, _target, _reference, OperationType::READ, AccessibilityLevel::ALLOW);
+        neg find effectiveJudgementOnObject_at_«prio»(user, object, OperationType::READ, AccessibilityLevel::ALLOW);
+        operation == OperationType::READ;
+        access == AccessibilityLevel::OBFUSCATE;
+    } or {
+        // allow R -> obfuscate R, reference -> target
+        find effectiveJudgementOnReference_at_«prio»(user, _source, object, _reference, OperationType::READ, AccessibilityLevel::ALLOW);
+        neg find effectiveJudgementOnObject_at_«prio»(user, object, OperationType::READ, AccessibilityLevel::ALLOW);
+        operation == OperationType::READ;
+        access == AccessibilityLevel::OBFUSCATE;
+    } or {
+        // deny R, containment reference -> target
+        find effectiveJudgementOnReference_at_«prio»(user, anySource, object, anyReference, OperationType::READ, AccessibilityLevel::DENY);
+        find containmentReference(anySource, object, anyReference);
+        operation == OperationType::READ;
+        access == AccessibilityLevel::DENY;
+    } or {
+        // allow W, containment reference -> target
+        find effectiveJudgementOnReference_at_«prio»(user, anySource, object, anyReference, OperationType::WRITE, AccessibilityLevel::ALLOW);
+        find containmentReference(anySource, object, anyReference);
+        operation == OperationType::WRITE;
+        access == AccessibilityLevel::ALLOW;
+    }
+    '''
+    
+    def generateStrongConsequenceOnAttribute(Integer prio) '''
+    pattern strongConsequenceOnAttribute_at_«prio»(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation, access)
+    {
+    	// allow W -> allow R, attribute -> attribute
+    	find effectiveJudgementOnAttribute_at_«prio»(user, source, value, attribute, OperationType::WRITE, AccessibilityLevel::ALLOW);
+    	operation == OperationType::READ;
+    	access == AccessibilityLevel::ALLOW;
+    } or {
+    	// deny R -> deny W, attribute -> attribute
+    	find effectiveJudgementOnAttribute_at_«prio»(user, source, value, attribute, OperationType::READ, AccessibilityLevel::DENY);
+    	operation == OperationType::WRITE;
+    	access == AccessibilityLevel::DENY;
+    } or {
+        // allow R, object -> ID attribute
+        find effectiveJudgementOnObject_at_«prio»(user, source, OperationType::READ, AccessibilityLevel::ALLOW);
+        find idAttribute(source, value, attribute);
+        operation == OperationType::READ;
+        access == AccessibilityLevel::ALLOW;
+    } or {
+        // deny W, containment reference -> attribute
+        find effectiveJudgementOnReference_at_«prio»(user, anySource, source, anyReference, OperationType::WRITE, AccessibilityLevel::ALLOW);
+        find containmentReference(anySource, source, anyReference);
+        find attributeAsset(source, value, attribute);
+        operation == OperationType::WRITE;
+        access == AccessibilityLevel::ALLOW;
+    } or {
+    	// obfuscate R, object -> ID attribute
+    	find effectiveJudgementOnObject_at_«prio»(user, source, OperationType::READ, AccessibilityLevel::OBFUSCATE);
+    	find idAttribute(source, value, attribute);
+    	operation == OperationType::READ;
+    	access == AccessibilityLevel::OBFUSCATE;
+    } or {
+        // obfuscate R -> deny R, object -> nonID attribute
+        find effectiveJudgementOnObject_at_«prio»(user, source, OperationType::READ, AccessibilityLevel::OBFUSCATE);
+        find attributeAsset(source, value, attribute);
+        neg find idAttribute(source, value, attribute);
+        operation == OperationType::READ;
+        access == AccessibilityLevel::DENY;
+    }
+    '''
+    
+    def generateStrongConsequenceOnReference(Integer prio) '''
+    pattern strongConsequenceOnReference_at_«prio»(user: java String, source: EObject, target: EObject, reference: EReference, operation, access)
+    {
+    	// allow W -> allow R, reference -> reference
+    	find effectiveJudgementOnReference_at_«prio»(user, source, target, reference, OperationType::WRITE, AccessibilityLevel::ALLOW);
+    	operation == OperationType::READ;
+    	access == AccessibilityLevel::ALLOW;
+    } or {
+    	// deny R -> deny W, reference -> reference
+    	find effectiveJudgementOnReference_at_«prio»(user, source, target, reference, OperationType::READ, AccessibilityLevel::DENY);
+    	operation == OperationType::WRITE;
+    	access == AccessibilityLevel::DENY;
+    } or {
+        // allow R, object -> container reference
+        find effectiveJudgementOnObject_at_«prio»(user, target, OperationType::READ, AccessibilityLevel::ALLOW);
+        find containmentReference(source, target, reference);
+        operation == OperationType::READ;
+        access == AccessibilityLevel::ALLOW;
+    } or {
+        // deny R, object -> incoming reference
+        find effectiveJudgementOnObject_at_«prio»(user, target, OperationType::READ, AccessibilityLevel::DENY);
+        find referenceAsset(source, target, reference);
+        operation == OperationType::READ;
+        access == AccessibilityLevel::DENY;
+    } or {
+        // deny R, object -> outgoing reference
+        find effectiveJudgementOnObject_at_«prio»(user, source, OperationType::READ, AccessibilityLevel::DENY);
+        find referenceAsset(source, target, reference);
+        operation == OperationType::READ;
+        access == AccessibilityLevel::DENY;
+    } or {
+        // allow W, object -> container reference
+        find effectiveJudgementOnObject_at_«prio»(user, target, OperationType::WRITE, AccessibilityLevel::ALLOW);
+        find containmentReference(source, target, reference);
+        operation == OperationType::WRITE;
+        access == AccessibilityLevel::ALLOW;
+    } or {
+        // deny R, ID attribute -> source
+        find effectiveJudgementOnAttribute_at_«prio»(user, target, anyValue, anyAttribute, OperationType::WRITE, AccessibilityLevel::ALLOW);
+        find idAttribute(target, anyValue, anyAttribute);
+        find referenceAsset(source, target, reference);
+        operation == OperationType::WRITE;
+        access == AccessibilityLevel::ALLOW;
+    }
+    '''
+    
+    def generateWeakConsequenceOnAttribute(TreeSet<Integer> priorities) '''
+    pattern weakConsequenceOnAttribute(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation, access)
+    {
+    	«FOR prio : priorities SEPARATOR "\n} or {"»
+    	find effectiveJudgementOnObject_at_«prio»(user, source, operation, access);
+    	find attributeAsset(source, value, attribute);
+    	«ENDFOR»
+    }
+    '''
+    
+    def generateWeakConsequenceOnReference(TreeSet<Integer> priorities) '''
+    pattern weakConsequenceOnReference(user: java String, source: EObject, target: EObject, reference: EReference, operation, access)
+    {
+    	«FOR prio : priorities SEPARATOR "\n} or {"»
+    	find effectiveJudgementOnObject_at_«prio»(user, source, operation, access);
+    	find referenceAsset(source, target, reference);
+    	«ENDFOR»
+    }
     '''
 
     def generateOperationType(OperationType operation) '''
@@ -232,11 +722,6 @@ pattern strongConsequence_at_«prio»(user: java String,
         access == AccessibilityLevel::DENY;
         «ENDIF»
     '''
-
-    def getObjectAsset(Rule rule) {
-    	val object = rule.asset as ObjectFact;
-    	return object.variable.name;
-    }
 
     def getBindList(Rule rule) {
 		val bindList = new ArrayList<Object>();
@@ -308,10 +793,124 @@ pattern strongConsequence_at_«prio»(user: java String,
 	
 	def getPriorities(Model model) {
 		val priorities = new TreeSet<Integer>();
-		priorities.add(0);
 		for(rule : model.policy.rules) {
 			priorities.add(rule.priority);
 		}
 		return priorities;
 	}
+	
+	def generateModelVQL(Resource model) '''
+«generateImport»
+
+pattern attributeAsset(source : EObject, value: java Object, attribute : EAttribute) {
+	«FOR object : model.allObjectThatHasAttribute SEPARATOR "\n} or {"»
+		«generateAttributeConstraints(object.eClass)»
+		«IF generateAttributeConstraints(object.eClass).length != 0 && !object.allSuperTypesThatHasAttribute.empty»
+		} or {
+	    «ENDIF»
+		«FOR eClass : object.allSuperTypesThatHasAttribute SEPARATOR "\n} or {"»
+			«generateAttributeConstraints(eClass)»
+		«ENDFOR»
+    «ENDFOR»
+}
+
+pattern referenceAsset(source : EObject, target : EObject, reference : EReference) {
+	«FOR object : model.allObjectThatHasReference SEPARATOR "\n} or {"»
+		«generateReferenceConstraints(object.eClass)»
+		«IF generateReferenceConstraints(object.eClass).length != 0 && !object.allSuperTypesThatHasReference.empty»
+		} or {
+		«ENDIF»
+		«FOR eClass : object.allSuperTypesThatHasReference SEPARATOR "\n} or {"»
+			«generateReferenceConstraints(eClass)»
+		«ENDFOR»
+	«ENDFOR»
+}
+
+pattern containmentReference(source : EObject, target : EObject, reference : EReference) {
+	find referenceAsset(source, target, reference);
+	EReference.containment(reference, true);
+}
+
+pattern idAttribute(source:EObject, value: java Object, attribute:EAttribute) {
+	find attributeAsset(source, value, attribute);
+	EAttribute.iD(attribute, true);
+}
+
+pattern contains(container: EObject, contained: EObject) {
+	«FOR object : model.getAllObjectThatHasChildren SEPARATOR "\n} or {"»
+		«FOR child : object.eContents SEPARATOR "\n} or {"»
+		«object.eClass.name».«child.eContainingFeature.name»(container, contained);
+		«ENDFOR»
+    «ENDFOR»
+}
+'''
+
+    def generateAttributeConstraints(EClass eClass)'''
+        «FOR attribute : eClass.EAttributes SEPARATOR "\n} or {"»
+	        «eClass.name».«attribute.name»(source, value);
+	        EClass.name(class, "«eClass.name»");
+	        EClass.eStructuralFeatures(class, attribute);
+	        EAttribute.name(attribute, "«attribute.name»");
+	    «ENDFOR»
+	'''
+	
+	def generateReferenceConstraints(EClass eClass)'''
+        «FOR reference : eClass.EReferences SEPARATOR "\n} or {"»
+	        «eClass.name».«reference.name»(source, target);
+	        EClass.name(class, "«eClass.name»");
+	        EClass.eStructuralFeatures(class, reference);
+	        EReference.name(reference, "«reference.name»");
+	    «ENDFOR»
+	'''
+
+
+    def getAllObjectThatHasAttribute(Resource model) {
+    	val objectList = new ArrayList();
+    	for(object : model.allContents.toIterable) {
+    		if(!object.eClass.EAllAttributes.isEmpty) {
+    			objectList.add(object);
+    		}
+    	}
+    	return objectList;
+    }
+    
+    def getAllSuperTypesThatHasAttribute(EObject object) {
+    	val eClassList = new ArrayList();
+    	for(eClass : object.eClass.ESuperTypes) {
+    		if(!eClass.EAttributes.empty) {
+    			eClassList.add(eClass);
+    		}
+    	}
+    	return eClassList;
+    }
+    
+    def getAllObjectThatHasReference(Resource model) {
+    	val objectList = new ArrayList();
+    	for(object : model.allContents.toIterable) {
+    		if(!object.eClass.EAllReferences.isEmpty) {
+    			objectList.add(object);
+    		}
+    	}
+    	return objectList;
+    }
+    
+    def getAllSuperTypesThatHasReference(EObject object) {
+    	val eClassList = new ArrayList();
+    	for(eClass : object.eClass.ESuperTypes) {
+    		if(!eClass.EReferences.empty) {
+    			eClassList.add(eClass);
+    		}
+    	}
+    	return eClassList;
+    }
+    
+    def getAllObjectThatHasChildren(Resource model) {
+    	val objectList = new ArrayList();
+    	for(object : model.allContents.toIterable) {
+    		if(!object.eContents.isEmpty) {
+    			objectList.add(object);
+    		}
+    	}
+    	return objectList;
+    }
 }

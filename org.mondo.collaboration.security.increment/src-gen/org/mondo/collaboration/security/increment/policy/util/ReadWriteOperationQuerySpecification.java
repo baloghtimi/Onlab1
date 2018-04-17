@@ -1,5 +1,5 @@
 /**
- * Generated from platform:/resource/org.mondo.collaboration.security.increment/src/org/mondo/collaboration/security/increment/policy/policy_gen.vql
+ * Generated from platform:/resource/org.mondo.collaboration.security.increment/src/org/mondo/collaboration/security/increment/policy/policy_helper_pattern.vql
  */
 package org.mondo.collaboration.security.increment.policy.util;
 
@@ -66,7 +66,7 @@ public final class ReadWriteOperationQuerySpecification extends BaseGeneratedEMF
   
   @Override
   public ReadWriteOperationMatch newMatch(final Object... parameters) {
-    return ReadWriteOperationMatch.newMatch((org.mondo.collaboration.security.increment.vocabulary.OperationType) parameters[0]);
+    return ReadWriteOperationMatch.newMatch((org.mondo.collaboration.policy.rules.OperationType) parameters[0]);
   }
   
   /**
@@ -98,7 +98,7 @@ public final class ReadWriteOperationQuerySpecification extends BaseGeneratedEMF
   private static class GeneratedPQuery extends BaseGeneratedEMFPQuery {
     private final static ReadWriteOperationQuerySpecification.GeneratedPQuery INSTANCE = new GeneratedPQuery();
     
-    private final PParameter parameter_pOperation = new PParameter("operation", "org.mondo.collaboration.security.increment.vocabulary.OperationType", (IInputKey)null, PParameterDirection.INOUT);
+    private final PParameter parameter_pOperation = new PParameter("operation", "org.mondo.collaboration.policy.rules.OperationType", (IInputKey)null, PParameterDirection.INOUT);
     
     private final List<PParameter> parameters = Arrays.asList(parameter_pOperation);
     
@@ -128,7 +128,7 @@ public final class ReadWriteOperationQuerySpecification extends BaseGeneratedEMF
           ));
           // 	operation == OperationType::READ
           PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new ConstantValue(body, var__virtual_0_, org.mondo.collaboration.security.increment.vocabulary.OperationType.get("READ"));
+          new ConstantValue(body, var__virtual_0_, org.mondo.collaboration.policy.rules.OperationType.get("R"));
           new Equality(body, var_operation, var__virtual_0_);
           bodies.add(body);
       }
@@ -140,7 +140,7 @@ public final class ReadWriteOperationQuerySpecification extends BaseGeneratedEMF
           ));
           // 	operation == OperationType::WRITE
           PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new ConstantValue(body, var__virtual_0_, org.mondo.collaboration.security.increment.vocabulary.OperationType.get("WRITE"));
+          new ConstantValue(body, var__virtual_0_, org.mondo.collaboration.policy.rules.OperationType.get("W"));
           new Equality(body, var_operation, var__virtual_0_);
           bodies.add(body);
       }

@@ -5,7 +5,7 @@ user SubsystemManager
 policy DemoPolicy allow RW by default {
 //    rule testRule deny W to PrincipalEngineer, IOManager, SubsystemManager {
 //	    from query "objectRoot"
-//		select attr(root:sysId)
+//		select attr(root:model)
 //	} with 1 priority
 
     rule restrictRoot deny W to PrincipalEngineer, IOManager, SubsystemManager {
@@ -13,15 +13,20 @@ policy DemoPolicy allow RW by default {
 		select obj(root)
 	} with 1 priority
 	
-	rule enableRoot allow R to PrincipalEngineer, IOManager, SubsystemManager {
-		from query "objectRoot"
-		select obj(root)
-	} with 1 priority
+//	rule enableRoot allow R to PrincipalEngineer, IOManager, SubsystemManager {
+//		from query "objectRoot"
+//		select obj(root)
+//	} with 1 priority
 	
 	rule enableIO allow RW to IOManager {
 		from query "objectIO"
 		select obj(object)
 	} with 1 priority
+	
+//	rule enableIOnot deny RW to IOManager {
+//		from query "objectIO"
+//		select obj(object)
+//	} with 1 priority
 
     rule restrictNotIO deny R to IOManager {
     	from query "objectNotIO"

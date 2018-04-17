@@ -5,7 +5,7 @@
     xmlns:wtc="http://WTSpec4M/5.0M"
     sysId="WindPower4MONDO"
     model="WindPower4MONDO"
-    version="">
+    version="test">
   <itsSubsystems
       sysId="Subsystem_4"
       description="Description for Subsystem_4">
@@ -14,7 +14,7 @@
         sysId="CtrlUnit29_1"
         description="Description for Control Unit 29_1"
         Input__iInput1="//@itsInputs.0"
-        BhvParam__BhvParam1=""/>
+        BhvParam__BhvParam1="asd"/>
   </itsSubsystems>
   <itsInputs
       sysId="I_1"

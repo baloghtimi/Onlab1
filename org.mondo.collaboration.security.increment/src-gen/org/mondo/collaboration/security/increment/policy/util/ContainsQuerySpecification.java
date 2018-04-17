@@ -1,5 +1,5 @@
 /**
- * Generated from platform:/resource/org.mondo.collaboration.security.increment/src/org/mondo/collaboration/security/increment/policy/policy.vql
+ * Generated from platform:/resource/org.mondo.collaboration.security.increment/src/org/mondo/collaboration/security/increment/policy/windturbineS_gen.vql
  */
 package org.mondo.collaboration.security.increment.policy.util;
 
@@ -153,6 +153,96 @@ public final class ContainsQuerySpecification extends BaseGeneratedEMFQuerySpeci
              new ExportedParameter(body, var_container, parameter_pContainer),
              new ExportedParameter(body, var_contained, parameter_pContained)
           ));
+          // 	WT.itsSubsystems(container, contained)
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "WT")));
+          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "WT", "itsSubsystems")));
+          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "MainSubsystem")));
+          new Equality(body, var__virtual_0_, var_contained);
+          bodies.add(body);
+      }
+      {
+          PBody body = new PBody(this);
+          PVariable var_container = body.getOrCreateVariableByName("container");
+          PVariable var_contained = body.getOrCreateVariableByName("contained");
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+          new TypeConstraint(body, Tuples.flatTupleOf(var_contained), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+             new ExportedParameter(body, var_container, parameter_pContainer),
+             new ExportedParameter(body, var_contained, parameter_pContained)
+          ));
+          // 	WT.itsInputs(container, contained)
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "WT")));
+          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "WT", "itsInputs")));
+          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemInput")));
+          new Equality(body, var__virtual_0_, var_contained);
+          bodies.add(body);
+      }
+      {
+          PBody body = new PBody(this);
+          PVariable var_container = body.getOrCreateVariableByName("container");
+          PVariable var_contained = body.getOrCreateVariableByName("contained");
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+          new TypeConstraint(body, Tuples.flatTupleOf(var_contained), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+             new ExportedParameter(body, var_container, parameter_pContainer),
+             new ExportedParameter(body, var_contained, parameter_pContained)
+          ));
+          // 	WT.itsInputs(container, contained)
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "WT")));
+          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "WT", "itsInputs")));
+          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemInput")));
+          new Equality(body, var__virtual_0_, var_contained);
+          bodies.add(body);
+      }
+      {
+          PBody body = new PBody(this);
+          PVariable var_container = body.getOrCreateVariableByName("container");
+          PVariable var_contained = body.getOrCreateVariableByName("contained");
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+          new TypeConstraint(body, Tuples.flatTupleOf(var_contained), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+             new ExportedParameter(body, var_container, parameter_pContainer),
+             new ExportedParameter(body, var_contained, parameter_pContained)
+          ));
+          // 	WT.itsInputs(container, contained)
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "WT")));
+          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "WT", "itsInputs")));
+          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemInput")));
+          new Equality(body, var__virtual_0_, var_contained);
+          bodies.add(body);
+      }
+      {
+          PBody body = new PBody(this);
+          PVariable var_container = body.getOrCreateVariableByName("container");
+          PVariable var_contained = body.getOrCreateVariableByName("contained");
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+          new TypeConstraint(body, Tuples.flatTupleOf(var_contained), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+             new ExportedParameter(body, var_container, parameter_pContainer),
+             new ExportedParameter(body, var_contained, parameter_pContained)
+          ));
+          // 	WT.itsInputs(container, contained)
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "WT")));
+          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "WT", "itsInputs")));
+          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemInput")));
+          new Equality(body, var__virtual_0_, var_contained);
+          bodies.add(body);
+      }
+      {
+          PBody body = new PBody(this);
+          PVariable var_container = body.getOrCreateVariableByName("container");
+          PVariable var_contained = body.getOrCreateVariableByName("contained");
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+          new TypeConstraint(body, Tuples.flatTupleOf(var_contained), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+             new ExportedParameter(body, var_container, parameter_pContainer),
+             new ExportedParameter(body, var_contained, parameter_pContained)
+          ));
           // 	WT.itsInputs(container, contained)
           new TypeConstraint(body, Tuples.flatTupleOf(var_container), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "WT")));
           PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
@@ -176,6 +266,204 @@ public final class ContainsQuerySpecification extends BaseGeneratedEMFQuerySpeci
           PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
           new TypeConstraint(body, Tuples.flatTupleOf(var_container, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "WT", "itsOutputs")));
           new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemOutput")));
+          new Equality(body, var__virtual_0_, var_contained);
+          bodies.add(body);
+      }
+      {
+          PBody body = new PBody(this);
+          PVariable var_container = body.getOrCreateVariableByName("container");
+          PVariable var_contained = body.getOrCreateVariableByName("contained");
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+          new TypeConstraint(body, Tuples.flatTupleOf(var_contained), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+             new ExportedParameter(body, var_container, parameter_pContainer),
+             new ExportedParameter(body, var_contained, parameter_pContained)
+          ));
+          // 	WT.itsOutputs(container, contained)
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "WT")));
+          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "WT", "itsOutputs")));
+          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemOutput")));
+          new Equality(body, var__virtual_0_, var_contained);
+          bodies.add(body);
+      }
+      {
+          PBody body = new PBody(this);
+          PVariable var_container = body.getOrCreateVariableByName("container");
+          PVariable var_contained = body.getOrCreateVariableByName("contained");
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+          new TypeConstraint(body, Tuples.flatTupleOf(var_contained), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+             new ExportedParameter(body, var_container, parameter_pContainer),
+             new ExportedParameter(body, var_contained, parameter_pContained)
+          ));
+          // 	WT.itsOutputs(container, contained)
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "WT")));
+          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "WT", "itsOutputs")));
+          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemOutput")));
+          new Equality(body, var__virtual_0_, var_contained);
+          bodies.add(body);
+      }
+      {
+          PBody body = new PBody(this);
+          PVariable var_container = body.getOrCreateVariableByName("container");
+          PVariable var_contained = body.getOrCreateVariableByName("contained");
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+          new TypeConstraint(body, Tuples.flatTupleOf(var_contained), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+             new ExportedParameter(body, var_container, parameter_pContainer),
+             new ExportedParameter(body, var_contained, parameter_pContained)
+          ));
+          // 	WT.itsOutputs(container, contained)
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "WT")));
+          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "WT", "itsOutputs")));
+          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemOutput")));
+          new Equality(body, var__virtual_0_, var_contained);
+          bodies.add(body);
+      }
+      {
+          PBody body = new PBody(this);
+          PVariable var_container = body.getOrCreateVariableByName("container");
+          PVariable var_contained = body.getOrCreateVariableByName("contained");
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+          new TypeConstraint(body, Tuples.flatTupleOf(var_contained), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+             new ExportedParameter(body, var_container, parameter_pContainer),
+             new ExportedParameter(body, var_contained, parameter_pContained)
+          ));
+          // 	WT.itsOutputs(container, contained)
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "WT")));
+          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "WT", "itsOutputs")));
+          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemOutput")));
+          new Equality(body, var__virtual_0_, var_contained);
+          bodies.add(body);
+      }
+      {
+          PBody body = new PBody(this);
+          PVariable var_container = body.getOrCreateVariableByName("container");
+          PVariable var_contained = body.getOrCreateVariableByName("contained");
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+          new TypeConstraint(body, Tuples.flatTupleOf(var_contained), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+             new ExportedParameter(body, var_container, parameter_pContainer),
+             new ExportedParameter(body, var_contained, parameter_pContained)
+          ));
+          // 	WT.itsParams(container, contained)
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "WT")));
+          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "WT", "itsParams")));
+          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemParam")));
+          new Equality(body, var__virtual_0_, var_contained);
+          bodies.add(body);
+      }
+      {
+          PBody body = new PBody(this);
+          PVariable var_container = body.getOrCreateVariableByName("container");
+          PVariable var_contained = body.getOrCreateVariableByName("contained");
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+          new TypeConstraint(body, Tuples.flatTupleOf(var_contained), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+             new ExportedParameter(body, var_container, parameter_pContainer),
+             new ExportedParameter(body, var_contained, parameter_pContained)
+          ));
+          // 	WT.itsParams(container, contained)
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "WT")));
+          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "WT", "itsParams")));
+          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemParam")));
+          new Equality(body, var__virtual_0_, var_contained);
+          bodies.add(body);
+      }
+      {
+          PBody body = new PBody(this);
+          PVariable var_container = body.getOrCreateVariableByName("container");
+          PVariable var_contained = body.getOrCreateVariableByName("contained");
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+          new TypeConstraint(body, Tuples.flatTupleOf(var_contained), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+             new ExportedParameter(body, var_container, parameter_pContainer),
+             new ExportedParameter(body, var_contained, parameter_pContained)
+          ));
+          // 	WT.itsTimers(container, contained)
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "WT")));
+          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "WT", "itsTimers")));
+          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemTimer")));
+          new Equality(body, var__virtual_0_, var_contained);
+          bodies.add(body);
+      }
+      {
+          PBody body = new PBody(this);
+          PVariable var_container = body.getOrCreateVariableByName("container");
+          PVariable var_contained = body.getOrCreateVariableByName("contained");
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+          new TypeConstraint(body, Tuples.flatTupleOf(var_contained), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+             new ExportedParameter(body, var_container, parameter_pContainer),
+             new ExportedParameter(body, var_contained, parameter_pContained)
+          ));
+          // 	WT.itsTimers(container, contained)
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "WT")));
+          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "WT", "itsTimers")));
+          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemTimer")));
+          new Equality(body, var__virtual_0_, var_contained);
+          bodies.add(body);
+      }
+      {
+          PBody body = new PBody(this);
+          PVariable var_container = body.getOrCreateVariableByName("container");
+          PVariable var_contained = body.getOrCreateVariableByName("contained");
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+          new TypeConstraint(body, Tuples.flatTupleOf(var_contained), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+             new ExportedParameter(body, var_container, parameter_pContainer),
+             new ExportedParameter(body, var_contained, parameter_pContained)
+          ));
+          // 	WT.itsFaults(container, contained)
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "WT")));
+          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "WT", "itsFaults")));
+          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemFault")));
+          new Equality(body, var__virtual_0_, var_contained);
+          bodies.add(body);
+      }
+      {
+          PBody body = new PBody(this);
+          PVariable var_container = body.getOrCreateVariableByName("container");
+          PVariable var_contained = body.getOrCreateVariableByName("contained");
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+          new TypeConstraint(body, Tuples.flatTupleOf(var_contained), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+             new ExportedParameter(body, var_container, parameter_pContainer),
+             new ExportedParameter(body, var_contained, parameter_pContained)
+          ));
+          // 	WT.itsFaults(container, contained)
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "WT")));
+          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "WT", "itsFaults")));
+          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemFault")));
+          new Equality(body, var__virtual_0_, var_contained);
+          bodies.add(body);
+      }
+      {
+          PBody body = new PBody(this);
+          PVariable var_container = body.getOrCreateVariableByName("container");
+          PVariable var_contained = body.getOrCreateVariableByName("contained");
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+          new TypeConstraint(body, Tuples.flatTupleOf(var_contained), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+             new ExportedParameter(body, var_container, parameter_pContainer),
+             new ExportedParameter(body, var_contained, parameter_pContained)
+          ));
+          // 	WT.itsFaults(container, contained)
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "WT")));
+          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
+          new TypeConstraint(body, Tuples.flatTupleOf(var_container, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "WT", "itsFaults")));
+          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemFault")));
           new Equality(body, var__virtual_0_, var_contained);
           bodies.add(body);
       }

@@ -3,14 +3,6 @@ package org.mondo.collaboration.security.increment.policy
 import "http://WTSpec4M/5.0M"
 import "http://www.eclipse.org/emf/2002/Ecore"
 
-pattern contains(container: EObject, contained: EObject) = {
-	WT.itsSubsystems(container, contained);
-} or {
-	WT.itsInputs(container, contained);
-} or {
-	WT.itsOutputs(container, contained);
-}
-
 pattern objectAll(obj: EObject) {
 	EObject(obj);
 }
