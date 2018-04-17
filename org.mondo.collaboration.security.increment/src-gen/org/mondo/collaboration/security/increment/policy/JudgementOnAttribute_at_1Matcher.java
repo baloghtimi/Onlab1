@@ -35,7 +35,7 @@ import org.mondo.collaboration.security.increment.policy.util.JudgementOnAttribu
  * pattern judgementOnAttribute_at_1(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation, access)
  * {
  *     find explicitJudgementOnAttribute(user, source, value, attribute, operation, access, 1);
- *     neg find dominatedExplicitJudgementOnObject_at_1(user, object, operation, access);
+ *     neg find dominatedExplicitJudgementOnAttribute_at_1(user, source, value, attribute, operation, access);
  * } or {
  *     find strongConsequenceOnAttribute_at_1(user, source, value, attribute, operation, access);
  * }

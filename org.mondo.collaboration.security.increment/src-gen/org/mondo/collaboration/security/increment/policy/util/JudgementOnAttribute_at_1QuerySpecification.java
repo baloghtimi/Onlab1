@@ -30,7 +30,7 @@ import org.eclipse.viatra.query.runtime.matchers.tuple.FlatTuple;
 import org.eclipse.viatra.query.runtime.matchers.tuple.Tuples;
 import org.mondo.collaboration.security.increment.policy.JudgementOnAttribute_at_1Match;
 import org.mondo.collaboration.security.increment.policy.JudgementOnAttribute_at_1Matcher;
-import org.mondo.collaboration.security.increment.policy.util.DominatedExplicitJudgementOnObject_at_1QuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.DominatedExplicitJudgementOnAttribute_at_1QuerySpecification;
 import org.mondo.collaboration.security.increment.policy.util.ExplicitJudgementOnAttributeQuerySpecification;
 import org.mondo.collaboration.security.increment.policy.util.StrongConsequenceOnAttribute_at_1QuerySpecification;
 
@@ -150,7 +150,6 @@ public final class JudgementOnAttribute_at_1QuerySpecification extends BaseGener
               PVariable var_attribute = body.getOrCreateVariableByName("attribute");
               PVariable var_operation = body.getOrCreateVariableByName("operation");
               PVariable var_access = body.getOrCreateVariableByName("access");
-              PVariable var_object = body.getOrCreateVariableByName("object");
               new TypeFilterConstraint(body, new FlatTuple(var_user), new JavaTransitiveInstancesKey(java.lang.String.class));
               new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
               new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
@@ -167,8 +166,8 @@ public final class JudgementOnAttribute_at_1QuerySpecification extends BaseGener
               PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
               new ConstantValue(body, var__virtual_0_, 1);
               new PositivePatternCall(body, new FlatTuple(var_user, var_source, var_value, var_attribute, var_operation, var_access, var__virtual_0_), ExplicitJudgementOnAttributeQuerySpecification.instance().getInternalQueryRepresentation());
-              //     neg find dominatedExplicitJudgementOnObject_at_1(user, object, operation, access)
-              new NegativePatternCall(body, new FlatTuple(var_user, var_object, var_operation, var_access), DominatedExplicitJudgementOnObject_at_1QuerySpecification.instance().getInternalQueryRepresentation());
+              //     neg find dominatedExplicitJudgementOnAttribute_at_1(user, source, value, attribute, operation, access)
+              new NegativePatternCall(body, new FlatTuple(var_user, var_source, var_value, var_attribute, var_operation, var_access), DominatedExplicitJudgementOnAttribute_at_1QuerySpecification.instance().getInternalQueryRepresentation());
               bodies.add(body);
           }
           {

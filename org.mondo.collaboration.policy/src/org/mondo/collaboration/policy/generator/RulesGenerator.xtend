@@ -479,7 +479,7 @@ class RulesGenerator extends AbstractGenerator {
     pattern judgementOnAttribute_at_«prio»(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation, access)
     {
         find explicitJudgementOnAttribute(user, source, value, attribute, operation, access, «prio»);
-        neg find dominatedExplicitJudgementOnObject_at_«prio»(user, object, operation, access);
+        neg find dominatedExplicitJudgementOnAttribute_at_«prio»(user, source, value, attribute, operation, access);
     } or {
         find strongConsequenceOnAttribute_at_«prio»(user, source, value, attribute, operation, access);
 «««        «FOR domPrio: priorities»«IF domPrio >= prio»
@@ -491,7 +491,7 @@ class RulesGenerator extends AbstractGenerator {
     pattern judgementOnReference_at_«prio»(user: java String, source: EObject, target: EObject, reference: EReference, operation, access)
     {
         find explicitJudgementOnReference(user, source, target, reference, operation, access, «prio»);
-        neg find dominatedExplicitJudgementOnAttribute_at_«prio»(user, source, value, attribute, operation, access);
+        neg find dominatedExplicitJudgementOnReference_at_«prio»(user, source, target, reference, operation, access);
     } or {
         find strongConsequenceOnReference_at_«prio»(user, source, target, reference, operation, access);
 «««        «FOR domPrio: priorities»«IF domPrio >= prio»

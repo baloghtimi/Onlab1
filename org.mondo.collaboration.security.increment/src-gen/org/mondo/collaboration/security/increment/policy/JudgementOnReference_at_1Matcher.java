@@ -35,7 +35,7 @@ import org.mondo.collaboration.security.increment.policy.util.JudgementOnReferen
  * pattern judgementOnReference_at_1(user: java String, source: EObject, target: EObject, reference: EReference, operation, access)
  * {
  *     find explicitJudgementOnReference(user, source, target, reference, operation, access, 1);
- *     neg find dominatedExplicitJudgementOnAttribute_at_1(user, source, value, attribute, operation, access);
+ *     neg find dominatedExplicitJudgementOnReference_at_1(user, source, target, reference, operation, access);
  * } or {
  *     find strongConsequenceOnReference_at_1(user, source, target, reference, operation, access);
  * }
