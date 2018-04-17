@@ -1,5 +1,5 @@
 /**
- * Generated from platform:/resource/org.mondo.collaboration.security.increment/src/org/mondo/collaboration/security/increment/policy/windturbineS_gen.vql
+ * Generated from platform:/resource/org.mondo.collaboration.security.increment/src/org/mondo/collaboration/security/increment/policy/WTSpec4M_gen.vql
  */
 package org.mondo.collaboration.security.increment.policy;
 
@@ -31,255 +31,81 @@ import org.mondo.collaboration.security.increment.policy.util.AttributeAssetQuer
  * <p>Original source:
  * <code><pre>
  * pattern attributeAsset(source : EObject, value: java Object, attribute : EAttribute) {
- * 	WT.sysId(source, value);
- * 	EClass.name(class, "WT");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "sysId");
+ * 	find attributeAssetWTsysId(source, value, attribute);
  * 	} or {
- * 	WT.model(source, value);
- * 	EClass.name(class, "WT");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "model");
+ * 	find attributeAssetWTmodel(source, value, attribute);
  * 	} or {
- * 	WT.version(source, value);
- * 	EClass.name(class, "WT");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "version");
+ * 	find attributeAssetWTversion(source, value, attribute);
  * 	} or {
- * 	Subsystem.sysId(source, value);
- * 	EClass.name(class, "Subsystem");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "sysId");
+ * 	find attributeAssetSystemInputsysId(source, value, attribute);
  * 	} or {
- * 	Subsystem.description(source, value);
- * 	EClass.name(class, "Subsystem");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "description");
+ * 	find attributeAssetSystemInputdescription(source, value, attribute);
  * 	} or {
- * 	Subsystem.sysId(source, value);
- * 	EClass.name(class, "Subsystem");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "sysId");
+ * 	find attributeAssetSystemOutputsysId(source, value, attribute);
  * 	} or {
- * 	Subsystem.description(source, value);
- * 	EClass.name(class, "Subsystem");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "description");
+ * 	find attributeAssetSystemOutputdescription(source, value, attribute);
  * 	} or {
- * 	SystemInput.sysId(source, value);
- * 	EClass.name(class, "SystemInput");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "sysId");
+ * 	find attributeAssetSystemFaultsysId(source, value, attribute);
  * 	} or {
- * 	SystemInput.description(source, value);
- * 	EClass.name(class, "SystemInput");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "description");
+ * 	find attributeAssetSystemFaultdescription(source, value, attribute);
  * 	} or {
- * 	SystemInput.sysId(source, value);
- * 	EClass.name(class, "SystemInput");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "sysId");
+ * 	find attributeAssetSystemFaultvalue(source, value, attribute);
  * 	} or {
- * 	SystemInput.description(source, value);
- * 	EClass.name(class, "SystemInput");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "description");
+ * 	find attributeAssetSystemParamsysId(source, value, attribute);
  * 	} or {
- * 	SystemInput.sysId(source, value);
- * 	EClass.name(class, "SystemInput");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "sysId");
+ * 	find attributeAssetSystemParamdescription(source, value, attribute);
  * 	} or {
- * 	SystemInput.description(source, value);
- * 	EClass.name(class, "SystemInput");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "description");
+ * 	find attributeAssetSystemParamvalue(source, value, attribute);
  * 	} or {
- * 	SystemInput.sysId(source, value);
- * 	EClass.name(class, "SystemInput");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "sysId");
+ * 	find attributeAssetSystemParamsettable(source, value, attribute);
  * 	} or {
- * 	SystemInput.description(source, value);
- * 	EClass.name(class, "SystemInput");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "description");
+ * 	find attributeAssetSystemTimersysId(source, value, attribute);
  * 	} or {
- * 	SystemInput.sysId(source, value);
- * 	EClass.name(class, "SystemInput");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "sysId");
+ * 	find attributeAssetSystemTimerdescription(source, value, attribute);
  * 	} or {
- * 	SystemInput.description(source, value);
- * 	EClass.name(class, "SystemInput");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "description");
+ * 	find attributeAssetSystemTimervalue(source, value, attribute);
  * 	} or {
- * 	SystemOutput.sysId(source, value);
- * 	EClass.name(class, "SystemOutput");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "sysId");
+ * 	find attributeAssetSystemVariablesysId(source, value, attribute);
  * 	} or {
- * 	SystemOutput.description(source, value);
- * 	EClass.name(class, "SystemOutput");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "description");
+ * 	find attributeAssetSystemVariabledescription(source, value, attribute);
  * 	} or {
- * 	SystemOutput.sysId(source, value);
- * 	EClass.name(class, "SystemOutput");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "sysId");
+ * 	find attributeAssetSubsystemsysId(source, value, attribute);
  * 	} or {
- * 	SystemOutput.description(source, value);
- * 	EClass.name(class, "SystemOutput");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "description");
+ * 	find attributeAssetSubsystemdescription(source, value, attribute);
  * 	} or {
- * 	SystemOutput.sysId(source, value);
- * 	EClass.name(class, "SystemOutput");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "sysId");
+ * 	find attributeAssetwtcsysId(source, value, attribute);
  * 	} or {
- * 	SystemOutput.description(source, value);
- * 	EClass.name(class, "SystemOutput");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "description");
+ * 	find attributeAssetwtcdescription(source, value, attribute);
  * 	} or {
- * 	SystemOutput.sysId(source, value);
- * 	EClass.name(class, "SystemOutput");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "sysId");
+ * 	find attributeAssetwtccycle(source, value, attribute);
  * 	} or {
- * 	SystemOutput.description(source, value);
- * 	EClass.name(class, "SystemOutput");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "description");
+ * 	find attributeAssetwtcpriority(source, value, attribute);
  * 	} or {
- * 	SystemOutput.sysId(source, value);
- * 	EClass.name(class, "SystemOutput");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "sysId");
+ * 	find attributeAssetwtcenabled(source, value, attribute);
  * 	} or {
- * 	SystemOutput.description(source, value);
- * 	EClass.name(class, "SystemOutput");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "description");
+ * 	find attributeAssetCtrlUnit9BhvParam__BhvParam1(source, value, attribute);
  * 	} or {
- * 	SystemParam.sysId(source, value);
- * 	EClass.name(class, "SystemParam");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "sysId");
+ * 	find attributeAssetCtrlUnit9BhvParam__BhvParam2(source, value, attribute);
  * 	} or {
- * 	SystemParam.description(source, value);
- * 	EClass.name(class, "SystemParam");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "description");
+ * 	find attributeAssetCtrlUnit10BhvParam__BhvParam1(source, value, attribute);
  * 	} or {
- * 	SystemParam.value(source, value);
- * 	EClass.name(class, "SystemParam");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "value");
+ * 	find attributeAssetCtrlUnit13BhvParam__BhvParam1(source, value, attribute);
  * 	} or {
- * 	SystemParam.settable(source, value);
- * 	EClass.name(class, "SystemParam");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "settable");
+ * 	find attributeAssetCtrlUnit13BhvParam__BhvParam2(source, value, attribute);
  * 	} or {
- * 	SystemParam.sysId(source, value);
- * 	EClass.name(class, "SystemParam");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "sysId");
+ * 	find attributeAssetCtrlUnit29BhvParam__BhvParam1(source, value, attribute);
  * 	} or {
- * 	SystemParam.description(source, value);
- * 	EClass.name(class, "SystemParam");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "description");
+ * 	find attributeAssetCtrlUnit34BhvParam__BhvParam1(source, value, attribute);
  * 	} or {
- * 	SystemParam.value(source, value);
- * 	EClass.name(class, "SystemParam");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "value");
+ * 	find attributeAssetCtrlUnit37BhvParam__BhvParam1(source, value, attribute);
  * 	} or {
- * 	SystemParam.settable(source, value);
- * 	EClass.name(class, "SystemParam");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "settable");
+ * 	find attributeAssetCtrlUnit39BhvParam__BhvParam1(source, value, attribute);
  * 	} or {
- * 	SystemTimer.sysId(source, value);
- * 	EClass.name(class, "SystemTimer");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "sysId");
+ * 	find attributeAssetCtrlUnit58BhvParam__BhvParam1(source, value, attribute);
  * 	} or {
- * 	SystemTimer.description(source, value);
- * 	EClass.name(class, "SystemTimer");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "description");
+ * 	find attributeAssetCtrlUnit68BhvParam__BhvParam1(source, value, attribute);
  * 	} or {
- * 	SystemTimer.value(source, value);
- * 	EClass.name(class, "SystemTimer");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "value");
- * 	} or {
- * 	SystemTimer.sysId(source, value);
- * 	EClass.name(class, "SystemTimer");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "sysId");
- * 	} or {
- * 	SystemTimer.description(source, value);
- * 	EClass.name(class, "SystemTimer");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "description");
- * 	} or {
- * 	SystemTimer.value(source, value);
- * 	EClass.name(class, "SystemTimer");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "value");
- * 	} or {
- * 	SystemFault.sysId(source, value);
- * 	EClass.name(class, "SystemFault");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "sysId");
- * 	} or {
- * 	SystemFault.description(source, value);
- * 	EClass.name(class, "SystemFault");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "description");
- * 	} or {
- * 	SystemFault.value(source, value);
- * 	EClass.name(class, "SystemFault");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "value");
- * 	} or {
- * 	SystemFault.sysId(source, value);
- * 	EClass.name(class, "SystemFault");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "sysId");
- * 	} or {
- * 	SystemFault.description(source, value);
- * 	EClass.name(class, "SystemFault");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "description");
- * 	} or {
- * 	SystemFault.value(source, value);
- * 	EClass.name(class, "SystemFault");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "value");
- * 	} or {
- * 	SystemFault.sysId(source, value);
- * 	EClass.name(class, "SystemFault");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "sysId");
- * 	} or {
- * 	SystemFault.description(source, value);
- * 	EClass.name(class, "SystemFault");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "description");
- * 	} or {
- * 	SystemFault.value(source, value);
- * 	EClass.name(class, "SystemFault");
- * 	EClass.eStructuralFeatures(class, attribute);
- * 	EAttribute.name(attribute, "value");
+ * 	find attributeAssetCtrlUnit92BhvParam__BhvParam1(source, value, attribute);
  * }
  * </pre></code>
  * 

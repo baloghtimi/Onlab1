@@ -118,13 +118,4 @@
       <query-specification fqn="org.mondo.collaboration.security.increment.policy.dominatedExplicitJudgementOnReference_at_1"/>
     </group>
   </extension>
-  <extension id="org.mondo.collaboration.security.increment.policy.WindturbineS_gen" point="org.eclipse.viatra.query.runtime.queryspecification">
-    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:org.mondo.collaboration.security.increment.policy.WindturbineS_gen" id="org.mondo.collaboration.security.increment.policy.WindturbineS_gen">
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.attributeAsset"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.referenceAsset"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.containmentReference"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.idAttribute"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.contains"/>
-    </group>
-  </extension>
 </plugin>

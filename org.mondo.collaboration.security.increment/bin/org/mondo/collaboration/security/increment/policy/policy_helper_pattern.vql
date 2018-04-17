@@ -1,0 +1,55 @@
+package org.mondo.collaboration.security.increment.policy
+
+import "http://www.eclipse.org/emf/2002/Ecore"
+import "http://www.mondo.org/collaboration/policy/Rules"
+import "http://WTSpec4M/5.0M"
+
+pattern readWriteOperation(operation) = {
+	operation == OperationType::READ;
+} or {
+	operation == OperationType::WRITE;
+}
+
+pattern restrictRootAsset(root : EObject) {
+    	    find objectRoot(root);
+}
+pattern restrictRootUser(user: java String) {
+	user == "PrincipalEngineer";
+	} or {
+	user == "IOManager";
+	} or {
+	user == "SubsystemManager";
+}
+
+
+pattern enableIOAsset(object : EObject) {
+    	    find objectIO(object);
+}
+pattern enableIOUser(user: java String) {
+	user == "IOManager";
+}
+
+
+pattern restrictNotIOAsset(object : EObject) {
+    	    find objectNotIO(object);
+}
+pattern restrictNotIOUser(user: java String) {
+	user == "IOManager";
+}
+
+
+pattern restrictIOAsset(object : EObject) {
+    	    find objectIO(object);
+}
+pattern restrictIOUser(user: java String) {
+	user == "SubsystemManager";
+}
+
+
+pattern allUsers(user: java String) {
+	user == "PrincipalEngineer";
+	} or {
+	user == "IOManager";
+	} or {
+	user == "SubsystemManager";
+}

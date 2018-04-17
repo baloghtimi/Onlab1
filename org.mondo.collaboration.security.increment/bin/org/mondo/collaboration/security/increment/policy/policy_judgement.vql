@@ -1,0 +1,54 @@
+package org.mondo.collaboration.security.increment.policy
+
+import "http://www.eclipse.org/emf/2002/Ecore"
+import "http://www.mondo.org/collaboration/policy/Rules"
+import "http://WTSpec4M/5.0M"
+
+pattern judgementOnObject_at_default(user: java String, object: EObject, operation, access)
+{
+    find explicitJudgementOnObject(user, object, operation, access, eval(-1));
+}
+
+pattern judgementOnAttribute_at_default(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation, access)
+{
+    find explicitJudgementOnAttribute(user, source, value, attribute, operation, access, eval(-1));
+}
+
+pattern judgementOnReference_at_default(user: java String, source: EObject, target: EObject, reference: EReference, operation, access)
+{
+    find explicitJudgementOnReference(user, source, target, reference, operation, access, eval(-1));
+}
+
+pattern judgementOnAttribute_at_weak(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation, access)
+{
+   find weakConsequenceOnAttribute(user, source, value, attribute, operation, access);
+}
+    
+pattern judgementOnReference_at_weak(user: java String, source: EObject, target: EObject, reference: EReference, operation, access)
+{
+    find weakConsequenceOnReference(user, source, target, reference, operation, access);
+}
+
+pattern judgementOnObject_at_1(user: java String, object: EObject, operation, access)
+{
+    find explicitJudgementOnObject(user, object, operation, access, 1);
+    neg find dominatedExplicitJudgementOnObject_at_1(user, object, operation, access);
+} or {
+    find strongConsequenceOnObject_at_1(user, object, operation, access);
+}
+    
+pattern judgementOnAttribute_at_1(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation, access)
+{
+    find explicitJudgementOnAttribute(user, source, value, attribute, operation, access, 1);
+    neg find dominatedExplicitJudgementOnObject_at_1(user, object, operation, access);
+} or {
+    find strongConsequenceOnAttribute_at_1(user, source, value, attribute, operation, access);
+}
+        
+pattern judgementOnReference_at_1(user: java String, source: EObject, target: EObject, reference: EReference, operation, access)
+{
+    find explicitJudgementOnReference(user, source, target, reference, operation, access, 1);
+    neg find dominatedExplicitJudgementOnAttribute_at_1(user, source, value, attribute, operation, access);
+} or {
+    find strongConsequenceOnReference_at_1(user, source, target, reference, operation, access);
+}

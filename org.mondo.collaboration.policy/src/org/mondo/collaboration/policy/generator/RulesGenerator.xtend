@@ -27,6 +27,8 @@ import org.mondo.collaboration.policy.rules.Role
 import org.mondo.collaboration.policy.rules.Rule
 import org.mondo.collaboration.policy.rules.User
 import org.eclipse.emf.ecore.EClass
+import org.eclipse.emf.ecore.EPackage
+import org.eclipse.emf.ecore.EAttribute
 
 /**
  * Generates code from your model files on save.
@@ -46,9 +48,13 @@ class RulesGenerator extends AbstractGenerator {
 		    fsa.generateFile(resource.className+"_domination_higher_priority.vql", generateDominationHigherPriorityPattern(model, priorities));
 		    fsa.generateFile(resource.className+"_domination_same_priority.vql", generateDominationSamePriorityPattern(model, priorities));
 		    fsa.generateFile(resource.className+"_consequence.vql", generateConsequencePattern(priorities));
-		}
-		if(resource.contents.head instanceof WT) {
-			fsa.generateFile(resource.className+"_gen.vql", generateModelVQL(resource));
+		} else if(resource.contents.head instanceof EPackage) {
+			val metamodel = resource.contents.head as EPackage
+			fsa.generateFile(metamodel.name+"_gen.vql", generateModelVQL(metamodel));
+		} else {
+			val root = resource.contents.head as EObject
+			val metamodel = root.eClass.EPackage as EPackage
+			fsa.generateFile(metamodel.name+"_gen.vql", generateModelVQL(metamodel));
 		}
 	}
 	
@@ -799,32 +805,32 @@ class RulesGenerator extends AbstractGenerator {
 		return priorities;
 	}
 	
-	def generateModelVQL(Resource model) '''
+	def generateModelVQL(EPackage metamodel) '''
 «generateImport»
 
 pattern attributeAsset(source : EObject, value: java Object, attribute : EAttribute) {
-	«FOR object : model.allObjectThatHasAttribute SEPARATOR "\n} or {"»
-		«generateAttributeConstraints(object.eClass)»
-		«IF generateAttributeConstraints(object.eClass).length != 0 && !object.allSuperTypesThatHasAttribute.empty»
-		} or {
-	    «ENDIF»
-		«FOR eClass : object.allSuperTypesThatHasAttribute SEPARATOR "\n} or {"»
-			«generateAttributeConstraints(eClass)»
+	«FOR eClass : metamodel.EClassifiers.filter(EClass).filter(x | !x.EAttributes.empty) SEPARATOR "\n} or {"»
+		«FOR attribute : eClass.EAttributes SEPARATOR "\n} or {"»
+		    find attributeAsset«eClass.name»«attribute.name»(source, value, attribute);
 		«ENDFOR»
     «ENDFOR»
 }
 
+«FOR eClass : metamodel.EClassifiers.filter(EClass).filter(x | !x.EAttributes.empty) SEPARATOR "\n"»
+    «generateAttributeConstraints(eClass)»
+«ENDFOR»
+
 pattern referenceAsset(source : EObject, target : EObject, reference : EReference) {
-	«FOR object : model.allObjectThatHasReference SEPARATOR "\n} or {"»
-		«generateReferenceConstraints(object.eClass)»
-		«IF generateReferenceConstraints(object.eClass).length != 0 && !object.allSuperTypesThatHasReference.empty»
-		} or {
-		«ENDIF»
-		«FOR eClass : object.allSuperTypesThatHasReference SEPARATOR "\n} or {"»
-			«generateReferenceConstraints(eClass)»
-		«ENDFOR»
+	«FOR eClass : metamodel.EClassifiers.filter(EClass).filter(x | !x.EReferences.empty) SEPARATOR "\n} or {"»
+		«FOR reference : eClass.EReferences SEPARATOR "\n} or {"»
+		   find referenceAsset«eClass.name»«reference.name»(source, target, reference);     
+	    «ENDFOR»
 	«ENDFOR»
 }
+
+«FOR eClass : metamodel.EClassifiers.filter(EClass).filter(x | !x.EReferences.empty) SEPARATOR "\n"»
+    «generateReferenceConstraints(eClass)»
+«ENDFOR»
 
 pattern containmentReference(source : EObject, target : EObject, reference : EReference) {
 	find referenceAsset(source, target, reference);
@@ -837,34 +843,41 @@ pattern idAttribute(source:EObject, value: java Object, attribute:EAttribute) {
 }
 
 pattern contains(container: EObject, contained: EObject) {
-	«FOR object : model.getAllObjectThatHasChildren SEPARATOR "\n} or {"»
-		«FOR child : object.eContents SEPARATOR "\n} or {"»
-		«object.eClass.name».«child.eContainingFeature.name»(container, contained);
+	«FOR eClass : metamodel.EClassifiers.filter(EClass).filter(x | x.EReferences.exists[y | y.containment]) SEPARATOR "\n} or {"»
+		«FOR eReference : eClass.EReferences.filter[x | x.isContainment] SEPARATOR "\n} or {"»
+		«eClass.name».«eReference.name»(container, contained);
 		«ENDFOR»
     «ENDFOR»
 }
 '''
 
     def generateAttributeConstraints(EClass eClass)'''
-        «FOR attribute : eClass.EAttributes SEPARATOR "\n} or {"»
+        «FOR attribute : eClass.EAttributes SEPARATOR "\n"»
+        pattern attributeAsset«eClass.name»«attribute.name»(source : EObject, value: java Object, attribute : EAttribute)
+        {
 	        «eClass.name».«attribute.name»(source, value);
 	        EClass.name(class, "«eClass.name»");
 	        EClass.eStructuralFeatures(class, attribute);
 	        EAttribute.name(attribute, "«attribute.name»");
+	    }
 	    «ENDFOR»
 	'''
 	
+	
+	
 	def generateReferenceConstraints(EClass eClass)'''
-        «FOR reference : eClass.EReferences SEPARATOR "\n} or {"»
+        «FOR reference : eClass.EReferences SEPARATOR "\n"»
+        pattern referenceAsset«eClass.name»«reference.name»(source : EObject, target : EObject, reference : EReference)
+        {
 	        «eClass.name».«reference.name»(source, target);
 	        EClass.name(class, "«eClass.name»");
 	        EClass.eStructuralFeatures(class, reference);
 	        EReference.name(reference, "«reference.name»");
+	    }
 	    «ENDFOR»
 	'''
 
-
-    def getAllObjectThatHasAttribute(Resource model) {
+	def getAllObjectThatHasAttribute(Resource model) {
     	val objectList = new ArrayList();
     	for(object : model.allContents.toIterable) {
     		if(!object.eClass.EAllAttributes.isEmpty) {

@@ -1,5 +1,5 @@
 /**
- * Generated from platform:/resource/org.mondo.collaboration.security.increment/src/org/mondo/collaboration/security/increment/policy/windturbineS_gen.vql
+ * Generated from platform:/resource/org.mondo.collaboration.security.increment/src/org/mondo/collaboration/security/increment/policy/WTSpec4M_gen.vql
  */
 package org.mondo.collaboration.security.increment.policy;
 
@@ -32,41 +32,21 @@ import org.mondo.collaboration.security.increment.policy.util.ContainsQuerySpeci
  * pattern contains(container: EObject, contained: EObject) {
  * 	WT.itsSubsystems(container, contained);
  * 	} or {
- * 	WT.itsSubsystems(container, contained);
- * 	} or {
  * 	WT.itsInputs(container, contained);
- * 	} or {
- * 	WT.itsInputs(container, contained);
- * 	} or {
- * 	WT.itsInputs(container, contained);
- * 	} or {
- * 	WT.itsInputs(container, contained);
- * 	} or {
- * 	WT.itsInputs(container, contained);
- * 	} or {
- * 	WT.itsOutputs(container, contained);
- * 	} or {
- * 	WT.itsOutputs(container, contained);
- * 	} or {
- * 	WT.itsOutputs(container, contained);
- * 	} or {
- * 	WT.itsOutputs(container, contained);
  * 	} or {
  * 	WT.itsOutputs(container, contained);
  * 	} or {
  * 	WT.itsParams(container, contained);
  * 	} or {
- * 	WT.itsParams(container, contained);
- * 	} or {
- * 	WT.itsTimers(container, contained);
- * 	} or {
  * 	WT.itsTimers(container, contained);
  * 	} or {
  * 	WT.itsFaults(container, contained);
  * 	} or {
- * 	WT.itsFaults(container, contained);
+ * 	WT.itsVariables(container, contained);
  * 	} or {
- * 	WT.itsFaults(container, contained);
+ * 	Subsystem.itsWTCs(container, contained);
+ * 	} or {
+ * 	Subsystem.itsSubsystems(container, contained);
  * }
  * </pre></code>
  * 

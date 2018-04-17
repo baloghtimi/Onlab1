@@ -1,5 +1,5 @@
 /**
- * Generated from platform:/resource/org.mondo.collaboration.security.increment/src/org/mondo/collaboration/security/increment/policy/windturbineS_gen.vql
+ * Generated from platform:/resource/org.mondo.collaboration.security.increment/src/org/mondo/collaboration/security/increment/policy/WTSpec4M_gen.vql
  */
 package org.mondo.collaboration.security.increment.policy.util;
 
@@ -8,21 +8,17 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.viatra.query.runtime.api.ViatraQueryEngine;
 import org.eclipse.viatra.query.runtime.api.impl.BaseGeneratedEMFPQuery;
 import org.eclipse.viatra.query.runtime.api.impl.BaseGeneratedEMFQuerySpecification;
 import org.eclipse.viatra.query.runtime.emf.types.EClassTransitiveInstancesKey;
-import org.eclipse.viatra.query.runtime.emf.types.EDataTypeInSlotsKey;
-import org.eclipse.viatra.query.runtime.emf.types.EStructuralFeatureInstancesKey;
 import org.eclipse.viatra.query.runtime.exception.ViatraQueryException;
 import org.eclipse.viatra.query.runtime.matchers.context.common.JavaTransitiveInstancesKey;
 import org.eclipse.viatra.query.runtime.matchers.psystem.PBody;
 import org.eclipse.viatra.query.runtime.matchers.psystem.PVariable;
-import org.eclipse.viatra.query.runtime.matchers.psystem.basicdeferred.Equality;
 import org.eclipse.viatra.query.runtime.matchers.psystem.basicdeferred.ExportedParameter;
 import org.eclipse.viatra.query.runtime.matchers.psystem.basicdeferred.TypeFilterConstraint;
-import org.eclipse.viatra.query.runtime.matchers.psystem.basicenumerables.ConstantValue;
+import org.eclipse.viatra.query.runtime.matchers.psystem.basicenumerables.PositivePatternCall;
 import org.eclipse.viatra.query.runtime.matchers.psystem.basicenumerables.TypeConstraint;
 import org.eclipse.viatra.query.runtime.matchers.psystem.queries.PParameter;
 import org.eclipse.viatra.query.runtime.matchers.psystem.queries.PParameterDirection;
@@ -31,6 +27,44 @@ import org.eclipse.viatra.query.runtime.matchers.tuple.FlatTuple;
 import org.eclipse.viatra.query.runtime.matchers.tuple.Tuples;
 import org.mondo.collaboration.security.increment.policy.AttributeAssetMatch;
 import org.mondo.collaboration.security.increment.policy.AttributeAssetMatcher;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetCtrlUnit10BhvParam__BhvParam1QuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetCtrlUnit13BhvParam__BhvParam1QuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetCtrlUnit13BhvParam__BhvParam2QuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetCtrlUnit29BhvParam__BhvParam1QuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetCtrlUnit34BhvParam__BhvParam1QuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetCtrlUnit37BhvParam__BhvParam1QuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetCtrlUnit39BhvParam__BhvParam1QuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetCtrlUnit58BhvParam__BhvParam1QuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetCtrlUnit68BhvParam__BhvParam1QuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetCtrlUnit92BhvParam__BhvParam1QuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetCtrlUnit9BhvParam__BhvParam1QuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetCtrlUnit9BhvParam__BhvParam2QuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetSubsystemdescriptionQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetSubsystemsysIdQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetSystemFaultdescriptionQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetSystemFaultsysIdQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetSystemFaultvalueQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetSystemInputdescriptionQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetSystemInputsysIdQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetSystemOutputdescriptionQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetSystemOutputsysIdQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetSystemParamdescriptionQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetSystemParamsettableQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetSystemParamsysIdQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetSystemParamvalueQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetSystemTimerdescriptionQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetSystemTimersysIdQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetSystemTimervalueQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetSystemVariabledescriptionQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetSystemVariablesysIdQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetWTmodelQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetWTsysIdQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetWTversionQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetwtccycleQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetwtcdescriptionQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetwtcenabledQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetwtcpriorityQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetwtcsysIdQuerySpecification;
 
 /**
  * A pattern-specific query specification that can instantiate AttributeAssetMatcher in a type-safe way.
@@ -133,2205 +167,655 @@ public final class AttributeAssetQuerySpecification extends BaseGeneratedEMFQuer
     @Override
     public Set<PBody> doGetContainedBodies() throws QueryInitializationException {
       Set<PBody> bodies = Sets.newLinkedHashSet();
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	WT.sysId(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "WT")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "WT", "sysId")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "WT")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "WT");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "sysId")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "sysId");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	WT.model(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "WT")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "WT", "model")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "WT")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "WT");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "model")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "model");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	WT.version(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "WT")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "WT", "version")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "WT")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "WT");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "version")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "version");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	Subsystem.sysId(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "Subsystem")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "Subsystem", "sysId")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "Subsystem")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "Subsystem");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "sysId")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "sysId");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	Subsystem.description(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "Subsystem")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "Subsystem", "description")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "Subsystem")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "Subsystem");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "description")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "description");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	Subsystem.sysId(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "Subsystem")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "Subsystem", "sysId")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "Subsystem")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "Subsystem");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "sysId")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "sysId");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	Subsystem.description(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "Subsystem")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "Subsystem", "description")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "Subsystem")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "Subsystem");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "description")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "description");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemInput.sysId(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemInput")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemInput", "sysId")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemInput")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemInput");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "sysId")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "sysId");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemInput.description(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemInput")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemInput", "description")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemInput")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemInput");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "description")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "description");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemInput.sysId(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemInput")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemInput", "sysId")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemInput")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemInput");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "sysId")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "sysId");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemInput.description(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemInput")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemInput", "description")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemInput")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemInput");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "description")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "description");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemInput.sysId(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemInput")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemInput", "sysId")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemInput")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemInput");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "sysId")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "sysId");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemInput.description(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemInput")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemInput", "description")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemInput")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemInput");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "description")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "description");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemInput.sysId(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemInput")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemInput", "sysId")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemInput")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemInput");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "sysId")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "sysId");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemInput.description(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemInput")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemInput", "description")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemInput")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemInput");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "description")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "description");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemInput.sysId(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemInput")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemInput", "sysId")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemInput")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemInput");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "sysId")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "sysId");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemInput.description(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemInput")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemInput", "description")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemInput")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemInput");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "description")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "description");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemOutput.sysId(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemOutput")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemOutput", "sysId")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemOutput")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemOutput");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "sysId")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "sysId");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemOutput.description(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemOutput")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemOutput", "description")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemOutput")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemOutput");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "description")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "description");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemOutput.sysId(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemOutput")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemOutput", "sysId")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemOutput")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemOutput");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "sysId")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "sysId");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemOutput.description(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemOutput")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemOutput", "description")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemOutput")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemOutput");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "description")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "description");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemOutput.sysId(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemOutput")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemOutput", "sysId")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemOutput")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemOutput");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "sysId")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "sysId");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemOutput.description(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemOutput")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemOutput", "description")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemOutput")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemOutput");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "description")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "description");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemOutput.sysId(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemOutput")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemOutput", "sysId")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemOutput")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemOutput");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "sysId")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "sysId");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemOutput.description(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemOutput")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemOutput", "description")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemOutput")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemOutput");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "description")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "description");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemOutput.sysId(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemOutput")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemOutput", "sysId")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemOutput")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemOutput");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "sysId")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "sysId");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemOutput.description(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemOutput")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemOutput", "description")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemOutput")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemOutput");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "description")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "description");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemParam.sysId(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemParam")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemParam", "sysId")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemParam")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemParam");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "sysId")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "sysId");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemParam.description(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemParam")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemParam", "description")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemParam")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemParam");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "description")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "description");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemParam.value(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemParam")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemParam", "value")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EInt")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemParam")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemParam");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "value")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "value");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemParam.settable(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemParam")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemParam", "settable")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EBoolean")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemParam")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemParam");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "settable")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "settable");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemParam.sysId(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemParam")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemParam", "sysId")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemParam")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemParam");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "sysId")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "sysId");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemParam.description(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemParam")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemParam", "description")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemParam")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemParam");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "description")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "description");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemParam.value(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemParam")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemParam", "value")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EInt")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemParam")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemParam");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "value")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "value");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemParam.settable(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemParam")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemParam", "settable")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EBoolean")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemParam")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemParam");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "settable")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "settable");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemTimer.sysId(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemTimer")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemTimer", "sysId")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemTimer")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemTimer");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "sysId")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "sysId");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemTimer.description(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemTimer")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemTimer", "description")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemTimer")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemTimer");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "description")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "description");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemTimer.value(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemTimer")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemTimer", "value")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EInt")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemTimer")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemTimer");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "value")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "value");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemTimer.sysId(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemTimer")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemTimer", "sysId")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemTimer")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemTimer");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "sysId")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "sysId");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemTimer.description(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemTimer")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemTimer", "description")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemTimer")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemTimer");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "description")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "description");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemTimer.value(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemTimer")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemTimer", "value")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EInt")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemTimer")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemTimer");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "value")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "value");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemFault.sysId(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemFault")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemFault", "sysId")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemFault")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemFault");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "sysId")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "sysId");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemFault.description(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemFault")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemFault", "description")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemFault")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemFault");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "description")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "description");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemFault.value(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemFault")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemFault", "value")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EInt")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemFault")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemFault");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "value")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "value");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemFault.sysId(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemFault")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemFault", "sysId")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemFault")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemFault");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "sysId")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "sysId");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemFault.description(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemFault")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemFault", "description")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemFault")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemFault");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "description")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "description");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemFault.value(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemFault")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemFault", "value")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EInt")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemFault")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemFault");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "value")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "value");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemFault.sysId(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemFault")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemFault", "sysId")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemFault")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemFault");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "sysId")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "sysId");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemFault.description(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemFault")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemFault", "description")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemFault")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemFault");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "description")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "description");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
-      }
-      {
-          PBody body = new PBody(this);
-          PVariable var_source = body.getOrCreateVariableByName("source");
-          PVariable var_value = body.getOrCreateVariableByName("value");
-          PVariable var_attribute = body.getOrCreateVariableByName("attribute");
-          PVariable var_class = body.getOrCreateVariableByName("class");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
-          new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-             new ExportedParameter(body, var_source, parameter_pSource),
-             new ExportedParameter(body, var_value, parameter_pValue),
-             new ExportedParameter(body, var_attribute, parameter_pAttribute)
-          ));
-          // 	SystemFault.value(source, value)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://WTSpec4M/5.0M", "SystemFault")));
-          PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_source, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://WTSpec4M/5.0M", "SystemFault", "value")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_0_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EInt")));
-          new Equality(body, var__virtual_0_, var_value);
-          // 	EClass.name(class, "SystemFault")
-          PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-          new ConstantValue(body, var__virtual_1_, "SystemFault");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_2_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_2_, var__virtual_1_);
-          // 	EClass.eStructuralFeatures(class, attribute)
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
-          PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_class, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_3_), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EStructuralFeature")));
-          new Equality(body, var__virtual_3_, var_attribute);
-          // 	EAttribute.name(attribute, "value")
-          PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
-          new ConstantValue(body, var__virtual_4_, "value");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
-          PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
-          new TypeConstraint(body, Tuples.flatTupleOf(var_attribute, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name")));
-          new TypeConstraint(body, Tuples.flatTupleOf(var__virtual_5_), new EDataTypeInSlotsKey((EDataType)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EString")));
-          new Equality(body, var__virtual_5_, var__virtual_4_);
-          bodies.add(body);
+      try {
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetWTsysId(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetWTsysIdQuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetWTmodel(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetWTmodelQuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetWTversion(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetWTversionQuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetSystemInputsysId(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetSystemInputsysIdQuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetSystemInputdescription(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetSystemInputdescriptionQuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetSystemOutputsysId(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetSystemOutputsysIdQuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetSystemOutputdescription(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetSystemOutputdescriptionQuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetSystemFaultsysId(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetSystemFaultsysIdQuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetSystemFaultdescription(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetSystemFaultdescriptionQuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetSystemFaultvalue(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetSystemFaultvalueQuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetSystemParamsysId(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetSystemParamsysIdQuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetSystemParamdescription(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetSystemParamdescriptionQuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetSystemParamvalue(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetSystemParamvalueQuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetSystemParamsettable(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetSystemParamsettableQuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetSystemTimersysId(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetSystemTimersysIdQuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetSystemTimerdescription(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetSystemTimerdescriptionQuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetSystemTimervalue(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetSystemTimervalueQuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetSystemVariablesysId(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetSystemVariablesysIdQuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetSystemVariabledescription(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetSystemVariabledescriptionQuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetSubsystemsysId(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetSubsystemsysIdQuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetSubsystemdescription(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetSubsystemdescriptionQuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetwtcsysId(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetwtcsysIdQuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetwtcdescription(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetwtcdescriptionQuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetwtccycle(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetwtccycleQuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetwtcpriority(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetwtcpriorityQuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetwtcenabled(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetwtcenabledQuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetCtrlUnit9BhvParam__BhvParam1(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetCtrlUnit9BhvParam__BhvParam1QuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetCtrlUnit9BhvParam__BhvParam2(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetCtrlUnit9BhvParam__BhvParam2QuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetCtrlUnit10BhvParam__BhvParam1(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetCtrlUnit10BhvParam__BhvParam1QuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetCtrlUnit13BhvParam__BhvParam1(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetCtrlUnit13BhvParam__BhvParam1QuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetCtrlUnit13BhvParam__BhvParam2(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetCtrlUnit13BhvParam__BhvParam2QuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetCtrlUnit29BhvParam__BhvParam1(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetCtrlUnit29BhvParam__BhvParam1QuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetCtrlUnit34BhvParam__BhvParam1(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetCtrlUnit34BhvParam__BhvParam1QuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetCtrlUnit37BhvParam__BhvParam1(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetCtrlUnit37BhvParam__BhvParam1QuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetCtrlUnit39BhvParam__BhvParam1(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetCtrlUnit39BhvParam__BhvParam1QuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetCtrlUnit58BhvParam__BhvParam1(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetCtrlUnit58BhvParam__BhvParam1QuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetCtrlUnit68BhvParam__BhvParam1(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetCtrlUnit68BhvParam__BhvParam1QuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_source = body.getOrCreateVariableByName("source");
+              PVariable var_value = body.getOrCreateVariableByName("value");
+              PVariable var_attribute = body.getOrCreateVariableByName("attribute");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_source), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_value), new JavaTransitiveInstancesKey(java.lang.Object.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_attribute), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute")));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_source, parameter_pSource),
+                 new ExportedParameter(body, var_value, parameter_pValue),
+                 new ExportedParameter(body, var_attribute, parameter_pAttribute)
+              ));
+              // 	find attributeAssetCtrlUnit92BhvParam__BhvParam1(source, value, attribute)
+              new PositivePatternCall(body, new FlatTuple(var_source, var_value, var_attribute), AttributeAssetCtrlUnit92BhvParam__BhvParam1QuerySpecification.instance().getInternalQueryRepresentation());
+              bodies.add(body);
+          }
+      } catch (ViatraQueryException ex) {
+          throw processDependencyException(ex);
       }
       return bodies;
     }
