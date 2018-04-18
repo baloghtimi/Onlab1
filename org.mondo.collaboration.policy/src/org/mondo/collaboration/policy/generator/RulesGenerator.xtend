@@ -853,13 +853,13 @@ pattern contains(container: EObject, contained: EObject) {
 
     def generateAttributeConstraints(EClass eClass)'''
         «FOR attribute : eClass.EAttributes SEPARATOR "\n"»
-        pattern attributeAsset«eClass.name»«attribute.name»(source : EObject, value: java Object, attribute : EAttribute)
-        {
-	        «eClass.name».«attribute.name»(source, value);
-	        EClass.name(class, "«eClass.name»");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "«attribute.name»");
-	    }
+pattern attributeAsset«eClass.name»«attribute.name»(source : EObject, value: java Object, attribute : EAttribute)
+{
+     «eClass.name».«attribute.name»(source, value);
+	 EClass.name(class, "«eClass.name»");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "«attribute.name»");
+}
 	    «ENDFOR»
 	'''
 	
@@ -867,13 +867,13 @@ pattern contains(container: EObject, contained: EObject) {
 	
 	def generateReferenceConstraints(EClass eClass)'''
         «FOR reference : eClass.EReferences SEPARATOR "\n"»
-        pattern referenceAsset«eClass.name»«reference.name»(source : EObject, target : EObject, reference : EReference)
-        {
-	        «eClass.name».«reference.name»(source, target);
-	        EClass.name(class, "«eClass.name»");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "«reference.name»");
-	    }
+pattern referenceAsset«eClass.name»«reference.name»(source : EObject, target : EObject, reference : EReference)
+{
+	«eClass.name».«reference.name»(source, target);
+	EClass.name(class, "«eClass.name»");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "«reference.name»");
+}
 	    «ENDFOR»
 	'''
 

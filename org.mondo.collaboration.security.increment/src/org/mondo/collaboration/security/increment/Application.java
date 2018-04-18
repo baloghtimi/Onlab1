@@ -1,12 +1,10 @@
 package org.mondo.collaboration.security.increment;
 
+import java.io.IOException;
 import java.util.Comparator;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.eclipse.core.databinding.observable.set.IObservableSet;
-import org.eclipse.core.databinding.observable.set.ISetChangeListener;
-import org.eclipse.core.databinding.observable.set.SetChangeEvent;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
@@ -17,7 +15,6 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-import org.eclipse.viatra.addon.databinding.runtime.api.ViatraObservables;
 import org.eclipse.viatra.query.runtime.api.AdvancedViatraQueryEngine;
 import org.eclipse.viatra.query.runtime.api.IMatchProcessor;
 import org.eclipse.viatra.query.runtime.api.IPatternMatch;
@@ -26,6 +23,8 @@ import org.eclipse.viatra.query.runtime.emf.EMFScope;
 import org.eclipse.viatra.query.runtime.exception.ViatraQueryException;
 import org.mondo.collaboration.security.increment.policy.AttributeAssetMatch;
 import org.mondo.collaboration.security.increment.policy.AttributeAssetMatcher;
+import org.mondo.collaboration.security.increment.policy.AttributeAssetWTversionMatch;
+import org.mondo.collaboration.security.increment.policy.AttributeAssetWTversionMatcher;
 import org.mondo.collaboration.security.increment.policy.EffectiveJudgementOnAttributeMatch;
 import org.mondo.collaboration.security.increment.policy.EffectiveJudgementOnAttributeMatcher;
 import org.mondo.collaboration.security.increment.policy.EffectiveJudgementOnObjectMatch;
@@ -35,6 +34,7 @@ import org.mondo.collaboration.security.increment.policy.EffectiveJudgementOnRef
 import org.mondo.collaboration.security.increment.policy.ExplicitJudgementOnAttributeMatch;
 import org.mondo.collaboration.security.increment.policy.ExplicitJudgementOnAttributeMatcher;
 import org.mondo.collaboration.security.increment.policy.util.AttributeAssetQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.AttributeAssetWTversionQuerySpecification;
 import org.mondo.collaboration.security.increment.policy.util.EffectiveJudgementOnAttributeQuerySpecification;
 import org.mondo.collaboration.security.increment.policy.util.EffectiveJudgementOnObjectQuerySpecification;
 import org.mondo.collaboration.security.increment.policy.util.EffectiveJudgementOnReferenceQuerySpecification;
@@ -50,10 +50,10 @@ public class Application {
 	
 
     private static final String MODEL_PATH = 
-    "C:\\Bulisuli\\1\\Onlab1\\workspace\\org.mondo.collaboration.security.increment\\src\\org\\mondo\\collaboration\\security\\increment\\model\\windturbineS.wtspec4m";
+    "C:\\Bulisuli\\1\\Onlab1\\Onlab1\\org.mondo.collaboration.security.increment\\src\\org\\mondo\\collaboration\\security\\increment\\model\\windturbineM.wtspec4m";
     private static final String METAMODEL_PATH = "C:\\Bulisuli\\1\\Onlab1\\Onlab1\\org.mondo.wt.cstudy.metamodel\\WTSpec4M.ecore";
 	
-	public static void main(String[] args) throws ViatraQueryException {
+	public static void main(String[] args) throws ViatraQueryException, IOException {
 		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("wtspec4m", new XMIResourceFactoryImpl());
 		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("ecore", new XMIResourceFactoryImpl());
 		WTSpec4MFactory.eINSTANCE.eClass();
@@ -68,9 +68,12 @@ public class Application {
 		int numOfEff = 0;
 		
 		ViatraQueryEngine engine = AdvancedViatraQueryEngine.on(new EMFScope(resourceSet));
-		listObjectJudgements(engine, numOfEff);
-		listAttributeJudgements(engine, numOfEff);
-		listReferenceJudgements(engine, numOfEff);
+		numOfEff += listObjectJudgements(engine);
+		numOfEff += listAttributeJudgements(engine);
+		numOfEff += listReferenceJudgements(engine);
+		
+		logger.info("Number of effective judgements: " + numOfEff);
+		
 //		listExplicitAttributeJudgements(engine, numOfEff);
 //		listAttributeAssets(engine, numOfEff);
 	}
@@ -81,7 +84,7 @@ public class Application {
 
 			@Override
 			public void process(AttributeAssetMatch match) {
-				System.out.println(match.getAttribute().getName());
+				logger.info(match);
 			}
 		});
 	}
@@ -119,15 +122,13 @@ public class Application {
 		}
 	}
 
-	private static void listReferenceJudgements(ViatraQueryEngine engine, int numOfEff) throws ViatraQueryException {
+	private static int listReferenceJudgements(ViatraQueryEngine engine) throws ViatraQueryException {
 		EffectiveJudgementOnReferenceQuerySpecification querySpecificationOnReference = EffectiveJudgementOnReferenceQuerySpecification.instance();
 		EffectiveJudgementOnReferenceMatcher matcherOnReference = engine.getMatcher(querySpecificationOnReference);
 		EffectiveJudgementOnReferenceMatch filterOnReference = matcherOnReference.newEmptyMatch();
-//		filter.setUser("PrincipalEngineer");
 		filterOnReference.setUser("IOManager");
-//		filter.setUser("SubsystemManager");
-		numOfEff += matcherOnReference.countMatches(filterOnReference);
-		logger.info("Number of effective references: " + matcherOnReference.countMatches(filterOnReference));
+		int numOfEff = matcherOnReference.countMatches(filterOnReference);
+		logger.info("Number of effective references: " + numOfEff);
 		matcherOnReference.forEachMatch(filterOnReference, new IMatchProcessor<EffectiveJudgementOnReferenceMatch>() {
 
 			@Override
@@ -135,34 +136,47 @@ public class Application {
 				logger.info(match);
 			}
 		});
+		
+		return numOfEff;
 	}
 
-	private static void listAttributeJudgements(ViatraQueryEngine engine, int numOfEff) throws ViatraQueryException {
+	private static int listAttributeJudgements(ViatraQueryEngine engine) throws ViatraQueryException {
 		EffectiveJudgementOnAttributeQuerySpecification querySpecificationOnAttribute = EffectiveJudgementOnAttributeQuerySpecification.instance();
 		EffectiveJudgementOnAttributeMatcher matcherOnAttribute = engine.getMatcher(querySpecificationOnAttribute);
 		EffectiveJudgementOnAttributeMatch filterOnAttribute = matcherOnAttribute.newEmptyMatch();
-//		filter.setUser("PrincipalEngineer");
 		filterOnAttribute.setUser("IOManager");
-//		filter.setUser("SubsystemManager");
-		numOfEff += matcherOnAttribute.countMatches(filterOnAttribute);
-		logger.info("Number of effective attributes: " + matcherOnAttribute.countMatches(filterOnAttribute));
+	    int numOfEff = matcherOnAttribute.countMatches(filterOnAttribute);
+		logger.info("Number of effective attributes: " + numOfEff);
+		
+		final List<IPatternMatch> matches = Lists.newArrayList();
 		matcherOnAttribute.forEachMatch(filterOnAttribute, new IMatchProcessor<EffectiveJudgementOnAttributeMatch>() {
 
 			@Override
 			public void process(EffectiveJudgementOnAttributeMatch match) {
-				logger.info(match);
+				matches.add(match);
 			}
 		});
+		matches.sort(new Comparator<IPatternMatch>() {
+
+			@Override
+			public int compare(IPatternMatch o1, IPatternMatch o2) {
+				return o1.get(1).toString().compareTo(o2.get(1).toString());
+			}
+		});
+		for (IPatternMatch match : matches) {
+			logger.info(match);
+		}
+		
+		return numOfEff;
 	}
 
-	private static void listObjectJudgements(ViatraQueryEngine engine, int numOfEff) throws ViatraQueryException {
+	private static int listObjectJudgements(ViatraQueryEngine engine) throws ViatraQueryException {
 		EffectiveJudgementOnObjectQuerySpecification querySpecificationOnObject = EffectiveJudgementOnObjectQuerySpecification.instance();
 		EffectiveJudgementOnObjectMatcher matcherOnObject = engine.getMatcher(querySpecificationOnObject);
 		EffectiveJudgementOnObjectMatch filterOnObject = matcherOnObject.newEmptyMatch();
 		filterOnObject.setUser("IOManager");
-		
-		numOfEff += matcherOnObject.countMatches(filterOnObject);
-		logger.info("Number of effective objects: " + matcherOnObject.countMatches(filterOnObject));
+		int numOfEff = matcherOnObject.countMatches(filterOnObject);
+		logger.info("Number of effective objects: " + numOfEff);
 		
 		matcherOnObject.forEachMatch(filterOnObject, new IMatchProcessor<EffectiveJudgementOnObjectMatch>() {
 			@Override
@@ -170,6 +184,8 @@ public class Application {
 				logger.info(match);
 			}
 		});
+		
+		return numOfEff;
 	}
 
 	private static void countAssets(Resource model) {
@@ -184,6 +200,7 @@ public class Application {
 			
 //			// attributes
 			for(EAttribute attribute : object.eClass().getEAllAttributes()) {
+//				logger.info(object.eClass().getName() + "." + attribute.getName());
 				numOfAttr++;
 			}
 //			

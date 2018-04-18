@@ -3,7 +3,8 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:wtc="http://WTSpec4M/5.0M"
     sysId="WindPower4MONDO"
-    model="WindPower4MONDO">
+    model="WindPower4MONDO"
+    version="test">
   <itsSubsystems
       sysId="Subsystem_4"
       description="Description for Subsystem_4"/>
