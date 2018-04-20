@@ -1,16 +1,35 @@
 <?xml version="1.0" encoding="ASCII"?>
 <wtc:WT xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:wtc="http://WTSpec4M/5.0M"
     sysId="WindPower4MONDO"
     model="WindPower4MONDO"
     version="test">
   <itsSubsystems
       sysId="Subsystem_4"
-      description="Description for Subsystem_4"/>
+      description="Description for Subsystem_4">
+    <itsWTCs
+        xsi:type="wtc:CtrlUnit5"
+        sysId="test"
+        description="test"
+        Input__iInput1="//@itsInputs.2"
+        Input__iInput2="//@itsInputs.0"
+        Output__oOutput1="//@itsOutputs.3"/>
+  </itsSubsystems>
   <itsSubsystems
       sysId="Subsystem_5"
-      description="Description for Subsystem_5"/>
+      description="Description for Subsystem_5">
+    <itsWTCs
+        xsi:type="wtc:CtrlUnit9"
+        sysId="test"
+        description="test"
+        Input__iInput1="//@itsInputs.1"
+        Output__oOutput1="//@itsOutputs.1"
+        Parameter__pParam1="//@itsParams.1"
+        BhvParam__BhvParam1="test"
+        BhvParam__BhvParam2="test"/>
+  </itsSubsystems>
   <itsInputs
       sysId="I_1"
       description="Input 1"/>

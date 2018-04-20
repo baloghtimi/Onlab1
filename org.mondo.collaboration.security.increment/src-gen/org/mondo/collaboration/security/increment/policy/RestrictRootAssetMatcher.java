@@ -29,8 +29,8 @@ import org.mondo.collaboration.security.increment.policy.util.RestrictRootAssetQ
  * 
  * <p>Original source:
  * <code><pre>
- * pattern restrictRootAsset(root : EObject) {
- *     	    find objectRoot(root);
+ * pattern restrictRootAsset(object : EObject) {
+ *     	    find findRoot(object);
  * }
  * </pre></code>
  * 
@@ -68,7 +68,7 @@ public class RestrictRootAssetMatcher extends BaseMatcher<RestrictRootAssetMatch
     return new RestrictRootAssetMatcher();
   }
   
-  private final static int POSITION_ROOT = 0;
+  private final static int POSITION_OBJECT = 0;
   
   private final static Logger LOGGER = ViatraQueryLoggingUtil.getLogger(RestrictRootAssetMatcher.class);
   
@@ -86,104 +86,104 @@ public class RestrictRootAssetMatcher extends BaseMatcher<RestrictRootAssetMatch
   
   /**
    * Returns the set of all matches of the pattern that conform to the given fixed values of some parameters.
-   * @param pRoot the fixed value of pattern parameter root, or null if not bound.
+   * @param pObject the fixed value of pattern parameter object, or null if not bound.
    * @return matches represented as a RestrictRootAssetMatch object.
    * 
    */
-  public Collection<RestrictRootAssetMatch> getAllMatches(final EObject pRoot) {
-    return rawGetAllMatches(new Object[]{pRoot});
+  public Collection<RestrictRootAssetMatch> getAllMatches(final EObject pObject) {
+    return rawGetAllMatches(new Object[]{pObject});
   }
   
   /**
    * Returns an arbitrarily chosen match of the pattern that conforms to the given fixed values of some parameters.
    * Neither determinism nor randomness of selection is guaranteed.
-   * @param pRoot the fixed value of pattern parameter root, or null if not bound.
+   * @param pObject the fixed value of pattern parameter object, or null if not bound.
    * @return a match represented as a RestrictRootAssetMatch object, or null if no match is found.
    * 
    */
-  public RestrictRootAssetMatch getOneArbitraryMatch(final EObject pRoot) {
-    return rawGetOneArbitraryMatch(new Object[]{pRoot});
+  public RestrictRootAssetMatch getOneArbitraryMatch(final EObject pObject) {
+    return rawGetOneArbitraryMatch(new Object[]{pObject});
   }
   
   /**
    * Indicates whether the given combination of specified pattern parameters constitute a valid pattern match,
    * under any possible substitution of the unspecified parameters (if any).
-   * @param pRoot the fixed value of pattern parameter root, or null if not bound.
+   * @param pObject the fixed value of pattern parameter object, or null if not bound.
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final EObject pRoot) {
-    return rawHasMatch(new Object[]{pRoot});
+  public boolean hasMatch(final EObject pObject) {
+    return rawHasMatch(new Object[]{pObject});
   }
   
   /**
    * Returns the number of all matches of the pattern that conform to the given fixed values of some parameters.
-   * @param pRoot the fixed value of pattern parameter root, or null if not bound.
+   * @param pObject the fixed value of pattern parameter object, or null if not bound.
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final EObject pRoot) {
-    return rawCountMatches(new Object[]{pRoot});
+  public int countMatches(final EObject pObject) {
+    return rawCountMatches(new Object[]{pObject});
   }
   
   /**
    * Executes the given processor on each match of the pattern that conforms to the given fixed values of some parameters.
-   * @param pRoot the fixed value of pattern parameter root, or null if not bound.
+   * @param pObject the fixed value of pattern parameter object, or null if not bound.
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final EObject pRoot, final IMatchProcessor<? super RestrictRootAssetMatch> processor) {
-    rawForEachMatch(new Object[]{pRoot}, processor);
+  public void forEachMatch(final EObject pObject, final IMatchProcessor<? super RestrictRootAssetMatch> processor) {
+    rawForEachMatch(new Object[]{pObject}, processor);
   }
   
   /**
    * Executes the given processor on an arbitrarily chosen match of the pattern that conforms to the given fixed values of some parameters.
    * Neither determinism nor randomness of selection is guaranteed.
-   * @param pRoot the fixed value of pattern parameter root, or null if not bound.
+   * @param pObject the fixed value of pattern parameter object, or null if not bound.
    * @param processor the action that will process the selected match.
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final EObject pRoot, final IMatchProcessor<? super RestrictRootAssetMatch> processor) {
-    return rawForOneArbitraryMatch(new Object[]{pRoot}, processor);
+  public boolean forOneArbitraryMatch(final EObject pObject, final IMatchProcessor<? super RestrictRootAssetMatch> processor) {
+    return rawForOneArbitraryMatch(new Object[]{pObject}, processor);
   }
   
   /**
    * Returns a new (partial) match.
    * This can be used e.g. to call the matcher with a partial match.
    * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
-   * @param pRoot the fixed value of pattern parameter root, or null if not bound.
+   * @param pObject the fixed value of pattern parameter object, or null if not bound.
    * @return the (partial) match object.
    * 
    */
-  public RestrictRootAssetMatch newMatch(final EObject pRoot) {
-    return RestrictRootAssetMatch.newMatch(pRoot);
+  public RestrictRootAssetMatch newMatch(final EObject pObject) {
+    return RestrictRootAssetMatch.newMatch(pObject);
   }
   
   /**
-   * Retrieve the set of values that occur in matches for root.
+   * Retrieve the set of values that occur in matches for object.
    * @return the Set of all values or empty set if there are no matches
    * 
    */
-  protected Set<EObject> rawAccumulateAllValuesOfroot(final Object[] parameters) {
+  protected Set<EObject> rawAccumulateAllValuesOfobject(final Object[] parameters) {
     Set<EObject> results = new HashSet<EObject>();
-    rawAccumulateAllValues(POSITION_ROOT, parameters, results);
+    rawAccumulateAllValues(POSITION_OBJECT, parameters, results);
     return results;
   }
   
   /**
-   * Retrieve the set of values that occur in matches for root.
+   * Retrieve the set of values that occur in matches for object.
    * @return the Set of all values or empty set if there are no matches
    * 
    */
-  public Set<EObject> getAllValuesOfroot() {
-    return rawAccumulateAllValuesOfroot(emptyArray());
+  public Set<EObject> getAllValuesOfobject() {
+    return rawAccumulateAllValuesOfobject(emptyArray());
   }
   
   @Override
   protected RestrictRootAssetMatch tupleToMatch(final Tuple t) {
     try {
-        return RestrictRootAssetMatch.newMatch((EObject) t.get(POSITION_ROOT));
+        return RestrictRootAssetMatch.newMatch((EObject) t.get(POSITION_OBJECT));
     } catch(ClassCastException e) {
         LOGGER.error("Element(s) in tuple not properly typed!",e);
         return null;
@@ -193,7 +193,7 @@ public class RestrictRootAssetMatcher extends BaseMatcher<RestrictRootAssetMatch
   @Override
   protected RestrictRootAssetMatch arrayToMatch(final Object[] match) {
     try {
-        return RestrictRootAssetMatch.newMatch((EObject) match[POSITION_ROOT]);
+        return RestrictRootAssetMatch.newMatch((EObject) match[POSITION_OBJECT]);
     } catch(ClassCastException e) {
         LOGGER.error("Element(s) in array not properly typed!",e);
         return null;
@@ -203,7 +203,7 @@ public class RestrictRootAssetMatcher extends BaseMatcher<RestrictRootAssetMatch
   @Override
   protected RestrictRootAssetMatch arrayToMatchMutable(final Object[] match) {
     try {
-        return RestrictRootAssetMatch.newMutableMatch((EObject) match[POSITION_ROOT]);
+        return RestrictRootAssetMatch.newMutableMatch((EObject) match[POSITION_OBJECT]);
     } catch(ClassCastException e) {
         LOGGER.error("Element(s) in array not properly typed!",e);
         return null;

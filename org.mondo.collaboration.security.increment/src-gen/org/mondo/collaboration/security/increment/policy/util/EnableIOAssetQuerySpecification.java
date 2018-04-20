@@ -25,7 +25,7 @@ import org.eclipse.viatra.query.runtime.matchers.tuple.FlatTuple;
 import org.eclipse.viatra.query.runtime.matchers.tuple.Tuples;
 import org.mondo.collaboration.security.increment.policy.EnableIOAssetMatch;
 import org.mondo.collaboration.security.increment.policy.EnableIOAssetMatcher;
-import org.mondo.collaboration.security.increment.policy.util.ObjectIOQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.InputOutputQuerySpecification;
 
 /**
  * A pattern-specific query specification that can instantiate EnableIOAssetMatcher in a type-safe way.
@@ -132,8 +132,8 @@ public final class EnableIOAssetQuerySpecification extends BaseGeneratedEMFQuery
               body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
                  new ExportedParameter(body, var_object, parameter_pObject)
               ));
-              //     	    find objectIO(object)
-              new PositivePatternCall(body, new FlatTuple(var_object), ObjectIOQuerySpecification.instance().getInternalQueryRepresentation());
+              //     	    find inputOutput(object)
+              new PositivePatternCall(body, new FlatTuple(var_object), InputOutputQuerySpecification.instance().getInternalQueryRepresentation());
               bodies.add(body);
           }
       } catch (ViatraQueryException ex) {

@@ -27,37 +27,37 @@ import org.mondo.collaboration.security.increment.policy.util.RestrictRootAssetQ
  */
 @SuppressWarnings("all")
 public abstract class RestrictRootAssetMatch extends BasePatternMatch {
-  private EObject fRoot;
+  private EObject fObject;
   
-  private static List<String> parameterNames = makeImmutableList("root");
+  private static List<String> parameterNames = makeImmutableList("object");
   
-  private RestrictRootAssetMatch(final EObject pRoot) {
-    this.fRoot = pRoot;
+  private RestrictRootAssetMatch(final EObject pObject) {
+    this.fObject = pObject;
   }
   
   @Override
   public Object get(final String parameterName) {
-    if ("root".equals(parameterName)) return this.fRoot;
+    if ("object".equals(parameterName)) return this.fObject;
     return null;
   }
   
-  public EObject getRoot() {
-    return this.fRoot;
+  public EObject getObject() {
+    return this.fObject;
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
-    if ("root".equals(parameterName) ) {
-        this.fRoot = (EObject) newValue;
+    if ("object".equals(parameterName) ) {
+        this.fObject = (EObject) newValue;
         return true;
     }
     return false;
   }
   
-  public void setRoot(final EObject pRoot) {
+  public void setObject(final EObject pObject) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
-    this.fRoot = pRoot;
+    this.fObject = pObject;
   }
   
   @Override
@@ -72,24 +72,24 @@ public abstract class RestrictRootAssetMatch extends BasePatternMatch {
   
   @Override
   public Object[] toArray() {
-    return new Object[]{fRoot};
+    return new Object[]{fObject};
   }
   
   @Override
   public RestrictRootAssetMatch toImmutable() {
-    return isMutable() ? newMatch(fRoot) : this;
+    return isMutable() ? newMatch(fObject) : this;
   }
   
   @Override
   public String prettyPrint() {
     StringBuilder result = new StringBuilder();
-    result.append("\"root\"=" + prettyPrintValue(fRoot));
+    result.append("\"object\"=" + prettyPrintValue(fObject));
     return result.toString();
   }
   
   @Override
   public int hashCode() {
-    return Objects.hash (fRoot);
+    return Objects.hash (fObject);
   }
   
   @Override
@@ -101,7 +101,7 @@ public abstract class RestrictRootAssetMatch extends BasePatternMatch {
     }
     if ((obj instanceof RestrictRootAssetMatch)) {
         RestrictRootAssetMatch other = (RestrictRootAssetMatch) obj;
-        return Objects.equals(fRoot, other.fRoot);
+        return Objects.equals(fObject, other.fObject);
     } else {
         // this should be infrequent
         if (!(obj instanceof IPatternMatch)) {
@@ -137,29 +137,29 @@ public abstract class RestrictRootAssetMatch extends BasePatternMatch {
    * Returns a mutable (partial) match.
    * Fields of the mutable match can be filled to create a partial match, usable as matcher input.
    * 
-   * @param pRoot the fixed value of pattern parameter root, or null if not bound.
+   * @param pObject the fixed value of pattern parameter object, or null if not bound.
    * @return the new, mutable (partial) match object.
    * 
    */
-  public static RestrictRootAssetMatch newMutableMatch(final EObject pRoot) {
-    return new Mutable(pRoot);
+  public static RestrictRootAssetMatch newMutableMatch(final EObject pObject) {
+    return new Mutable(pObject);
   }
   
   /**
    * Returns a new (partial) match.
    * This can be used e.g. to call the matcher with a partial match.
    * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
-   * @param pRoot the fixed value of pattern parameter root, or null if not bound.
+   * @param pObject the fixed value of pattern parameter object, or null if not bound.
    * @return the (partial) match object.
    * 
    */
-  public static RestrictRootAssetMatch newMatch(final EObject pRoot) {
-    return new Immutable(pRoot);
+  public static RestrictRootAssetMatch newMatch(final EObject pObject) {
+    return new Immutable(pObject);
   }
   
   private static final class Mutable extends RestrictRootAssetMatch {
-    Mutable(final EObject pRoot) {
-      super(pRoot);
+    Mutable(final EObject pObject) {
+      super(pObject);
     }
     
     @Override
@@ -169,8 +169,8 @@ public abstract class RestrictRootAssetMatch extends BasePatternMatch {
   }
   
   private static final class Immutable extends RestrictRootAssetMatch {
-    Immutable(final EObject pRoot) {
-      super(pRoot);
+    Immutable(final EObject pObject) {
+      super(pObject);
     }
     
     @Override

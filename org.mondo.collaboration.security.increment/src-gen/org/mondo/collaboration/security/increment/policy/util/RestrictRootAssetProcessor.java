@@ -17,13 +17,13 @@ import org.mondo.collaboration.security.increment.policy.RestrictRootAssetMatch;
 public abstract class RestrictRootAssetProcessor implements IMatchProcessor<RestrictRootAssetMatch> {
   /**
    * Defines the action that is to be executed on each match.
-   * @param pRoot the value of pattern parameter root in the currently processed match
+   * @param pObject the value of pattern parameter object in the currently processed match
    * 
    */
-  public abstract void process(final EObject pRoot);
+  public abstract void process(final EObject pObject);
   
   @Override
   public void process(final RestrictRootAssetMatch match) {
-    process(match.getRoot());
+    process(match.getObject());
   }
 }

@@ -1,31 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><plugin>
   <extension id="org.mondo.collaboration.security.increment.policy.Policy" point="org.eclipse.viatra.query.runtime.queryspecification">
     <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:org.mondo.collaboration.security.increment.policy.Policy" id="org.mondo.collaboration.security.increment.policy.Policy">
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.objectAll"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.objectRoot"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.objectRootWithId"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.referenceitsInputs"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.referenceitsOutputs"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.referenceitsParams"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.referenceitsTimers"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.referenceitsFaults"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.referenceitsVariables"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.referenceitsMainSubsystems"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.objectWTC"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.objectIO"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.objectNotIO"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.objectInput"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.objectOutput"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.objectFault"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.objectParam"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.objectTimer"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.objectVariable"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.objectSubsystemWithName"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.objectIOFaultTimerVariable"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.attributeenabled"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.lockParameterValues"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.objectAllObjectsWithoutRoot"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.objectAllObjects"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.findRoot"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.findObjectAssetWithoutRoot"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.inputOutput"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.nonInputOutput"/>
     </group>
   </extension>
   <extension id="org.mondo.collaboration.security.increment.policy.Policy_consequence" point="org.eclipse.viatra.query.runtime.queryspecification">
@@ -74,10 +53,14 @@
       <query-specification fqn="org.mondo.collaboration.security.increment.policy.readWriteOperation"/>
       <query-specification fqn="org.mondo.collaboration.security.increment.policy.restrictRootAsset"/>
       <query-specification fqn="org.mondo.collaboration.security.increment.policy.restrictRootUser"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.enableNonRootAsset"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.enableNonRootUser"/>
       <query-specification fqn="org.mondo.collaboration.security.increment.policy.enableIOAsset"/>
       <query-specification fqn="org.mondo.collaboration.security.increment.policy.enableIOUser"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.restrictNotIOAsset"/>
-      <query-specification fqn="org.mondo.collaboration.security.increment.policy.restrictNotIOUser"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.restrictNonIOAsset"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.restrictNonIOUser"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.enableNonIOAsset"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.enableNonIOUser"/>
       <query-specification fqn="org.mondo.collaboration.security.increment.policy.restrictIOAsset"/>
       <query-specification fqn="org.mondo.collaboration.security.increment.policy.restrictIOUser"/>
       <query-specification fqn="org.mondo.collaboration.security.increment.policy.allUsers"/>
@@ -289,6 +272,9 @@
       <query-specification fqn="org.mondo.collaboration.security.increment.policy.containmentReference"/>
       <query-specification fqn="org.mondo.collaboration.security.increment.policy.idAttribute"/>
       <query-specification fqn="org.mondo.collaboration.security.increment.policy.contains"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.objectAsset"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.root"/>
+      <query-specification fqn="org.mondo.collaboration.security.increment.policy.objectAssetWithoutRoot"/>
     </group>
   </extension>
 </plugin>

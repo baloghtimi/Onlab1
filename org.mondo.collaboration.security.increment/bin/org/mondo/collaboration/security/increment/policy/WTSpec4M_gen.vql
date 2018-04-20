@@ -84,307 +84,307 @@ pattern attributeAsset(source : EObject, value: java Object, attribute : EAttrib
 
 pattern attributeAssetWTsysId(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        WT.sysId(source, value);
-	        EClass.name(class, "WT");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "sysId");
-	    }
+     WT.sysId(source, value);
+	 EClass.name(class, "WT");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "sysId");
+}
 
 pattern attributeAssetWTmodel(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        WT.model(source, value);
-	        EClass.name(class, "WT");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "model");
-	    }
+     WT.model(source, value);
+	 EClass.name(class, "WT");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "model");
+}
 
 pattern attributeAssetWTversion(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        WT.version(source, value);
-	        EClass.name(class, "WT");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "version");
-	    }
+     WT.version(source, value);
+	 EClass.name(class, "WT");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "version");
+}
 
 pattern attributeAssetSystemInputsysId(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        SystemInput.sysId(source, value);
-	        EClass.name(class, "SystemInput");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "sysId");
-	    }
+     SystemInput.sysId(source, value);
+	 EClass.name(class, "SystemInput");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "sysId");
+}
 
 pattern attributeAssetSystemInputdescription(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        SystemInput.description(source, value);
-	        EClass.name(class, "SystemInput");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "description");
-	    }
+     SystemInput.description(source, value);
+	 EClass.name(class, "SystemInput");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "description");
+}
 
 pattern attributeAssetSystemOutputsysId(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        SystemOutput.sysId(source, value);
-	        EClass.name(class, "SystemOutput");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "sysId");
-	    }
+     SystemOutput.sysId(source, value);
+	 EClass.name(class, "SystemOutput");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "sysId");
+}
 
 pattern attributeAssetSystemOutputdescription(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        SystemOutput.description(source, value);
-	        EClass.name(class, "SystemOutput");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "description");
-	    }
+     SystemOutput.description(source, value);
+	 EClass.name(class, "SystemOutput");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "description");
+}
 
 pattern attributeAssetSystemFaultsysId(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        SystemFault.sysId(source, value);
-	        EClass.name(class, "SystemFault");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "sysId");
-	    }
+     SystemFault.sysId(source, value);
+	 EClass.name(class, "SystemFault");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "sysId");
+}
 
 pattern attributeAssetSystemFaultdescription(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        SystemFault.description(source, value);
-	        EClass.name(class, "SystemFault");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "description");
-	    }
+     SystemFault.description(source, value);
+	 EClass.name(class, "SystemFault");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "description");
+}
 
 pattern attributeAssetSystemFaultvalue(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        SystemFault.value(source, value);
-	        EClass.name(class, "SystemFault");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "value");
-	    }
+     SystemFault.value(source, value);
+	 EClass.name(class, "SystemFault");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "value");
+}
 
 pattern attributeAssetSystemParamsysId(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        SystemParam.sysId(source, value);
-	        EClass.name(class, "SystemParam");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "sysId");
-	    }
+     SystemParam.sysId(source, value);
+	 EClass.name(class, "SystemParam");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "sysId");
+}
 
 pattern attributeAssetSystemParamdescription(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        SystemParam.description(source, value);
-	        EClass.name(class, "SystemParam");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "description");
-	    }
+     SystemParam.description(source, value);
+	 EClass.name(class, "SystemParam");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "description");
+}
 
 pattern attributeAssetSystemParamvalue(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        SystemParam.value(source, value);
-	        EClass.name(class, "SystemParam");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "value");
-	    }
+     SystemParam.value(source, value);
+	 EClass.name(class, "SystemParam");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "value");
+}
 
 pattern attributeAssetSystemParamsettable(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        SystemParam.settable(source, value);
-	        EClass.name(class, "SystemParam");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "settable");
-	    }
+     SystemParam.settable(source, value);
+	 EClass.name(class, "SystemParam");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "settable");
+}
 
 pattern attributeAssetSystemTimersysId(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        SystemTimer.sysId(source, value);
-	        EClass.name(class, "SystemTimer");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "sysId");
-	    }
+     SystemTimer.sysId(source, value);
+	 EClass.name(class, "SystemTimer");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "sysId");
+}
 
 pattern attributeAssetSystemTimerdescription(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        SystemTimer.description(source, value);
-	        EClass.name(class, "SystemTimer");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "description");
-	    }
+     SystemTimer.description(source, value);
+	 EClass.name(class, "SystemTimer");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "description");
+}
 
 pattern attributeAssetSystemTimervalue(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        SystemTimer.value(source, value);
-	        EClass.name(class, "SystemTimer");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "value");
-	    }
+     SystemTimer.value(source, value);
+	 EClass.name(class, "SystemTimer");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "value");
+}
 
 pattern attributeAssetSystemVariablesysId(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        SystemVariable.sysId(source, value);
-	        EClass.name(class, "SystemVariable");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "sysId");
-	    }
+     SystemVariable.sysId(source, value);
+	 EClass.name(class, "SystemVariable");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "sysId");
+}
 
 pattern attributeAssetSystemVariabledescription(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        SystemVariable.description(source, value);
-	        EClass.name(class, "SystemVariable");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "description");
-	    }
+     SystemVariable.description(source, value);
+	 EClass.name(class, "SystemVariable");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "description");
+}
 
 pattern attributeAssetSubsystemsysId(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        Subsystem.sysId(source, value);
-	        EClass.name(class, "Subsystem");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "sysId");
-	    }
+     Subsystem.sysId(source, value);
+	 EClass.name(class, "Subsystem");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "sysId");
+}
 
 pattern attributeAssetSubsystemdescription(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        Subsystem.description(source, value);
-	        EClass.name(class, "Subsystem");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "description");
-	    }
+     Subsystem.description(source, value);
+	 EClass.name(class, "Subsystem");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "description");
+}
 
 pattern attributeAssetwtcsysId(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        wtc.sysId(source, value);
-	        EClass.name(class, "wtc");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "sysId");
-	    }
+     wtc.sysId(source, value);
+	 EClass.name(class, "wtc");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "sysId");
+}
 
 pattern attributeAssetwtcdescription(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        wtc.description(source, value);
-	        EClass.name(class, "wtc");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "description");
-	    }
+     wtc.description(source, value);
+	 EClass.name(class, "wtc");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "description");
+}
 
 pattern attributeAssetwtccycle(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        wtc.cycle(source, value);
-	        EClass.name(class, "wtc");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "cycle");
-	    }
+     wtc.cycle(source, value);
+	 EClass.name(class, "wtc");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "cycle");
+}
 
 pattern attributeAssetwtcpriority(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        wtc.priority(source, value);
-	        EClass.name(class, "wtc");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "priority");
-	    }
+     wtc.priority(source, value);
+	 EClass.name(class, "wtc");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "priority");
+}
 
 pattern attributeAssetwtcenabled(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        wtc.enabled(source, value);
-	        EClass.name(class, "wtc");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "enabled");
-	    }
+     wtc.enabled(source, value);
+	 EClass.name(class, "wtc");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "enabled");
+}
 
 pattern attributeAssetCtrlUnit9BhvParam__BhvParam1(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        CtrlUnit9.BhvParam__BhvParam1(source, value);
-	        EClass.name(class, "CtrlUnit9");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "BhvParam__BhvParam1");
-	    }
+     CtrlUnit9.BhvParam__BhvParam1(source, value);
+	 EClass.name(class, "CtrlUnit9");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "BhvParam__BhvParam1");
+}
 
 pattern attributeAssetCtrlUnit9BhvParam__BhvParam2(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        CtrlUnit9.BhvParam__BhvParam2(source, value);
-	        EClass.name(class, "CtrlUnit9");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "BhvParam__BhvParam2");
-	    }
+     CtrlUnit9.BhvParam__BhvParam2(source, value);
+	 EClass.name(class, "CtrlUnit9");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "BhvParam__BhvParam2");
+}
 
 pattern attributeAssetCtrlUnit10BhvParam__BhvParam1(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        CtrlUnit10.BhvParam__BhvParam1(source, value);
-	        EClass.name(class, "CtrlUnit10");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "BhvParam__BhvParam1");
-	    }
+     CtrlUnit10.BhvParam__BhvParam1(source, value);
+	 EClass.name(class, "CtrlUnit10");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "BhvParam__BhvParam1");
+}
 
 pattern attributeAssetCtrlUnit13BhvParam__BhvParam1(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        CtrlUnit13.BhvParam__BhvParam1(source, value);
-	        EClass.name(class, "CtrlUnit13");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "BhvParam__BhvParam1");
-	    }
+     CtrlUnit13.BhvParam__BhvParam1(source, value);
+	 EClass.name(class, "CtrlUnit13");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "BhvParam__BhvParam1");
+}
 
 pattern attributeAssetCtrlUnit13BhvParam__BhvParam2(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        CtrlUnit13.BhvParam__BhvParam2(source, value);
-	        EClass.name(class, "CtrlUnit13");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "BhvParam__BhvParam2");
-	    }
+     CtrlUnit13.BhvParam__BhvParam2(source, value);
+	 EClass.name(class, "CtrlUnit13");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "BhvParam__BhvParam2");
+}
 
 pattern attributeAssetCtrlUnit29BhvParam__BhvParam1(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        CtrlUnit29.BhvParam__BhvParam1(source, value);
-	        EClass.name(class, "CtrlUnit29");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "BhvParam__BhvParam1");
-	    }
+     CtrlUnit29.BhvParam__BhvParam1(source, value);
+	 EClass.name(class, "CtrlUnit29");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "BhvParam__BhvParam1");
+}
 
 pattern attributeAssetCtrlUnit34BhvParam__BhvParam1(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        CtrlUnit34.BhvParam__BhvParam1(source, value);
-	        EClass.name(class, "CtrlUnit34");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "BhvParam__BhvParam1");
-	    }
+     CtrlUnit34.BhvParam__BhvParam1(source, value);
+	 EClass.name(class, "CtrlUnit34");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "BhvParam__BhvParam1");
+}
 
 pattern attributeAssetCtrlUnit37BhvParam__BhvParam1(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        CtrlUnit37.BhvParam__BhvParam1(source, value);
-	        EClass.name(class, "CtrlUnit37");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "BhvParam__BhvParam1");
-	    }
+     CtrlUnit37.BhvParam__BhvParam1(source, value);
+	 EClass.name(class, "CtrlUnit37");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "BhvParam__BhvParam1");
+}
 
 pattern attributeAssetCtrlUnit39BhvParam__BhvParam1(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        CtrlUnit39.BhvParam__BhvParam1(source, value);
-	        EClass.name(class, "CtrlUnit39");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "BhvParam__BhvParam1");
-	    }
+     CtrlUnit39.BhvParam__BhvParam1(source, value);
+	 EClass.name(class, "CtrlUnit39");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "BhvParam__BhvParam1");
+}
 
 pattern attributeAssetCtrlUnit58BhvParam__BhvParam1(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        CtrlUnit58.BhvParam__BhvParam1(source, value);
-	        EClass.name(class, "CtrlUnit58");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "BhvParam__BhvParam1");
-	    }
+     CtrlUnit58.BhvParam__BhvParam1(source, value);
+	 EClass.name(class, "CtrlUnit58");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "BhvParam__BhvParam1");
+}
 
 pattern attributeAssetCtrlUnit68BhvParam__BhvParam1(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        CtrlUnit68.BhvParam__BhvParam1(source, value);
-	        EClass.name(class, "CtrlUnit68");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "BhvParam__BhvParam1");
-	    }
+     CtrlUnit68.BhvParam__BhvParam1(source, value);
+	 EClass.name(class, "CtrlUnit68");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "BhvParam__BhvParam1");
+}
 
 pattern attributeAssetCtrlUnit92BhvParam__BhvParam1(source : EObject, value: java Object, attribute : EAttribute)
 {
-	        CtrlUnit92.BhvParam__BhvParam1(source, value);
-	        EClass.name(class, "CtrlUnit92");
-	        EClass.eStructuralFeatures(class, attribute);
-	        EAttribute.name(attribute, "BhvParam__BhvParam1");
-	    }
+     CtrlUnit92.BhvParam__BhvParam1(source, value);
+	 EClass.name(class, "CtrlUnit92");
+	 EClass.eStructuralFeatures(class, attribute);
+	 EAttribute.name(attribute, "BhvParam__BhvParam1");
+}
 
 pattern referenceAsset(source : EObject, target : EObject, reference : EReference) {
 	find referenceAssetWTitsSubsystems(source, target, reference);     
@@ -712,1291 +712,1291 @@ pattern referenceAsset(source : EObject, target : EObject, reference : EReferenc
 
 pattern referenceAssetWTitsSubsystems(source : EObject, target : EObject, reference : EReference)
 {
-	        WT.itsSubsystems(source, target);
-	        EClass.name(class, "WT");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "itsSubsystems");
-	    }
+	WT.itsSubsystems(source, target);
+	EClass.name(class, "WT");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "itsSubsystems");
+}
 
 pattern referenceAssetWTitsInputs(source : EObject, target : EObject, reference : EReference)
 {
-	        WT.itsInputs(source, target);
-	        EClass.name(class, "WT");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "itsInputs");
-	    }
+	WT.itsInputs(source, target);
+	EClass.name(class, "WT");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "itsInputs");
+}
 
 pattern referenceAssetWTitsOutputs(source : EObject, target : EObject, reference : EReference)
 {
-	        WT.itsOutputs(source, target);
-	        EClass.name(class, "WT");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "itsOutputs");
-	    }
+	WT.itsOutputs(source, target);
+	EClass.name(class, "WT");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "itsOutputs");
+}
 
 pattern referenceAssetWTitsParams(source : EObject, target : EObject, reference : EReference)
 {
-	        WT.itsParams(source, target);
-	        EClass.name(class, "WT");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "itsParams");
-	    }
+	WT.itsParams(source, target);
+	EClass.name(class, "WT");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "itsParams");
+}
 
 pattern referenceAssetWTitsTimers(source : EObject, target : EObject, reference : EReference)
 {
-	        WT.itsTimers(source, target);
-	        EClass.name(class, "WT");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "itsTimers");
-	    }
+	WT.itsTimers(source, target);
+	EClass.name(class, "WT");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "itsTimers");
+}
 
 pattern referenceAssetWTitsFaults(source : EObject, target : EObject, reference : EReference)
 {
-	        WT.itsFaults(source, target);
-	        EClass.name(class, "WT");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "itsFaults");
-	    }
+	WT.itsFaults(source, target);
+	EClass.name(class, "WT");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "itsFaults");
+}
 
 pattern referenceAssetWTitsVariables(source : EObject, target : EObject, reference : EReference)
 {
-	        WT.itsVariables(source, target);
-	        EClass.name(class, "WT");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "itsVariables");
-	    }
+	WT.itsVariables(source, target);
+	EClass.name(class, "WT");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "itsVariables");
+}
 
 pattern referenceAssetSubsystemitsWTCs(source : EObject, target : EObject, reference : EReference)
 {
-	        Subsystem.itsWTCs(source, target);
-	        EClass.name(class, "Subsystem");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "itsWTCs");
-	    }
+	Subsystem.itsWTCs(source, target);
+	EClass.name(class, "Subsystem");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "itsWTCs");
+}
 
 pattern referenceAssetSubsystemitsSubsystems(source : EObject, target : EObject, reference : EReference)
 {
-	        Subsystem.itsSubsystems(source, target);
-	        EClass.name(class, "Subsystem");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "itsSubsystems");
-	    }
+	Subsystem.itsSubsystems(source, target);
+	EClass.name(class, "Subsystem");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "itsSubsystems");
+}
 
 pattern referenceAssetCtrlUnit5Input__iInput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit5.Input__iInput1(source, target);
-	        EClass.name(class, "CtrlUnit5");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput1");
-	    }
+	CtrlUnit5.Input__iInput1(source, target);
+	EClass.name(class, "CtrlUnit5");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput1");
+}
 
 pattern referenceAssetCtrlUnit5Input__iInput2(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit5.Input__iInput2(source, target);
-	        EClass.name(class, "CtrlUnit5");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput2");
-	    }
+	CtrlUnit5.Input__iInput2(source, target);
+	EClass.name(class, "CtrlUnit5");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput2");
+}
 
 pattern referenceAssetCtrlUnit5Output__oOutput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit5.Output__oOutput1(source, target);
-	        EClass.name(class, "CtrlUnit5");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Output__oOutput1");
-	    }
+	CtrlUnit5.Output__oOutput1(source, target);
+	EClass.name(class, "CtrlUnit5");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Output__oOutput1");
+}
 
 pattern referenceAssetCtrlUnit9Input__iInput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit9.Input__iInput1(source, target);
-	        EClass.name(class, "CtrlUnit9");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput1");
-	    }
+	CtrlUnit9.Input__iInput1(source, target);
+	EClass.name(class, "CtrlUnit9");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput1");
+}
 
 pattern referenceAssetCtrlUnit9Input__iInput2(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit9.Input__iInput2(source, target);
-	        EClass.name(class, "CtrlUnit9");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput2");
-	    }
+	CtrlUnit9.Input__iInput2(source, target);
+	EClass.name(class, "CtrlUnit9");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput2");
+}
 
 pattern referenceAssetCtrlUnit9Input__iInput3(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit9.Input__iInput3(source, target);
-	        EClass.name(class, "CtrlUnit9");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput3");
-	    }
+	CtrlUnit9.Input__iInput3(source, target);
+	EClass.name(class, "CtrlUnit9");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput3");
+}
 
 pattern referenceAssetCtrlUnit9Input__iInput4(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit9.Input__iInput4(source, target);
-	        EClass.name(class, "CtrlUnit9");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput4");
-	    }
+	CtrlUnit9.Input__iInput4(source, target);
+	EClass.name(class, "CtrlUnit9");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput4");
+}
 
 pattern referenceAssetCtrlUnit9Output__oOutput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit9.Output__oOutput1(source, target);
-	        EClass.name(class, "CtrlUnit9");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Output__oOutput1");
-	    }
+	CtrlUnit9.Output__oOutput1(source, target);
+	EClass.name(class, "CtrlUnit9");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Output__oOutput1");
+}
 
 pattern referenceAssetCtrlUnit9Parameter__pParam1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit9.Parameter__pParam1(source, target);
-	        EClass.name(class, "CtrlUnit9");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Parameter__pParam1");
-	    }
+	CtrlUnit9.Parameter__pParam1(source, target);
+	EClass.name(class, "CtrlUnit9");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Parameter__pParam1");
+}
 
 pattern referenceAssetCtrlUnit9Parameter__pParam2(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit9.Parameter__pParam2(source, target);
-	        EClass.name(class, "CtrlUnit9");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Parameter__pParam2");
-	    }
+	CtrlUnit9.Parameter__pParam2(source, target);
+	EClass.name(class, "CtrlUnit9");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Parameter__pParam2");
+}
 
 pattern referenceAssetCtrlUnit9Timer__tTimer1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit9.Timer__tTimer1(source, target);
-	        EClass.name(class, "CtrlUnit9");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Timer__tTimer1");
-	    }
+	CtrlUnit9.Timer__tTimer1(source, target);
+	EClass.name(class, "CtrlUnit9");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Timer__tTimer1");
+}
 
 pattern referenceAssetCtrlUnit10Input__iInput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit10.Input__iInput1(source, target);
-	        EClass.name(class, "CtrlUnit10");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput1");
-	    }
+	CtrlUnit10.Input__iInput1(source, target);
+	EClass.name(class, "CtrlUnit10");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput1");
+}
 
 pattern referenceAssetCtrlUnit10Output__oOutput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit10.Output__oOutput1(source, target);
-	        EClass.name(class, "CtrlUnit10");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Output__oOutput1");
-	    }
+	CtrlUnit10.Output__oOutput1(source, target);
+	EClass.name(class, "CtrlUnit10");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Output__oOutput1");
+}
 
 pattern referenceAssetCtrlUnit10Parameter__pParam1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit10.Parameter__pParam1(source, target);
-	        EClass.name(class, "CtrlUnit10");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Parameter__pParam1");
-	    }
+	CtrlUnit10.Parameter__pParam1(source, target);
+	EClass.name(class, "CtrlUnit10");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Parameter__pParam1");
+}
 
 pattern referenceAssetCtrlUnit10Parameter__pParam2(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit10.Parameter__pParam2(source, target);
-	        EClass.name(class, "CtrlUnit10");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Parameter__pParam2");
-	    }
+	CtrlUnit10.Parameter__pParam2(source, target);
+	EClass.name(class, "CtrlUnit10");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Parameter__pParam2");
+}
 
 pattern referenceAssetCtrlUnit10Parameter__pParam3(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit10.Parameter__pParam3(source, target);
-	        EClass.name(class, "CtrlUnit10");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Parameter__pParam3");
-	    }
+	CtrlUnit10.Parameter__pParam3(source, target);
+	EClass.name(class, "CtrlUnit10");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Parameter__pParam3");
+}
 
 pattern referenceAssetCtrlUnit10Parameter__pParam4(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit10.Parameter__pParam4(source, target);
-	        EClass.name(class, "CtrlUnit10");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Parameter__pParam4");
-	    }
+	CtrlUnit10.Parameter__pParam4(source, target);
+	EClass.name(class, "CtrlUnit10");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Parameter__pParam4");
+}
 
 pattern referenceAssetCtrlUnit10Parameter__pParam5(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit10.Parameter__pParam5(source, target);
-	        EClass.name(class, "CtrlUnit10");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Parameter__pParam5");
-	    }
+	CtrlUnit10.Parameter__pParam5(source, target);
+	EClass.name(class, "CtrlUnit10");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Parameter__pParam5");
+}
 
 pattern referenceAssetCtrlUnit10Parameter__pParam6(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit10.Parameter__pParam6(source, target);
-	        EClass.name(class, "CtrlUnit10");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Parameter__pParam6");
-	    }
+	CtrlUnit10.Parameter__pParam6(source, target);
+	EClass.name(class, "CtrlUnit10");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Parameter__pParam6");
+}
 
 pattern referenceAssetCtrlUnit11Input__iInput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit11.Input__iInput1(source, target);
-	        EClass.name(class, "CtrlUnit11");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput1");
-	    }
+	CtrlUnit11.Input__iInput1(source, target);
+	EClass.name(class, "CtrlUnit11");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput1");
+}
 
 pattern referenceAssetCtrlUnit11Input__iInput2(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit11.Input__iInput2(source, target);
-	        EClass.name(class, "CtrlUnit11");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput2");
-	    }
+	CtrlUnit11.Input__iInput2(source, target);
+	EClass.name(class, "CtrlUnit11");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput2");
+}
 
 pattern referenceAssetCtrlUnit11Output__oOutput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit11.Output__oOutput1(source, target);
-	        EClass.name(class, "CtrlUnit11");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Output__oOutput1");
-	    }
+	CtrlUnit11.Output__oOutput1(source, target);
+	EClass.name(class, "CtrlUnit11");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Output__oOutput1");
+}
 
 pattern referenceAssetCtrlUnit13Input__iInput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit13.Input__iInput1(source, target);
-	        EClass.name(class, "CtrlUnit13");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput1");
-	    }
+	CtrlUnit13.Input__iInput1(source, target);
+	EClass.name(class, "CtrlUnit13");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput1");
+}
 
 pattern referenceAssetCtrlUnit13Input__iInput2(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit13.Input__iInput2(source, target);
-	        EClass.name(class, "CtrlUnit13");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput2");
-	    }
+	CtrlUnit13.Input__iInput2(source, target);
+	EClass.name(class, "CtrlUnit13");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput2");
+}
 
 pattern referenceAssetCtrlUnit13Input__iInput3(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit13.Input__iInput3(source, target);
-	        EClass.name(class, "CtrlUnit13");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput3");
-	    }
+	CtrlUnit13.Input__iInput3(source, target);
+	EClass.name(class, "CtrlUnit13");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput3");
+}
 
 pattern referenceAssetCtrlUnit13Output__oOutput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit13.Output__oOutput1(source, target);
-	        EClass.name(class, "CtrlUnit13");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Output__oOutput1");
-	    }
+	CtrlUnit13.Output__oOutput1(source, target);
+	EClass.name(class, "CtrlUnit13");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Output__oOutput1");
+}
 
 pattern referenceAssetCtrlUnit13Parameter__pParam1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit13.Parameter__pParam1(source, target);
-	        EClass.name(class, "CtrlUnit13");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Parameter__pParam1");
-	    }
+	CtrlUnit13.Parameter__pParam1(source, target);
+	EClass.name(class, "CtrlUnit13");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Parameter__pParam1");
+}
 
 pattern referenceAssetCtrlUnit13Parameter__pParam2(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit13.Parameter__pParam2(source, target);
-	        EClass.name(class, "CtrlUnit13");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Parameter__pParam2");
-	    }
+	CtrlUnit13.Parameter__pParam2(source, target);
+	EClass.name(class, "CtrlUnit13");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Parameter__pParam2");
+}
 
 pattern referenceAssetCtrlUnit15Input__iInput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit15.Input__iInput1(source, target);
-	        EClass.name(class, "CtrlUnit15");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput1");
-	    }
+	CtrlUnit15.Input__iInput1(source, target);
+	EClass.name(class, "CtrlUnit15");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput1");
+}
 
 pattern referenceAssetCtrlUnit15Output__oOutput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit15.Output__oOutput1(source, target);
-	        EClass.name(class, "CtrlUnit15");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Output__oOutput1");
-	    }
+	CtrlUnit15.Output__oOutput1(source, target);
+	EClass.name(class, "CtrlUnit15");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Output__oOutput1");
+}
 
 pattern referenceAssetCtrlUnit15Parameter__pParam1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit15.Parameter__pParam1(source, target);
-	        EClass.name(class, "CtrlUnit15");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Parameter__pParam1");
-	    }
+	CtrlUnit15.Parameter__pParam1(source, target);
+	EClass.name(class, "CtrlUnit15");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Parameter__pParam1");
+}
 
 pattern referenceAssetCtrlUnit18Input__iInput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit18.Input__iInput1(source, target);
-	        EClass.name(class, "CtrlUnit18");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput1");
-	    }
+	CtrlUnit18.Input__iInput1(source, target);
+	EClass.name(class, "CtrlUnit18");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput1");
+}
 
 pattern referenceAssetCtrlUnit18Input__iInput2(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit18.Input__iInput2(source, target);
-	        EClass.name(class, "CtrlUnit18");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput2");
-	    }
+	CtrlUnit18.Input__iInput2(source, target);
+	EClass.name(class, "CtrlUnit18");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput2");
+}
 
 pattern referenceAssetCtrlUnit18Input__iInput3(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit18.Input__iInput3(source, target);
-	        EClass.name(class, "CtrlUnit18");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput3");
-	    }
+	CtrlUnit18.Input__iInput3(source, target);
+	EClass.name(class, "CtrlUnit18");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput3");
+}
 
 pattern referenceAssetCtrlUnit18Input__iInput4(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit18.Input__iInput4(source, target);
-	        EClass.name(class, "CtrlUnit18");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput4");
-	    }
+	CtrlUnit18.Input__iInput4(source, target);
+	EClass.name(class, "CtrlUnit18");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput4");
+}
 
 pattern referenceAssetCtrlUnit18Input__iInput5(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit18.Input__iInput5(source, target);
-	        EClass.name(class, "CtrlUnit18");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput5");
-	    }
+	CtrlUnit18.Input__iInput5(source, target);
+	EClass.name(class, "CtrlUnit18");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput5");
+}
 
 pattern referenceAssetCtrlUnit18Input__iInput6(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit18.Input__iInput6(source, target);
-	        EClass.name(class, "CtrlUnit18");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput6");
-	    }
+	CtrlUnit18.Input__iInput6(source, target);
+	EClass.name(class, "CtrlUnit18");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput6");
+}
 
 pattern referenceAssetCtrlUnit18Output__oOutput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit18.Output__oOutput1(source, target);
-	        EClass.name(class, "CtrlUnit18");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Output__oOutput1");
-	    }
+	CtrlUnit18.Output__oOutput1(source, target);
+	EClass.name(class, "CtrlUnit18");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Output__oOutput1");
+}
 
 pattern referenceAssetCtrlUnit18Parameter__pParam1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit18.Parameter__pParam1(source, target);
-	        EClass.name(class, "CtrlUnit18");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Parameter__pParam1");
-	    }
+	CtrlUnit18.Parameter__pParam1(source, target);
+	EClass.name(class, "CtrlUnit18");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Parameter__pParam1");
+}
 
 pattern referenceAssetCtrlUnit18Parameter__pParam2(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit18.Parameter__pParam2(source, target);
-	        EClass.name(class, "CtrlUnit18");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Parameter__pParam2");
-	    }
+	CtrlUnit18.Parameter__pParam2(source, target);
+	EClass.name(class, "CtrlUnit18");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Parameter__pParam2");
+}
 
 pattern referenceAssetCtrlUnit18Parameter__pParam3(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit18.Parameter__pParam3(source, target);
-	        EClass.name(class, "CtrlUnit18");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Parameter__pParam3");
-	    }
+	CtrlUnit18.Parameter__pParam3(source, target);
+	EClass.name(class, "CtrlUnit18");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Parameter__pParam3");
+}
 
 pattern referenceAssetCtrlUnit18Parameter__pParam4(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit18.Parameter__pParam4(source, target);
-	        EClass.name(class, "CtrlUnit18");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Parameter__pParam4");
-	    }
+	CtrlUnit18.Parameter__pParam4(source, target);
+	EClass.name(class, "CtrlUnit18");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Parameter__pParam4");
+}
 
 pattern referenceAssetCtrlUnit18Parameter__pParam5(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit18.Parameter__pParam5(source, target);
-	        EClass.name(class, "CtrlUnit18");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Parameter__pParam5");
-	    }
+	CtrlUnit18.Parameter__pParam5(source, target);
+	EClass.name(class, "CtrlUnit18");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Parameter__pParam5");
+}
 
 pattern referenceAssetCtrlUnit18Parameter__pParam6(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit18.Parameter__pParam6(source, target);
-	        EClass.name(class, "CtrlUnit18");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Parameter__pParam6");
-	    }
+	CtrlUnit18.Parameter__pParam6(source, target);
+	EClass.name(class, "CtrlUnit18");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Parameter__pParam6");
+}
 
 pattern referenceAssetCtrlUnit18Parameter__pParam7(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit18.Parameter__pParam7(source, target);
-	        EClass.name(class, "CtrlUnit18");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Parameter__pParam7");
-	    }
+	CtrlUnit18.Parameter__pParam7(source, target);
+	EClass.name(class, "CtrlUnit18");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Parameter__pParam7");
+}
 
 pattern referenceAssetCtrlUnit18Timer__tTimer1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit18.Timer__tTimer1(source, target);
-	        EClass.name(class, "CtrlUnit18");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Timer__tTimer1");
-	    }
+	CtrlUnit18.Timer__tTimer1(source, target);
+	EClass.name(class, "CtrlUnit18");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Timer__tTimer1");
+}
 
 pattern referenceAssetCtrlUnit27Input__iInput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit27.Input__iInput1(source, target);
-	        EClass.name(class, "CtrlUnit27");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput1");
-	    }
+	CtrlUnit27.Input__iInput1(source, target);
+	EClass.name(class, "CtrlUnit27");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput1");
+}
 
 pattern referenceAssetCtrlUnit27Input__iInput2(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit27.Input__iInput2(source, target);
-	        EClass.name(class, "CtrlUnit27");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput2");
-	    }
+	CtrlUnit27.Input__iInput2(source, target);
+	EClass.name(class, "CtrlUnit27");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput2");
+}
 
 pattern referenceAssetCtrlUnit27Output__oOutput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit27.Output__oOutput1(source, target);
-	        EClass.name(class, "CtrlUnit27");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Output__oOutput1");
-	    }
+	CtrlUnit27.Output__oOutput1(source, target);
+	EClass.name(class, "CtrlUnit27");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Output__oOutput1");
+}
 
 pattern referenceAssetCtrlUnit27Output__oOutput2(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit27.Output__oOutput2(source, target);
-	        EClass.name(class, "CtrlUnit27");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Output__oOutput2");
-	    }
+	CtrlUnit27.Output__oOutput2(source, target);
+	EClass.name(class, "CtrlUnit27");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Output__oOutput2");
+}
 
 pattern referenceAssetCtrlUnit27Parameter__pParam1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit27.Parameter__pParam1(source, target);
-	        EClass.name(class, "CtrlUnit27");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Parameter__pParam1");
-	    }
+	CtrlUnit27.Parameter__pParam1(source, target);
+	EClass.name(class, "CtrlUnit27");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Parameter__pParam1");
+}
 
 pattern referenceAssetCtrlUnit29Input__iInput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit29.Input__iInput1(source, target);
-	        EClass.name(class, "CtrlUnit29");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput1");
-	    }
+	CtrlUnit29.Input__iInput1(source, target);
+	EClass.name(class, "CtrlUnit29");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput1");
+}
 
 pattern referenceAssetCtrlUnit29Input__iInput2(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit29.Input__iInput2(source, target);
-	        EClass.name(class, "CtrlUnit29");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput2");
-	    }
+	CtrlUnit29.Input__iInput2(source, target);
+	EClass.name(class, "CtrlUnit29");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput2");
+}
 
 pattern referenceAssetCtrlUnit29Fault__fFault1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit29.Fault__fFault1(source, target);
-	        EClass.name(class, "CtrlUnit29");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Fault__fFault1");
-	    }
+	CtrlUnit29.Fault__fFault1(source, target);
+	EClass.name(class, "CtrlUnit29");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Fault__fFault1");
+}
 
 pattern referenceAssetCtrlUnit31Input__iInput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit31.Input__iInput1(source, target);
-	        EClass.name(class, "CtrlUnit31");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput1");
-	    }
+	CtrlUnit31.Input__iInput1(source, target);
+	EClass.name(class, "CtrlUnit31");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput1");
+}
 
 pattern referenceAssetCtrlUnit31Output__oOutput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit31.Output__oOutput1(source, target);
-	        EClass.name(class, "CtrlUnit31");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Output__oOutput1");
-	    }
+	CtrlUnit31.Output__oOutput1(source, target);
+	EClass.name(class, "CtrlUnit31");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Output__oOutput1");
+}
 
 pattern referenceAssetCtrlUnit31Parameter__pParam1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit31.Parameter__pParam1(source, target);
-	        EClass.name(class, "CtrlUnit31");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Parameter__pParam1");
-	    }
+	CtrlUnit31.Parameter__pParam1(source, target);
+	EClass.name(class, "CtrlUnit31");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Parameter__pParam1");
+}
 
 pattern referenceAssetCtrlUnit34Input__iInput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit34.Input__iInput1(source, target);
-	        EClass.name(class, "CtrlUnit34");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput1");
-	    }
+	CtrlUnit34.Input__iInput1(source, target);
+	EClass.name(class, "CtrlUnit34");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput1");
+}
 
 pattern referenceAssetCtrlUnit34Input__iInput2(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit34.Input__iInput2(source, target);
-	        EClass.name(class, "CtrlUnit34");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput2");
-	    }
+	CtrlUnit34.Input__iInput2(source, target);
+	EClass.name(class, "CtrlUnit34");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput2");
+}
 
 pattern referenceAssetCtrlUnit34Output__oOutput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit34.Output__oOutput1(source, target);
-	        EClass.name(class, "CtrlUnit34");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Output__oOutput1");
-	    }
+	CtrlUnit34.Output__oOutput1(source, target);
+	EClass.name(class, "CtrlUnit34");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Output__oOutput1");
+}
 
 pattern referenceAssetCtrlUnit34Output__oOutput2(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit34.Output__oOutput2(source, target);
-	        EClass.name(class, "CtrlUnit34");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Output__oOutput2");
-	    }
+	CtrlUnit34.Output__oOutput2(source, target);
+	EClass.name(class, "CtrlUnit34");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Output__oOutput2");
+}
 
 pattern referenceAssetCtrlUnit34Timer__tTimer1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit34.Timer__tTimer1(source, target);
-	        EClass.name(class, "CtrlUnit34");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Timer__tTimer1");
-	    }
+	CtrlUnit34.Timer__tTimer1(source, target);
+	EClass.name(class, "CtrlUnit34");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Timer__tTimer1");
+}
 
 pattern referenceAssetCtrlUnit34Timer__tTimer2(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit34.Timer__tTimer2(source, target);
-	        EClass.name(class, "CtrlUnit34");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Timer__tTimer2");
-	    }
+	CtrlUnit34.Timer__tTimer2(source, target);
+	EClass.name(class, "CtrlUnit34");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Timer__tTimer2");
+}
 
 pattern referenceAssetCtrlUnit36Input__iInput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit36.Input__iInput1(source, target);
-	        EClass.name(class, "CtrlUnit36");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput1");
-	    }
+	CtrlUnit36.Input__iInput1(source, target);
+	EClass.name(class, "CtrlUnit36");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput1");
+}
 
 pattern referenceAssetCtrlUnit36Output__oOutput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit36.Output__oOutput1(source, target);
-	        EClass.name(class, "CtrlUnit36");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Output__oOutput1");
-	    }
+	CtrlUnit36.Output__oOutput1(source, target);
+	EClass.name(class, "CtrlUnit36");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Output__oOutput1");
+}
 
 pattern referenceAssetCtrlUnit36Parameter__pParam1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit36.Parameter__pParam1(source, target);
-	        EClass.name(class, "CtrlUnit36");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Parameter__pParam1");
-	    }
+	CtrlUnit36.Parameter__pParam1(source, target);
+	EClass.name(class, "CtrlUnit36");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Parameter__pParam1");
+}
 
 pattern referenceAssetCtrlUnit36Parameter__pParam2(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit36.Parameter__pParam2(source, target);
-	        EClass.name(class, "CtrlUnit36");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Parameter__pParam2");
-	    }
+	CtrlUnit36.Parameter__pParam2(source, target);
+	EClass.name(class, "CtrlUnit36");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Parameter__pParam2");
+}
 
 pattern referenceAssetCtrlUnit37Input__iInput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit37.Input__iInput1(source, target);
-	        EClass.name(class, "CtrlUnit37");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput1");
-	    }
+	CtrlUnit37.Input__iInput1(source, target);
+	EClass.name(class, "CtrlUnit37");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput1");
+}
 
 pattern referenceAssetCtrlUnit37Input__iInput2(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit37.Input__iInput2(source, target);
-	        EClass.name(class, "CtrlUnit37");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput2");
-	    }
+	CtrlUnit37.Input__iInput2(source, target);
+	EClass.name(class, "CtrlUnit37");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput2");
+}
 
 pattern referenceAssetCtrlUnit37Input__iInput3(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit37.Input__iInput3(source, target);
-	        EClass.name(class, "CtrlUnit37");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput3");
-	    }
+	CtrlUnit37.Input__iInput3(source, target);
+	EClass.name(class, "CtrlUnit37");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput3");
+}
 
 pattern referenceAssetCtrlUnit37Output__oOutput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit37.Output__oOutput1(source, target);
-	        EClass.name(class, "CtrlUnit37");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Output__oOutput1");
-	    }
+	CtrlUnit37.Output__oOutput1(source, target);
+	EClass.name(class, "CtrlUnit37");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Output__oOutput1");
+}
 
 pattern referenceAssetCtrlUnit37Fault__fFault1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit37.Fault__fFault1(source, target);
-	        EClass.name(class, "CtrlUnit37");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Fault__fFault1");
-	    }
+	CtrlUnit37.Fault__fFault1(source, target);
+	EClass.name(class, "CtrlUnit37");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Fault__fFault1");
+}
 
 pattern referenceAssetCtrlUnit37Timer__tTimer1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit37.Timer__tTimer1(source, target);
-	        EClass.name(class, "CtrlUnit37");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Timer__tTimer1");
-	    }
+	CtrlUnit37.Timer__tTimer1(source, target);
+	EClass.name(class, "CtrlUnit37");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Timer__tTimer1");
+}
 
 pattern referenceAssetCtrlUnit39Input__iInput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit39.Input__iInput1(source, target);
-	        EClass.name(class, "CtrlUnit39");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput1");
-	    }
+	CtrlUnit39.Input__iInput1(source, target);
+	EClass.name(class, "CtrlUnit39");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput1");
+}
 
 pattern referenceAssetCtrlUnit39Input__iInput2(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit39.Input__iInput2(source, target);
-	        EClass.name(class, "CtrlUnit39");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput2");
-	    }
+	CtrlUnit39.Input__iInput2(source, target);
+	EClass.name(class, "CtrlUnit39");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput2");
+}
 
 pattern referenceAssetCtrlUnit39Fault__fFault1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit39.Fault__fFault1(source, target);
-	        EClass.name(class, "CtrlUnit39");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Fault__fFault1");
-	    }
+	CtrlUnit39.Fault__fFault1(source, target);
+	EClass.name(class, "CtrlUnit39");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Fault__fFault1");
+}
 
 pattern referenceAssetCtrlUnit39Timer__tTimer1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit39.Timer__tTimer1(source, target);
-	        EClass.name(class, "CtrlUnit39");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Timer__tTimer1");
-	    }
+	CtrlUnit39.Timer__tTimer1(source, target);
+	EClass.name(class, "CtrlUnit39");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Timer__tTimer1");
+}
 
 pattern referenceAssetCtrlUnit40Input__iInput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit40.Input__iInput1(source, target);
-	        EClass.name(class, "CtrlUnit40");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput1");
-	    }
+	CtrlUnit40.Input__iInput1(source, target);
+	EClass.name(class, "CtrlUnit40");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput1");
+}
 
 pattern referenceAssetCtrlUnit40Output__oOutput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit40.Output__oOutput1(source, target);
-	        EClass.name(class, "CtrlUnit40");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Output__oOutput1");
-	    }
+	CtrlUnit40.Output__oOutput1(source, target);
+	EClass.name(class, "CtrlUnit40");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Output__oOutput1");
+}
 
 pattern referenceAssetCtrlUnit40Timer__tTimer1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit40.Timer__tTimer1(source, target);
-	        EClass.name(class, "CtrlUnit40");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Timer__tTimer1");
-	    }
+	CtrlUnit40.Timer__tTimer1(source, target);
+	EClass.name(class, "CtrlUnit40");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Timer__tTimer1");
+}
 
 pattern referenceAssetCtrlUnit44Input__iInput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit44.Input__iInput1(source, target);
-	        EClass.name(class, "CtrlUnit44");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput1");
-	    }
+	CtrlUnit44.Input__iInput1(source, target);
+	EClass.name(class, "CtrlUnit44");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput1");
+}
 
 pattern referenceAssetCtrlUnit44Output__oOutput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit44.Output__oOutput1(source, target);
-	        EClass.name(class, "CtrlUnit44");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Output__oOutput1");
-	    }
+	CtrlUnit44.Output__oOutput1(source, target);
+	EClass.name(class, "CtrlUnit44");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Output__oOutput1");
+}
 
 pattern referenceAssetCtrlUnit46Output__oOutput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit46.Output__oOutput1(source, target);
-	        EClass.name(class, "CtrlUnit46");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Output__oOutput1");
-	    }
+	CtrlUnit46.Output__oOutput1(source, target);
+	EClass.name(class, "CtrlUnit46");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Output__oOutput1");
+}
 
 pattern referenceAssetCtrlUnit47Input__iInput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit47.Input__iInput1(source, target);
-	        EClass.name(class, "CtrlUnit47");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput1");
-	    }
+	CtrlUnit47.Input__iInput1(source, target);
+	EClass.name(class, "CtrlUnit47");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput1");
+}
 
 pattern referenceAssetCtrlUnit47Fault__fFault1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit47.Fault__fFault1(source, target);
-	        EClass.name(class, "CtrlUnit47");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Fault__fFault1");
-	    }
+	CtrlUnit47.Fault__fFault1(source, target);
+	EClass.name(class, "CtrlUnit47");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Fault__fFault1");
+}
 
 pattern referenceAssetCtrlUnit49Input__iInput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit49.Input__iInput1(source, target);
-	        EClass.name(class, "CtrlUnit49");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput1");
-	    }
+	CtrlUnit49.Input__iInput1(source, target);
+	EClass.name(class, "CtrlUnit49");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput1");
+}
 
 pattern referenceAssetCtrlUnit49Input__iInput2(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit49.Input__iInput2(source, target);
-	        EClass.name(class, "CtrlUnit49");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput2");
-	    }
+	CtrlUnit49.Input__iInput2(source, target);
+	EClass.name(class, "CtrlUnit49");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput2");
+}
 
 pattern referenceAssetCtrlUnit49Input__iInput3(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit49.Input__iInput3(source, target);
-	        EClass.name(class, "CtrlUnit49");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput3");
-	    }
+	CtrlUnit49.Input__iInput3(source, target);
+	EClass.name(class, "CtrlUnit49");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput3");
+}
 
 pattern referenceAssetCtrlUnit49Input__iInput4(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit49.Input__iInput4(source, target);
-	        EClass.name(class, "CtrlUnit49");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput4");
-	    }
+	CtrlUnit49.Input__iInput4(source, target);
+	EClass.name(class, "CtrlUnit49");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput4");
+}
 
 pattern referenceAssetCtrlUnit49Output__oOutput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit49.Output__oOutput1(source, target);
-	        EClass.name(class, "CtrlUnit49");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Output__oOutput1");
-	    }
+	CtrlUnit49.Output__oOutput1(source, target);
+	EClass.name(class, "CtrlUnit49");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Output__oOutput1");
+}
 
 pattern referenceAssetCtrlUnit49Output__oOutput2(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit49.Output__oOutput2(source, target);
-	        EClass.name(class, "CtrlUnit49");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Output__oOutput2");
-	    }
+	CtrlUnit49.Output__oOutput2(source, target);
+	EClass.name(class, "CtrlUnit49");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Output__oOutput2");
+}
 
 pattern referenceAssetCtrlUnit49Parameter__pParam1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit49.Parameter__pParam1(source, target);
-	        EClass.name(class, "CtrlUnit49");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Parameter__pParam1");
-	    }
+	CtrlUnit49.Parameter__pParam1(source, target);
+	EClass.name(class, "CtrlUnit49");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Parameter__pParam1");
+}
 
 pattern referenceAssetCtrlUnit49Parameter__pParam2(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit49.Parameter__pParam2(source, target);
-	        EClass.name(class, "CtrlUnit49");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Parameter__pParam2");
-	    }
+	CtrlUnit49.Parameter__pParam2(source, target);
+	EClass.name(class, "CtrlUnit49");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Parameter__pParam2");
+}
 
 pattern referenceAssetCtrlUnit49Parameter__pParam3(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit49.Parameter__pParam3(source, target);
-	        EClass.name(class, "CtrlUnit49");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Parameter__pParam3");
-	    }
+	CtrlUnit49.Parameter__pParam3(source, target);
+	EClass.name(class, "CtrlUnit49");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Parameter__pParam3");
+}
 
 pattern referenceAssetCtrlUnit49Parameter__pParam4(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit49.Parameter__pParam4(source, target);
-	        EClass.name(class, "CtrlUnit49");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Parameter__pParam4");
-	    }
+	CtrlUnit49.Parameter__pParam4(source, target);
+	EClass.name(class, "CtrlUnit49");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Parameter__pParam4");
+}
 
 pattern referenceAssetCtrlUnit49Fault__fFault1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit49.Fault__fFault1(source, target);
-	        EClass.name(class, "CtrlUnit49");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Fault__fFault1");
-	    }
+	CtrlUnit49.Fault__fFault1(source, target);
+	EClass.name(class, "CtrlUnit49");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Fault__fFault1");
+}
 
 pattern referenceAssetCtrlUnit49Timer__tTimer1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit49.Timer__tTimer1(source, target);
-	        EClass.name(class, "CtrlUnit49");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Timer__tTimer1");
-	    }
+	CtrlUnit49.Timer__tTimer1(source, target);
+	EClass.name(class, "CtrlUnit49");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Timer__tTimer1");
+}
 
 pattern referenceAssetCtrlUnit50Output__oOutput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit50.Output__oOutput1(source, target);
-	        EClass.name(class, "CtrlUnit50");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Output__oOutput1");
-	    }
+	CtrlUnit50.Output__oOutput1(source, target);
+	EClass.name(class, "CtrlUnit50");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Output__oOutput1");
+}
 
 pattern referenceAssetCtrlUnit50Fault__fFault1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit50.Fault__fFault1(source, target);
-	        EClass.name(class, "CtrlUnit50");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Fault__fFault1");
-	    }
+	CtrlUnit50.Fault__fFault1(source, target);
+	EClass.name(class, "CtrlUnit50");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Fault__fFault1");
+}
 
 pattern referenceAssetCtrlUnit58Input__iInput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit58.Input__iInput1(source, target);
-	        EClass.name(class, "CtrlUnit58");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput1");
-	    }
+	CtrlUnit58.Input__iInput1(source, target);
+	EClass.name(class, "CtrlUnit58");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput1");
+}
 
 pattern referenceAssetCtrlUnit58Output__oOutput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit58.Output__oOutput1(source, target);
-	        EClass.name(class, "CtrlUnit58");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Output__oOutput1");
-	    }
+	CtrlUnit58.Output__oOutput1(source, target);
+	EClass.name(class, "CtrlUnit58");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Output__oOutput1");
+}
 
 pattern referenceAssetCtrlUnit58Parameter__pParam1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit58.Parameter__pParam1(source, target);
-	        EClass.name(class, "CtrlUnit58");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Parameter__pParam1");
-	    }
+	CtrlUnit58.Parameter__pParam1(source, target);
+	EClass.name(class, "CtrlUnit58");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Parameter__pParam1");
+}
 
 pattern referenceAssetCtrlUnit59Input__iInput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit59.Input__iInput1(source, target);
-	        EClass.name(class, "CtrlUnit59");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput1");
-	    }
+	CtrlUnit59.Input__iInput1(source, target);
+	EClass.name(class, "CtrlUnit59");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput1");
+}
 
 pattern referenceAssetCtrlUnit59Output__oOutput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit59.Output__oOutput1(source, target);
-	        EClass.name(class, "CtrlUnit59");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Output__oOutput1");
-	    }
+	CtrlUnit59.Output__oOutput1(source, target);
+	EClass.name(class, "CtrlUnit59");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Output__oOutput1");
+}
 
 pattern referenceAssetCtrlUnit65Output__oOutput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit65.Output__oOutput1(source, target);
-	        EClass.name(class, "CtrlUnit65");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Output__oOutput1");
-	    }
+	CtrlUnit65.Output__oOutput1(source, target);
+	EClass.name(class, "CtrlUnit65");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Output__oOutput1");
+}
 
 pattern referenceAssetCtrlUnit65Fault__fFault1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit65.Fault__fFault1(source, target);
-	        EClass.name(class, "CtrlUnit65");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Fault__fFault1");
-	    }
+	CtrlUnit65.Fault__fFault1(source, target);
+	EClass.name(class, "CtrlUnit65");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Fault__fFault1");
+}
 
 pattern referenceAssetCtrlUnit68Input__iInput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit68.Input__iInput1(source, target);
-	        EClass.name(class, "CtrlUnit68");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput1");
-	    }
+	CtrlUnit68.Input__iInput1(source, target);
+	EClass.name(class, "CtrlUnit68");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput1");
+}
 
 pattern referenceAssetCtrlUnit68Input__iInput2(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit68.Input__iInput2(source, target);
-	        EClass.name(class, "CtrlUnit68");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput2");
-	    }
+	CtrlUnit68.Input__iInput2(source, target);
+	EClass.name(class, "CtrlUnit68");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput2");
+}
 
 pattern referenceAssetCtrlUnit68Output__oOutput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit68.Output__oOutput1(source, target);
-	        EClass.name(class, "CtrlUnit68");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Output__oOutput1");
-	    }
+	CtrlUnit68.Output__oOutput1(source, target);
+	EClass.name(class, "CtrlUnit68");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Output__oOutput1");
+}
 
 pattern referenceAssetCtrlUnit71Input__iInput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit71.Input__iInput1(source, target);
-	        EClass.name(class, "CtrlUnit71");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput1");
-	    }
+	CtrlUnit71.Input__iInput1(source, target);
+	EClass.name(class, "CtrlUnit71");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput1");
+}
 
 pattern referenceAssetCtrlUnit71Input__iInput2(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit71.Input__iInput2(source, target);
-	        EClass.name(class, "CtrlUnit71");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput2");
-	    }
+	CtrlUnit71.Input__iInput2(source, target);
+	EClass.name(class, "CtrlUnit71");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput2");
+}
 
 pattern referenceAssetCtrlUnit71Input__iInput3(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit71.Input__iInput3(source, target);
-	        EClass.name(class, "CtrlUnit71");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput3");
-	    }
+	CtrlUnit71.Input__iInput3(source, target);
+	EClass.name(class, "CtrlUnit71");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput3");
+}
 
 pattern referenceAssetCtrlUnit71Input__iInput4(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit71.Input__iInput4(source, target);
-	        EClass.name(class, "CtrlUnit71");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput4");
-	    }
+	CtrlUnit71.Input__iInput4(source, target);
+	EClass.name(class, "CtrlUnit71");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput4");
+}
 
 pattern referenceAssetCtrlUnit71Input__iInput5(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit71.Input__iInput5(source, target);
-	        EClass.name(class, "CtrlUnit71");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput5");
-	    }
+	CtrlUnit71.Input__iInput5(source, target);
+	EClass.name(class, "CtrlUnit71");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput5");
+}
 
 pattern referenceAssetCtrlUnit71Input__iInput6(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit71.Input__iInput6(source, target);
-	        EClass.name(class, "CtrlUnit71");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput6");
-	    }
+	CtrlUnit71.Input__iInput6(source, target);
+	EClass.name(class, "CtrlUnit71");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput6");
+}
 
 pattern referenceAssetCtrlUnit71Output__oOutput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit71.Output__oOutput1(source, target);
-	        EClass.name(class, "CtrlUnit71");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Output__oOutput1");
-	    }
+	CtrlUnit71.Output__oOutput1(source, target);
+	EClass.name(class, "CtrlUnit71");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Output__oOutput1");
+}
 
 pattern referenceAssetCtrlUnit71Output__oOutput2(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit71.Output__oOutput2(source, target);
-	        EClass.name(class, "CtrlUnit71");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Output__oOutput2");
-	    }
+	CtrlUnit71.Output__oOutput2(source, target);
+	EClass.name(class, "CtrlUnit71");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Output__oOutput2");
+}
 
 pattern referenceAssetCtrlUnit73Input__iInput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit73.Input__iInput1(source, target);
-	        EClass.name(class, "CtrlUnit73");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput1");
-	    }
+	CtrlUnit73.Input__iInput1(source, target);
+	EClass.name(class, "CtrlUnit73");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput1");
+}
 
 pattern referenceAssetCtrlUnit73Output__oOutput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit73.Output__oOutput1(source, target);
-	        EClass.name(class, "CtrlUnit73");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Output__oOutput1");
-	    }
+	CtrlUnit73.Output__oOutput1(source, target);
+	EClass.name(class, "CtrlUnit73");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Output__oOutput1");
+}
 
 pattern referenceAssetCtrlUnit78Input__iInput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit78.Input__iInput1(source, target);
-	        EClass.name(class, "CtrlUnit78");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput1");
-	    }
+	CtrlUnit78.Input__iInput1(source, target);
+	EClass.name(class, "CtrlUnit78");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput1");
+}
 
 pattern referenceAssetCtrlUnit78Input__iInput2(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit78.Input__iInput2(source, target);
-	        EClass.name(class, "CtrlUnit78");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput2");
-	    }
+	CtrlUnit78.Input__iInput2(source, target);
+	EClass.name(class, "CtrlUnit78");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput2");
+}
 
 pattern referenceAssetCtrlUnit78Output__oOutput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit78.Output__oOutput1(source, target);
-	        EClass.name(class, "CtrlUnit78");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Output__oOutput1");
-	    }
+	CtrlUnit78.Output__oOutput1(source, target);
+	EClass.name(class, "CtrlUnit78");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Output__oOutput1");
+}
 
 pattern referenceAssetCtrlUnit80Input__iInput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit80.Input__iInput1(source, target);
-	        EClass.name(class, "CtrlUnit80");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput1");
-	    }
+	CtrlUnit80.Input__iInput1(source, target);
+	EClass.name(class, "CtrlUnit80");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput1");
+}
 
 pattern referenceAssetCtrlUnit80Input__iInput2(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit80.Input__iInput2(source, target);
-	        EClass.name(class, "CtrlUnit80");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput2");
-	    }
+	CtrlUnit80.Input__iInput2(source, target);
+	EClass.name(class, "CtrlUnit80");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput2");
+}
 
 pattern referenceAssetCtrlUnit80Input__iInput3(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit80.Input__iInput3(source, target);
-	        EClass.name(class, "CtrlUnit80");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput3");
-	    }
+	CtrlUnit80.Input__iInput3(source, target);
+	EClass.name(class, "CtrlUnit80");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput3");
+}
 
 pattern referenceAssetCtrlUnit80Input__iInput4(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit80.Input__iInput4(source, target);
-	        EClass.name(class, "CtrlUnit80");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput4");
-	    }
+	CtrlUnit80.Input__iInput4(source, target);
+	EClass.name(class, "CtrlUnit80");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput4");
+}
 
 pattern referenceAssetCtrlUnit80Input__iInput5(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit80.Input__iInput5(source, target);
-	        EClass.name(class, "CtrlUnit80");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput5");
-	    }
+	CtrlUnit80.Input__iInput5(source, target);
+	EClass.name(class, "CtrlUnit80");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput5");
+}
 
 pattern referenceAssetCtrlUnit80Output__oOutput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit80.Output__oOutput1(source, target);
-	        EClass.name(class, "CtrlUnit80");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Output__oOutput1");
-	    }
+	CtrlUnit80.Output__oOutput1(source, target);
+	EClass.name(class, "CtrlUnit80");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Output__oOutput1");
+}
 
 pattern referenceAssetCtrlUnit92Input__iInput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit92.Input__iInput1(source, target);
-	        EClass.name(class, "CtrlUnit92");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput1");
-	    }
+	CtrlUnit92.Input__iInput1(source, target);
+	EClass.name(class, "CtrlUnit92");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput1");
+}
 
 pattern referenceAssetCtrlUnit92Input__iInput2(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit92.Input__iInput2(source, target);
-	        EClass.name(class, "CtrlUnit92");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput2");
-	    }
+	CtrlUnit92.Input__iInput2(source, target);
+	EClass.name(class, "CtrlUnit92");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput2");
+}
 
 pattern referenceAssetCtrlUnit92Parameter__pParam1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit92.Parameter__pParam1(source, target);
-	        EClass.name(class, "CtrlUnit92");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Parameter__pParam1");
-	    }
+	CtrlUnit92.Parameter__pParam1(source, target);
+	EClass.name(class, "CtrlUnit92");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Parameter__pParam1");
+}
 
 pattern referenceAssetCtrlUnit92Parameter__pParam2(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit92.Parameter__pParam2(source, target);
-	        EClass.name(class, "CtrlUnit92");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Parameter__pParam2");
-	    }
+	CtrlUnit92.Parameter__pParam2(source, target);
+	EClass.name(class, "CtrlUnit92");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Parameter__pParam2");
+}
 
 pattern referenceAssetCtrlUnit92Fault__fFault1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit92.Fault__fFault1(source, target);
-	        EClass.name(class, "CtrlUnit92");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Fault__fFault1");
-	    }
+	CtrlUnit92.Fault__fFault1(source, target);
+	EClass.name(class, "CtrlUnit92");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Fault__fFault1");
+}
 
 pattern referenceAssetCtrlUnit94Input__iInput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit94.Input__iInput1(source, target);
-	        EClass.name(class, "CtrlUnit94");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput1");
-	    }
+	CtrlUnit94.Input__iInput1(source, target);
+	EClass.name(class, "CtrlUnit94");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput1");
+}
 
 pattern referenceAssetCtrlUnit94Output__oOutput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit94.Output__oOutput1(source, target);
-	        EClass.name(class, "CtrlUnit94");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Output__oOutput1");
-	    }
+	CtrlUnit94.Output__oOutput1(source, target);
+	EClass.name(class, "CtrlUnit94");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Output__oOutput1");
+}
 
 pattern referenceAssetCtrlUnit102Input__iInput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit102.Input__iInput1(source, target);
-	        EClass.name(class, "CtrlUnit102");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput1");
-	    }
+	CtrlUnit102.Input__iInput1(source, target);
+	EClass.name(class, "CtrlUnit102");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput1");
+}
 
 pattern referenceAssetCtrlUnit102Input__iInput2(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit102.Input__iInput2(source, target);
-	        EClass.name(class, "CtrlUnit102");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput2");
-	    }
+	CtrlUnit102.Input__iInput2(source, target);
+	EClass.name(class, "CtrlUnit102");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput2");
+}
 
 pattern referenceAssetCtrlUnit102Output__oOutput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit102.Output__oOutput1(source, target);
-	        EClass.name(class, "CtrlUnit102");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Output__oOutput1");
-	    }
+	CtrlUnit102.Output__oOutput1(source, target);
+	EClass.name(class, "CtrlUnit102");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Output__oOutput1");
+}
 
 pattern referenceAssetCtrlUnit102Fault__fFault1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit102.Fault__fFault1(source, target);
-	        EClass.name(class, "CtrlUnit102");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Fault__fFault1");
-	    }
+	CtrlUnit102.Fault__fFault1(source, target);
+	EClass.name(class, "CtrlUnit102");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Fault__fFault1");
+}
 
 pattern referenceAssetCtrlUnit124Input__iInput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit124.Input__iInput1(source, target);
-	        EClass.name(class, "CtrlUnit124");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput1");
-	    }
+	CtrlUnit124.Input__iInput1(source, target);
+	EClass.name(class, "CtrlUnit124");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput1");
+}
 
 pattern referenceAssetCtrlUnit124Input__iInput2(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit124.Input__iInput2(source, target);
-	        EClass.name(class, "CtrlUnit124");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput2");
-	    }
+	CtrlUnit124.Input__iInput2(source, target);
+	EClass.name(class, "CtrlUnit124");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput2");
+}
 
 pattern referenceAssetCtrlUnit124Output__oOutput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit124.Output__oOutput1(source, target);
-	        EClass.name(class, "CtrlUnit124");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Output__oOutput1");
-	    }
+	CtrlUnit124.Output__oOutput1(source, target);
+	EClass.name(class, "CtrlUnit124");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Output__oOutput1");
+}
 
 pattern referenceAssetCtrlUnit125Input__iInput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit125.Input__iInput1(source, target);
-	        EClass.name(class, "CtrlUnit125");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput1");
-	    }
+	CtrlUnit125.Input__iInput1(source, target);
+	EClass.name(class, "CtrlUnit125");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput1");
+}
 
 pattern referenceAssetCtrlUnit125Output__oOutput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit125.Output__oOutput1(source, target);
-	        EClass.name(class, "CtrlUnit125");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Output__oOutput1");
-	    }
+	CtrlUnit125.Output__oOutput1(source, target);
+	EClass.name(class, "CtrlUnit125");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Output__oOutput1");
+}
 
 pattern referenceAssetCtrlUnit125Parameter__pParam1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit125.Parameter__pParam1(source, target);
-	        EClass.name(class, "CtrlUnit125");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Parameter__pParam1");
-	    }
+	CtrlUnit125.Parameter__pParam1(source, target);
+	EClass.name(class, "CtrlUnit125");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Parameter__pParam1");
+}
 
 pattern referenceAssetCtrlUnit125Parameter__pParam2(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit125.Parameter__pParam2(source, target);
-	        EClass.name(class, "CtrlUnit125");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Parameter__pParam2");
-	    }
+	CtrlUnit125.Parameter__pParam2(source, target);
+	EClass.name(class, "CtrlUnit125");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Parameter__pParam2");
+}
 
 pattern referenceAssetCtrlUnit126Input__iInput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit126.Input__iInput1(source, target);
-	        EClass.name(class, "CtrlUnit126");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput1");
-	    }
+	CtrlUnit126.Input__iInput1(source, target);
+	EClass.name(class, "CtrlUnit126");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput1");
+}
 
 pattern referenceAssetCtrlUnit126Input__iInput2(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit126.Input__iInput2(source, target);
-	        EClass.name(class, "CtrlUnit126");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Input__iInput2");
-	    }
+	CtrlUnit126.Input__iInput2(source, target);
+	EClass.name(class, "CtrlUnit126");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Input__iInput2");
+}
 
 pattern referenceAssetCtrlUnit126Output__oOutput1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit126.Output__oOutput1(source, target);
-	        EClass.name(class, "CtrlUnit126");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Output__oOutput1");
-	    }
+	CtrlUnit126.Output__oOutput1(source, target);
+	EClass.name(class, "CtrlUnit126");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Output__oOutput1");
+}
 
 pattern referenceAssetCtrlUnit126Output__oOutput2(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit126.Output__oOutput2(source, target);
-	        EClass.name(class, "CtrlUnit126");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Output__oOutput2");
-	    }
+	CtrlUnit126.Output__oOutput2(source, target);
+	EClass.name(class, "CtrlUnit126");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Output__oOutput2");
+}
 
 pattern referenceAssetCtrlUnit126Parameter__pParam1(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit126.Parameter__pParam1(source, target);
-	        EClass.name(class, "CtrlUnit126");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Parameter__pParam1");
-	    }
+	CtrlUnit126.Parameter__pParam1(source, target);
+	EClass.name(class, "CtrlUnit126");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Parameter__pParam1");
+}
 
 pattern referenceAssetCtrlUnit126Parameter__pParam2(source : EObject, target : EObject, reference : EReference)
 {
-	        CtrlUnit126.Parameter__pParam2(source, target);
-	        EClass.name(class, "CtrlUnit126");
-	        EClass.eStructuralFeatures(class, reference);
-	        EReference.name(reference, "Parameter__pParam2");
-	    }
+	CtrlUnit126.Parameter__pParam2(source, target);
+	EClass.name(class, "CtrlUnit126");
+	EClass.eStructuralFeatures(class, reference);
+	EReference.name(reference, "Parameter__pParam2");
+}
 
 pattern containmentReference(source : EObject, target : EObject, reference : EReference) {
 	find referenceAsset(source, target, reference);
@@ -2026,4 +2026,113 @@ pattern contains(container: EObject, contained: EObject) {
 	Subsystem.itsWTCs(container, contained);
 	} or {
 	Subsystem.itsSubsystems(container, contained);
+}
+
+pattern objectAsset(object: EObject) {
+	WT(object);
+	} or {
+	SystemInput(object);
+	} or {
+	SystemOutput(object);
+	} or {
+	SystemFault(object);
+	} or {
+	SystemParam(object);
+	} or {
+	SystemTimer(object);
+	} or {
+	SystemVariable(object);
+	} or {
+	WTCInput(object);
+	} or {
+	WTCOutput(object);
+	} or {
+	WTCParam(object);
+	} or {
+	WTCTimer(object);
+	} or {
+	WTCFault(object);
+	} or {
+	Subsystem(object);
+	} or {
+	wtc(object);
+	} or {
+	CtrlUnit5(object);
+	} or {
+	CtrlUnit9(object);
+	} or {
+	CtrlUnit10(object);
+	} or {
+	CtrlUnit11(object);
+	} or {
+	CtrlUnit13(object);
+	} or {
+	CtrlUnit15(object);
+	} or {
+	CtrlUnit18(object);
+	} or {
+	CtrlUnit27(object);
+	} or {
+	CtrlUnit29(object);
+	} or {
+	CtrlUnit31(object);
+	} or {
+	CtrlUnit34(object);
+	} or {
+	CtrlUnit36(object);
+	} or {
+	CtrlUnit37(object);
+	} or {
+	CtrlUnit39(object);
+	} or {
+	CtrlUnit40(object);
+	} or {
+	CtrlUnit44(object);
+	} or {
+	CtrlUnit46(object);
+	} or {
+	CtrlUnit47(object);
+	} or {
+	CtrlUnit49(object);
+	} or {
+	CtrlUnit50(object);
+	} or {
+	CtrlUnit58(object);
+	} or {
+	CtrlUnit59(object);
+	} or {
+	CtrlUnit65(object);
+	} or {
+	CtrlUnit68(object);
+	} or {
+	CtrlUnit71(object);
+	} or {
+	CtrlUnit73(object);
+	} or {
+	CtrlUnit78(object);
+	} or {
+	CtrlUnit80(object);
+	} or {
+	CtrlUnit92(object);
+	} or {
+	CtrlUnit94(object);
+	} or {
+	CtrlUnit102(object);
+	} or {
+	CtrlUnit124(object);
+	} or {
+	CtrlUnit125(object);
+	} or {
+	CtrlUnit126(object);
+	} or {
+	MainSubsystem(object);
+}
+
+pattern root(object: EObject) {
+    WT(object);
+}
+
+pattern objectAssetWithoutRoot(object: EObject) {
+	find objectAsset(object);
+	neg find root(object);
 }

@@ -33,6 +33,7 @@ import org.mondo.collaboration.security.increment.policy.util.WeakConsequenceOnR
  * pattern weakConsequenceOnReference(user: java String, source: EObject, target: EObject, reference: EReference, operation, access)
  * {
  * 	find effectiveJudgementOnObject_at_1(user, source, operation, access);
+ * 	neg find effectiveJudgementOnObject_at_1(user, source, operation, AccessibilityLevel::OBFUSCATE);
  * 	find referenceAsset(source, target, reference);
  * }
  * </pre></code>

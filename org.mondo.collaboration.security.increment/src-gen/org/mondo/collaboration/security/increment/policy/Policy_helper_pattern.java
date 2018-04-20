@@ -9,21 +9,29 @@ import org.eclipse.viatra.query.runtime.exception.ViatraQueryException;
 import org.mondo.collaboration.security.increment.policy.AllUsersMatcher;
 import org.mondo.collaboration.security.increment.policy.EnableIOAssetMatcher;
 import org.mondo.collaboration.security.increment.policy.EnableIOUserMatcher;
+import org.mondo.collaboration.security.increment.policy.EnableNonIOAssetMatcher;
+import org.mondo.collaboration.security.increment.policy.EnableNonIOUserMatcher;
+import org.mondo.collaboration.security.increment.policy.EnableNonRootAssetMatcher;
+import org.mondo.collaboration.security.increment.policy.EnableNonRootUserMatcher;
 import org.mondo.collaboration.security.increment.policy.ReadWriteOperationMatcher;
 import org.mondo.collaboration.security.increment.policy.RestrictIOAssetMatcher;
 import org.mondo.collaboration.security.increment.policy.RestrictIOUserMatcher;
-import org.mondo.collaboration.security.increment.policy.RestrictNotIOAssetMatcher;
-import org.mondo.collaboration.security.increment.policy.RestrictNotIOUserMatcher;
+import org.mondo.collaboration.security.increment.policy.RestrictNonIOAssetMatcher;
+import org.mondo.collaboration.security.increment.policy.RestrictNonIOUserMatcher;
 import org.mondo.collaboration.security.increment.policy.RestrictRootAssetMatcher;
 import org.mondo.collaboration.security.increment.policy.RestrictRootUserMatcher;
 import org.mondo.collaboration.security.increment.policy.util.AllUsersQuerySpecification;
 import org.mondo.collaboration.security.increment.policy.util.EnableIOAssetQuerySpecification;
 import org.mondo.collaboration.security.increment.policy.util.EnableIOUserQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.EnableNonIOAssetQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.EnableNonIOUserQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.EnableNonRootAssetQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.EnableNonRootUserQuerySpecification;
 import org.mondo.collaboration.security.increment.policy.util.ReadWriteOperationQuerySpecification;
 import org.mondo.collaboration.security.increment.policy.util.RestrictIOAssetQuerySpecification;
 import org.mondo.collaboration.security.increment.policy.util.RestrictIOUserQuerySpecification;
-import org.mondo.collaboration.security.increment.policy.util.RestrictNotIOAssetQuerySpecification;
-import org.mondo.collaboration.security.increment.policy.util.RestrictNotIOUserQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.RestrictNonIOAssetQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.RestrictNonIOUserQuerySpecification;
 import org.mondo.collaboration.security.increment.policy.util.RestrictRootAssetQuerySpecification;
 import org.mondo.collaboration.security.increment.policy.util.RestrictRootUserQuerySpecification;
 
@@ -38,10 +46,14 @@ import org.mondo.collaboration.security.increment.policy.util.RestrictRootUserQu
  * <li>readWriteOperation</li>
  * <li>restrictRootAsset</li>
  * <li>restrictRootUser</li>
+ * <li>enableNonRootAsset</li>
+ * <li>enableNonRootUser</li>
  * <li>enableIOAsset</li>
  * <li>enableIOUser</li>
- * <li>restrictNotIOAsset</li>
- * <li>restrictNotIOUser</li>
+ * <li>restrictNonIOAsset</li>
+ * <li>restrictNonIOUser</li>
+ * <li>enableNonIOAsset</li>
+ * <li>enableNonIOUser</li>
  * <li>restrictIOAsset</li>
  * <li>restrictIOUser</li>
  * <li>allUsers</li>
@@ -72,10 +84,14 @@ public final class Policy_helper_pattern extends BaseGeneratedPatternGroup {
     querySpecifications.add(ReadWriteOperationQuerySpecification.instance());
     querySpecifications.add(RestrictRootAssetQuerySpecification.instance());
     querySpecifications.add(RestrictRootUserQuerySpecification.instance());
+    querySpecifications.add(EnableNonRootAssetQuerySpecification.instance());
+    querySpecifications.add(EnableNonRootUserQuerySpecification.instance());
     querySpecifications.add(EnableIOAssetQuerySpecification.instance());
     querySpecifications.add(EnableIOUserQuerySpecification.instance());
-    querySpecifications.add(RestrictNotIOAssetQuerySpecification.instance());
-    querySpecifications.add(RestrictNotIOUserQuerySpecification.instance());
+    querySpecifications.add(RestrictNonIOAssetQuerySpecification.instance());
+    querySpecifications.add(RestrictNonIOUserQuerySpecification.instance());
+    querySpecifications.add(EnableNonIOAssetQuerySpecification.instance());
+    querySpecifications.add(EnableNonIOUserQuerySpecification.instance());
     querySpecifications.add(RestrictIOAssetQuerySpecification.instance());
     querySpecifications.add(RestrictIOUserQuerySpecification.instance());
     querySpecifications.add(AllUsersQuerySpecification.instance());
@@ -105,6 +121,22 @@ public final class Policy_helper_pattern extends BaseGeneratedPatternGroup {
     return RestrictRootUserMatcher.on(engine);
   }
   
+  public EnableNonRootAssetQuerySpecification getEnableNonRootAsset() throws ViatraQueryException {
+    return EnableNonRootAssetQuerySpecification.instance();
+  }
+  
+  public EnableNonRootAssetMatcher getEnableNonRootAsset(final ViatraQueryEngine engine) throws ViatraQueryException {
+    return EnableNonRootAssetMatcher.on(engine);
+  }
+  
+  public EnableNonRootUserQuerySpecification getEnableNonRootUser() throws ViatraQueryException {
+    return EnableNonRootUserQuerySpecification.instance();
+  }
+  
+  public EnableNonRootUserMatcher getEnableNonRootUser(final ViatraQueryEngine engine) throws ViatraQueryException {
+    return EnableNonRootUserMatcher.on(engine);
+  }
+  
   public EnableIOAssetQuerySpecification getEnableIOAsset() throws ViatraQueryException {
     return EnableIOAssetQuerySpecification.instance();
   }
@@ -121,20 +153,36 @@ public final class Policy_helper_pattern extends BaseGeneratedPatternGroup {
     return EnableIOUserMatcher.on(engine);
   }
   
-  public RestrictNotIOAssetQuerySpecification getRestrictNotIOAsset() throws ViatraQueryException {
-    return RestrictNotIOAssetQuerySpecification.instance();
+  public RestrictNonIOAssetQuerySpecification getRestrictNonIOAsset() throws ViatraQueryException {
+    return RestrictNonIOAssetQuerySpecification.instance();
   }
   
-  public RestrictNotIOAssetMatcher getRestrictNotIOAsset(final ViatraQueryEngine engine) throws ViatraQueryException {
-    return RestrictNotIOAssetMatcher.on(engine);
+  public RestrictNonIOAssetMatcher getRestrictNonIOAsset(final ViatraQueryEngine engine) throws ViatraQueryException {
+    return RestrictNonIOAssetMatcher.on(engine);
   }
   
-  public RestrictNotIOUserQuerySpecification getRestrictNotIOUser() throws ViatraQueryException {
-    return RestrictNotIOUserQuerySpecification.instance();
+  public RestrictNonIOUserQuerySpecification getRestrictNonIOUser() throws ViatraQueryException {
+    return RestrictNonIOUserQuerySpecification.instance();
   }
   
-  public RestrictNotIOUserMatcher getRestrictNotIOUser(final ViatraQueryEngine engine) throws ViatraQueryException {
-    return RestrictNotIOUserMatcher.on(engine);
+  public RestrictNonIOUserMatcher getRestrictNonIOUser(final ViatraQueryEngine engine) throws ViatraQueryException {
+    return RestrictNonIOUserMatcher.on(engine);
+  }
+  
+  public EnableNonIOAssetQuerySpecification getEnableNonIOAsset() throws ViatraQueryException {
+    return EnableNonIOAssetQuerySpecification.instance();
+  }
+  
+  public EnableNonIOAssetMatcher getEnableNonIOAsset(final ViatraQueryEngine engine) throws ViatraQueryException {
+    return EnableNonIOAssetMatcher.on(engine);
+  }
+  
+  public EnableNonIOUserQuerySpecification getEnableNonIOUser() throws ViatraQueryException {
+    return EnableNonIOUserQuerySpecification.instance();
+  }
+  
+  public EnableNonIOUserMatcher getEnableNonIOUser(final ViatraQueryEngine engine) throws ViatraQueryException {
+    return EnableNonIOUserMatcher.on(engine);
   }
   
   public RestrictIOAssetQuerySpecification getRestrictIOAsset() throws ViatraQueryException {

@@ -25,7 +25,7 @@ import org.eclipse.viatra.query.runtime.matchers.tuple.FlatTuple;
 import org.eclipse.viatra.query.runtime.matchers.tuple.Tuples;
 import org.mondo.collaboration.security.increment.policy.RestrictRootAssetMatch;
 import org.mondo.collaboration.security.increment.policy.RestrictRootAssetMatcher;
-import org.mondo.collaboration.security.increment.policy.util.ObjectRootQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.FindRootQuerySpecification;
 
 /**
  * A pattern-specific query specification that can instantiate RestrictRootAssetMatcher in a type-safe way.
@@ -102,9 +102,9 @@ public final class RestrictRootAssetQuerySpecification extends BaseGeneratedEMFQ
   private static class GeneratedPQuery extends BaseGeneratedEMFPQuery {
     private final static RestrictRootAssetQuerySpecification.GeneratedPQuery INSTANCE = new GeneratedPQuery();
     
-    private final PParameter parameter_pRoot = new PParameter("root", "org.eclipse.emf.ecore.EObject", new EClassTransitiveInstancesKey((EClass)getClassifierLiteralSafe("http://www.eclipse.org/emf/2002/Ecore", "EObject")), PParameterDirection.INOUT);
+    private final PParameter parameter_pObject = new PParameter("object", "org.eclipse.emf.ecore.EObject", new EClassTransitiveInstancesKey((EClass)getClassifierLiteralSafe("http://www.eclipse.org/emf/2002/Ecore", "EObject")), PParameterDirection.INOUT);
     
-    private final List<PParameter> parameters = Arrays.asList(parameter_pRoot);
+    private final List<PParameter> parameters = Arrays.asList(parameter_pObject);
     
     @Override
     public String getFullyQualifiedName() {
@@ -113,7 +113,7 @@ public final class RestrictRootAssetQuerySpecification extends BaseGeneratedEMFQ
     
     @Override
     public List<String> getParameterNames() {
-      return Arrays.asList("root");
+      return Arrays.asList("object");
     }
     
     @Override
@@ -127,13 +127,13 @@ public final class RestrictRootAssetQuerySpecification extends BaseGeneratedEMFQ
       try {
           {
               PBody body = new PBody(this);
-              PVariable var_root = body.getOrCreateVariableByName("root");
-              new TypeConstraint(body, Tuples.flatTupleOf(var_root), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              PVariable var_object = body.getOrCreateVariableByName("object");
+              new TypeConstraint(body, Tuples.flatTupleOf(var_object), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
               body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-                 new ExportedParameter(body, var_root, parameter_pRoot)
+                 new ExportedParameter(body, var_object, parameter_pObject)
               ));
-              //     	    find objectRoot(root)
-              new PositivePatternCall(body, new FlatTuple(var_root), ObjectRootQuerySpecification.instance().getInternalQueryRepresentation());
+              //     	    find findRoot(object)
+              new PositivePatternCall(body, new FlatTuple(var_object), FindRootQuerySpecification.instance().getInternalQueryRepresentation());
               bodies.add(body);
           }
       } catch (ViatraQueryException ex) {

@@ -30,7 +30,7 @@ import org.mondo.collaboration.security.increment.policy.util.EnableIOAssetQuery
  * <p>Original source:
  * <code><pre>
  * pattern enableIOAsset(object : EObject) {
- *     	    find objectIO(object);
+ *     	    find inputOutput(object);
  * }
  * </pre></code>
  * 

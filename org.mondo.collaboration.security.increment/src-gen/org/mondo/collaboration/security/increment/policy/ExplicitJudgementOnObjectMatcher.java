@@ -43,6 +43,15 @@ import org.mondo.collaboration.security.increment.policy.util.ExplicitJudgementO
  * 
  * } or {
  * 
+ * //  rule enableNonRoot
+ *     find enableNonRootAsset(object);
+ *     find enableNonRootUser(user);
+ *     find readWriteOperation(operation);
+ *     access == AccessibilityLevel::ALLOW;
+ *     priority == 1;
+ * 
+ * } or {
+ * 
  * //  rule enableIO
  *     find enableIOAsset(object);
  *     find enableIOUser(user);
@@ -52,11 +61,20 @@ import org.mondo.collaboration.security.increment.policy.util.ExplicitJudgementO
  * 
  * } or {
  * 
- * //  rule restrictNotIO
- *     find restrictNotIOAsset(object);
- *     find restrictNotIOUser(user);
+ * //  rule restrictNonIO
+ *     find restrictNonIOAsset(object);
+ *     find restrictNonIOUser(user);
  *     operation == OperationType::READ;
  *     access == AccessibilityLevel::DENY;
+ *     priority == 1;
+ * 
+ * } or {
+ * 
+ * //  rule enableNonIO
+ *     find enableNonIOAsset(object);
+ *     find enableNonIOUser(user);
+ *     find readWriteOperation(operation);
+ *     access == AccessibilityLevel::ALLOW;
  *     priority == 1;
  * 
  * } or {
@@ -71,7 +89,7 @@ import org.mondo.collaboration.security.increment.policy.util.ExplicitJudgementO
  * } or {
  * 
  * //  rule default
- *     find objectAllObjects(object);
+ *     find objectAsset(object);
  *     find allUsers(user);
  *     find readWriteOperation(operation);
  *     access == AccessibilityLevel::ALLOW;

@@ -47,10 +47,9 @@ import WTSpec4M.WTSpec4MPackage;
 
 public class Application {
 	private final static Logger logger = Logger.getLogger(Application.class);
-	
 
     private static final String MODEL_PATH = 
-    "C:\\Bulisuli\\1\\Onlab1\\Onlab1\\org.mondo.collaboration.security.increment\\src\\org\\mondo\\collaboration\\security\\increment\\model\\windturbineM.wtspec4m";
+    "C:\\Bulisuli\\1\\Onlab1\\Onlab1\\org.mondo.collaboration.security.increment\\src\\org\\mondo\\collaboration\\security\\increment\\model\\windturbineL.wtspec4m";
     private static final String METAMODEL_PATH = "C:\\Bulisuli\\1\\Onlab1\\Onlab1\\org.mondo.wt.cstudy.metamodel\\WTSpec4M.ecore";
 	
 	public static void main(String[] args) throws ViatraQueryException, IOException {
@@ -65,97 +64,77 @@ public class Application {
 		
 		countAssets(model);
 		
-		int numOfEff = 0;
-		
 		ViatraQueryEngine engine = AdvancedViatraQueryEngine.on(new EMFScope(resourceSet));
-		numOfEff += listObjectJudgements(engine);
-		numOfEff += listAttributeJudgements(engine);
-		numOfEff += listReferenceJudgements(engine);
 		
-		logger.info("Number of effective judgements: " + numOfEff);
+//		String user = "PrincipalEngineer";
+//		String user = "SubsystemManager";
+		String user = "IOManager";
 		
-//		listExplicitAttributeJudgements(engine, numOfEff);
-//		listAttributeAssets(engine, numOfEff);
+		int numOfEff = 0;
+		numOfEff += listEffectiveJudgementsOnObjects(engine, user);
+		numOfEff += listEffectiveJudgementsOnAttributes(engine, user);
+		numOfEff += listEffectiveJudgementsOnReferences(engine, user);
+		logger.info("All judgements: " + numOfEff);
 	}
-
-	private static void listAttributeAssets(ViatraQueryEngine engine, int numOfEff) throws ViatraQueryException {
-		AttributeAssetMatcher matcher = AttributeAssetQuerySpecification.instance().getMatcher(engine);
-		matcher.forEachMatch(new IMatchProcessor<AttributeAssetMatch>() {
-
-			@Override
-			public void process(AttributeAssetMatch match) {
-				logger.info(match);
-			}
-		});
-	}
-
-	private static void listExplicitAttributeJudgements(ViatraQueryEngine engine, int numOfEff) throws ViatraQueryException {
-		ExplicitJudgementOnAttributeQuerySpecification querySpecification = ExplicitJudgementOnAttributeQuerySpecification.instance();
-		ExplicitJudgementOnAttributeMatcher matcher = engine.getMatcher(querySpecification);
+	
+	private static int listEffectiveJudgementsOnObjects(ViatraQueryEngine engine, String user) throws ViatraQueryException {
+		EffectiveJudgementOnObjectQuerySpecification querySpecification = EffectiveJudgementOnObjectQuerySpecification.instance();
+		EffectiveJudgementOnObjectMatcher matcher = engine.getMatcher(querySpecification);
+		EffectiveJudgementOnObjectMatch filter = matcher.newEmptyMatch();
+		filter.setUser(user);
+		int numOfEff = matcher.countMatches(filter);
+		logger.info("Object judgements: " + numOfEff);
 		
-		ExplicitJudgementOnAttributeMatch filter = matcher.newEmptyMatch();
-		filter.setUser("IOManager");
-		sortAndPrintMatches(matcher, filter);
-	}
-
-	private static void sortAndPrintMatches(ExplicitJudgementOnAttributeMatcher matcher,
-			ExplicitJudgementOnAttributeMatch filter) {
-		logger.info("Number of explicit judgements: " + matcher.countMatches(filter));
 		final List<IPatternMatch> matches = Lists.newArrayList();
-		matcher.forEachMatch(filter, new IMatchProcessor<ExplicitJudgementOnAttributeMatch>() {
-
+		matcher.forEachMatch(filter, new IMatchProcessor<EffectiveJudgementOnObjectMatch>() {
 			@Override
-			public void process(ExplicitJudgementOnAttributeMatch match) {
+			public void process(EffectiveJudgementOnObjectMatch match) {
 				matches.add(match);
 			}
 		});
-		
-		matches.sort(new Comparator<IPatternMatch>() {
-
-			@Override
-			public int compare(IPatternMatch o1, IPatternMatch o2) {
-				return o1.get(3).toString().compareTo(o2.get(3).toString());
-			}
-		});
-		for (IPatternMatch match : matches) {
-			System.out.println(match);
-		}
-	}
-
-	private static int listReferenceJudgements(ViatraQueryEngine engine) throws ViatraQueryException {
-		EffectiveJudgementOnReferenceQuerySpecification querySpecificationOnReference = EffectiveJudgementOnReferenceQuerySpecification.instance();
-		EffectiveJudgementOnReferenceMatcher matcherOnReference = engine.getMatcher(querySpecificationOnReference);
-		EffectiveJudgementOnReferenceMatch filterOnReference = matcherOnReference.newEmptyMatch();
-		filterOnReference.setUser("IOManager");
-		int numOfEff = matcherOnReference.countMatches(filterOnReference);
-		logger.info("Number of effective references: " + numOfEff);
-		matcherOnReference.forEachMatch(filterOnReference, new IMatchProcessor<EffectiveJudgementOnReferenceMatch>() {
-
-			@Override
-			public void process(EffectiveJudgementOnReferenceMatch match) {
-				logger.info(match);
-			}
-		});
-		
+		sortAndPrintMatches(matches);
 		return numOfEff;
 	}
-
-	private static int listAttributeJudgements(ViatraQueryEngine engine) throws ViatraQueryException {
-		EffectiveJudgementOnAttributeQuerySpecification querySpecificationOnAttribute = EffectiveJudgementOnAttributeQuerySpecification.instance();
-		EffectiveJudgementOnAttributeMatcher matcherOnAttribute = engine.getMatcher(querySpecificationOnAttribute);
-		EffectiveJudgementOnAttributeMatch filterOnAttribute = matcherOnAttribute.newEmptyMatch();
-		filterOnAttribute.setUser("IOManager");
-	    int numOfEff = matcherOnAttribute.countMatches(filterOnAttribute);
-		logger.info("Number of effective attributes: " + numOfEff);
+	
+	private static int listEffectiveJudgementsOnAttributes(ViatraQueryEngine engine, String user) throws ViatraQueryException {
+		EffectiveJudgementOnAttributeQuerySpecification querySpecification = EffectiveJudgementOnAttributeQuerySpecification.instance();
+		EffectiveJudgementOnAttributeMatcher matcher = engine.getMatcher(querySpecification);
+		EffectiveJudgementOnAttributeMatch filter = matcher.newEmptyMatch();
+		filter.setUser(user);
+	    int numOfEff = matcher.countMatches(filter);
+		logger.info("Attribute judgements: " + numOfEff);
 		
 		final List<IPatternMatch> matches = Lists.newArrayList();
-		matcherOnAttribute.forEachMatch(filterOnAttribute, new IMatchProcessor<EffectiveJudgementOnAttributeMatch>() {
-
+		matcher.forEachMatch(filter, new IMatchProcessor<EffectiveJudgementOnAttributeMatch>() {
 			@Override
 			public void process(EffectiveJudgementOnAttributeMatch match) {
 				matches.add(match);
 			}
 		});
+		sortAndPrintMatches(matches);
+		return numOfEff;
+	}
+	
+	private static int listEffectiveJudgementsOnReferences(ViatraQueryEngine engine, String user) throws ViatraQueryException {
+		EffectiveJudgementOnReferenceQuerySpecification querySpecification = EffectiveJudgementOnReferenceQuerySpecification.instance();
+		EffectiveJudgementOnReferenceMatcher matcher = engine.getMatcher(querySpecification);
+		EffectiveJudgementOnReferenceMatch filter = matcher.newEmptyMatch();
+		filter.setUser(user);
+		int numOfEff = matcher.countMatches(filter);
+		logger.info("Reference judgements: " + numOfEff);
+		
+		final List<IPatternMatch> matches = Lists.newArrayList();
+		matcher.forEachMatch(filter, new IMatchProcessor<EffectiveJudgementOnReferenceMatch>() {
+			@Override
+			public void process(EffectiveJudgementOnReferenceMatch match) {
+				matches.add(match);
+			}
+		});
+		sortAndPrintMatches(matches);
+		return numOfEff;
+	}
+
+	private static void sortAndPrintMatches(List<IPatternMatch> matches) {
 		matches.sort(new Comparator<IPatternMatch>() {
 
 			@Override
@@ -163,29 +142,10 @@ public class Application {
 				return o1.get(1).toString().compareTo(o2.get(1).toString());
 			}
 		});
+		
 		for (IPatternMatch match : matches) {
 			logger.info(match);
 		}
-		
-		return numOfEff;
-	}
-
-	private static int listObjectJudgements(ViatraQueryEngine engine) throws ViatraQueryException {
-		EffectiveJudgementOnObjectQuerySpecification querySpecificationOnObject = EffectiveJudgementOnObjectQuerySpecification.instance();
-		EffectiveJudgementOnObjectMatcher matcherOnObject = engine.getMatcher(querySpecificationOnObject);
-		EffectiveJudgementOnObjectMatch filterOnObject = matcherOnObject.newEmptyMatch();
-		filterOnObject.setUser("IOManager");
-		int numOfEff = matcherOnObject.countMatches(filterOnObject);
-		logger.info("Number of effective objects: " + numOfEff);
-		
-		matcherOnObject.forEachMatch(filterOnObject, new IMatchProcessor<EffectiveJudgementOnObjectMatch>() {
-			@Override
-			public void process(EffectiveJudgementOnObjectMatch match) {
-				logger.info(match);
-			}
-		});
-		
-		return numOfEff;
 	}
 
 	private static void countAssets(Resource model) {
@@ -222,10 +182,9 @@ public class Application {
     			}
 			}
 		}
-		logger.info("Number of objects: " + numOfObj);
-		logger.info("Number of attributes: " + numOfAttr);
-		logger.info("Number of references: " + numOfRef);
-		
-		logger.info("Number of assets: " + (numOfObj + numOfAttr + numOfRef));
+		logger.info("Objects: " + numOfObj);
+		logger.info("Attributes: " + numOfAttr);
+		logger.info("References: " + numOfRef);
+		logger.info("All assets: " + (numOfObj + numOfAttr + numOfRef));
 	}
 }

@@ -3,38 +3,34 @@ user IOManager
 user SubsystemManager
 
 policy DemoPolicy allow RW by default {
-//    rule testRule deny W to PrincipalEngineer, IOManager, SubsystemManager {
-//	    from query "objectRoot"
-//		select attr(root:model)
-//	} with 1 priority
 
     rule restrictRoot deny W to PrincipalEngineer, IOManager, SubsystemManager {
-		from query "objectRoot"
-		select obj(root)
-	} with 1 priority
-	
-//	rule enableRoot allow R to PrincipalEngineer, IOManager, SubsystemManager {
-//		from query "objectRoot"
-//		select obj(root)
-//	} with 1 priority
-	
-	rule enableIO allow RW to IOManager {
-		from query "objectIO"
+		from query "findRoot"
 		select obj(object)
 	} with 1 priority
 	
-//	rule enableIOnot deny RW to IOManager {
-//		from query "objectIO"
-//		select obj(object)
-//	} with 1 priority
+	rule enableNonRoot allow RW to PrincipalEngineer {
+		from query "findObjectAssetWithoutRoot"
+		select obj(object)
+	} with 1 priority
+	
+	rule enableIO allow RW to IOManager {
+		from query "inputOutput"
+		select obj(object)
+	} with 1 priority
 
-    rule restrictNotIO deny R to IOManager {
-    	from query "objectNotIO"
+    rule restrictNonIO deny R to IOManager {
+    	from query "nonInputOutput"
+    	select obj(object)
+    } with 1 priority
+    
+    rule enableNonIO allow RW to SubsystemManager {
+    	from query "nonInputOutput"
     	select obj(object)
     } with 1 priority
     
     rule restrictIO deny W to SubsystemManager {
-		from query "objectIO"
+		from query "inputOutput"
 		select obj(object)
 	} with 1 priority
 

@@ -18,7 +18,9 @@ import org.eclipse.viatra.query.runtime.matchers.context.common.JavaTransitiveIn
 import org.eclipse.viatra.query.runtime.matchers.psystem.PBody;
 import org.eclipse.viatra.query.runtime.matchers.psystem.PVariable;
 import org.eclipse.viatra.query.runtime.matchers.psystem.basicdeferred.ExportedParameter;
+import org.eclipse.viatra.query.runtime.matchers.psystem.basicdeferred.NegativePatternCall;
 import org.eclipse.viatra.query.runtime.matchers.psystem.basicdeferred.TypeFilterConstraint;
+import org.eclipse.viatra.query.runtime.matchers.psystem.basicenumerables.ConstantValue;
 import org.eclipse.viatra.query.runtime.matchers.psystem.basicenumerables.PositivePatternCall;
 import org.eclipse.viatra.query.runtime.matchers.psystem.basicenumerables.TypeConstraint;
 import org.eclipse.viatra.query.runtime.matchers.psystem.queries.PParameter;
@@ -161,6 +163,10 @@ public final class WeakConsequenceOnReferenceQuerySpecification extends BaseGene
               ));
               // 	find effectiveJudgementOnObject_at_1(user, source, operation, access)
               new PositivePatternCall(body, new FlatTuple(var_user, var_source, var_operation, var_access), EffectiveJudgementOnObject_at_1QuerySpecification.instance().getInternalQueryRepresentation());
+              // 	neg find effectiveJudgementOnObject_at_1(user, source, operation, AccessibilityLevel::OBFUSCATE)
+              PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
+              new ConstantValue(body, var__virtual_0_, org.mondo.collaboration.policy.rules.AccessibilityLevel.get("obfuscate"));
+              new NegativePatternCall(body, new FlatTuple(var_user, var_source, var_operation, var__virtual_0_), EffectiveJudgementOnObject_at_1QuerySpecification.instance().getInternalQueryRepresentation());
               // 	find referenceAsset(source, target, reference)
               new PositivePatternCall(body, new FlatTuple(var_source, var_target, var_reference), ReferenceAssetQuerySpecification.instance().getInternalQueryRepresentation());
               bodies.add(body);

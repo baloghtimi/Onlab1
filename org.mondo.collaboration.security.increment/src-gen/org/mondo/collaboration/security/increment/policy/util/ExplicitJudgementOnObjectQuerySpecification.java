@@ -36,12 +36,16 @@ import org.mondo.collaboration.security.increment.policy.ExplicitJudgementOnObje
 import org.mondo.collaboration.security.increment.policy.util.AllUsersQuerySpecification;
 import org.mondo.collaboration.security.increment.policy.util.EnableIOAssetQuerySpecification;
 import org.mondo.collaboration.security.increment.policy.util.EnableIOUserQuerySpecification;
-import org.mondo.collaboration.security.increment.policy.util.ObjectAllObjectsQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.EnableNonIOAssetQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.EnableNonIOUserQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.EnableNonRootAssetQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.EnableNonRootUserQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.ObjectAssetQuerySpecification;
 import org.mondo.collaboration.security.increment.policy.util.ReadWriteOperationQuerySpecification;
 import org.mondo.collaboration.security.increment.policy.util.RestrictIOAssetQuerySpecification;
 import org.mondo.collaboration.security.increment.policy.util.RestrictIOUserQuerySpecification;
-import org.mondo.collaboration.security.increment.policy.util.RestrictNotIOAssetQuerySpecification;
-import org.mondo.collaboration.security.increment.policy.util.RestrictNotIOUserQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.RestrictNonIOAssetQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.RestrictNonIOUserQuerySpecification;
 import org.mondo.collaboration.security.increment.policy.util.RestrictRootAssetQuerySpecification;
 import org.mondo.collaboration.security.increment.policy.util.RestrictRootUserQuerySpecification;
 
@@ -203,6 +207,39 @@ public final class ExplicitJudgementOnObjectQuerySpecification extends BaseGener
                  new ExportedParameter(body, var_access, parameter_pAccess),
                  new ExportedParameter(body, var_priority, parameter_pPriority)
               ));
+              // //  rule enableNonRoot    find enableNonRootAsset(object)
+              new PositivePatternCall(body, new FlatTuple(var_object), EnableNonRootAssetQuerySpecification.instance().getInternalQueryRepresentation());
+              //     find enableNonRootUser(user)
+              new PositivePatternCall(body, new FlatTuple(var_user), EnableNonRootUserQuerySpecification.instance().getInternalQueryRepresentation());
+              //     find readWriteOperation(operation)
+              new PositivePatternCall(body, new FlatTuple(var_operation), ReadWriteOperationQuerySpecification.instance().getInternalQueryRepresentation());
+              //     access == AccessibilityLevel::ALLOW
+              PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
+              new ConstantValue(body, var__virtual_0_, org.mondo.collaboration.policy.rules.AccessibilityLevel.get("allow"));
+              new Equality(body, var_access, var__virtual_0_);
+              //     priority == 1
+              PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
+              new ConstantValue(body, var__virtual_1_, 1);
+              new Equality(body, var_priority, var__virtual_1_);
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_user = body.getOrCreateVariableByName("user");
+              PVariable var_object = body.getOrCreateVariableByName("object");
+              PVariable var_operation = body.getOrCreateVariableByName("operation");
+              PVariable var_access = body.getOrCreateVariableByName("access");
+              PVariable var_priority = body.getOrCreateVariableByName("priority");
+              new TypeFilterConstraint(body, new FlatTuple(var_user), new JavaTransitiveInstancesKey(java.lang.String.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_object), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_priority), new JavaTransitiveInstancesKey(java.lang.Integer.class));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_user, parameter_pUser),
+                 new ExportedParameter(body, var_object, parameter_pObject),
+                 new ExportedParameter(body, var_operation, parameter_pOperation),
+                 new ExportedParameter(body, var_access, parameter_pAccess),
+                 new ExportedParameter(body, var_priority, parameter_pPriority)
+              ));
               // //  rule enableIO    find enableIOAsset(object)
               new PositivePatternCall(body, new FlatTuple(var_object), EnableIOAssetQuerySpecification.instance().getInternalQueryRepresentation());
               //     find enableIOUser(user)
@@ -236,10 +273,10 @@ public final class ExplicitJudgementOnObjectQuerySpecification extends BaseGener
                  new ExportedParameter(body, var_access, parameter_pAccess),
                  new ExportedParameter(body, var_priority, parameter_pPriority)
               ));
-              // //  rule restrictNotIO    find restrictNotIOAsset(object)
-              new PositivePatternCall(body, new FlatTuple(var_object), RestrictNotIOAssetQuerySpecification.instance().getInternalQueryRepresentation());
-              //     find restrictNotIOUser(user)
-              new PositivePatternCall(body, new FlatTuple(var_user), RestrictNotIOUserQuerySpecification.instance().getInternalQueryRepresentation());
+              // //  rule restrictNonIO    find restrictNonIOAsset(object)
+              new PositivePatternCall(body, new FlatTuple(var_object), RestrictNonIOAssetQuerySpecification.instance().getInternalQueryRepresentation());
+              //     find restrictNonIOUser(user)
+              new PositivePatternCall(body, new FlatTuple(var_user), RestrictNonIOUserQuerySpecification.instance().getInternalQueryRepresentation());
               //     operation == OperationType::READ
               PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
               new ConstantValue(body, var__virtual_0_, org.mondo.collaboration.policy.rules.OperationType.get("R"));
@@ -252,6 +289,39 @@ public final class ExplicitJudgementOnObjectQuerySpecification extends BaseGener
               PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
               new ConstantValue(body, var__virtual_2_, 1);
               new Equality(body, var_priority, var__virtual_2_);
+              bodies.add(body);
+          }
+          {
+              PBody body = new PBody(this);
+              PVariable var_user = body.getOrCreateVariableByName("user");
+              PVariable var_object = body.getOrCreateVariableByName("object");
+              PVariable var_operation = body.getOrCreateVariableByName("operation");
+              PVariable var_access = body.getOrCreateVariableByName("access");
+              PVariable var_priority = body.getOrCreateVariableByName("priority");
+              new TypeFilterConstraint(body, new FlatTuple(var_user), new JavaTransitiveInstancesKey(java.lang.String.class));
+              new TypeConstraint(body, Tuples.flatTupleOf(var_object), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject")));
+              new TypeFilterConstraint(body, new FlatTuple(var_priority), new JavaTransitiveInstancesKey(java.lang.Integer.class));
+              body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+                 new ExportedParameter(body, var_user, parameter_pUser),
+                 new ExportedParameter(body, var_object, parameter_pObject),
+                 new ExportedParameter(body, var_operation, parameter_pOperation),
+                 new ExportedParameter(body, var_access, parameter_pAccess),
+                 new ExportedParameter(body, var_priority, parameter_pPriority)
+              ));
+              // //  rule enableNonIO    find enableNonIOAsset(object)
+              new PositivePatternCall(body, new FlatTuple(var_object), EnableNonIOAssetQuerySpecification.instance().getInternalQueryRepresentation());
+              //     find enableNonIOUser(user)
+              new PositivePatternCall(body, new FlatTuple(var_user), EnableNonIOUserQuerySpecification.instance().getInternalQueryRepresentation());
+              //     find readWriteOperation(operation)
+              new PositivePatternCall(body, new FlatTuple(var_operation), ReadWriteOperationQuerySpecification.instance().getInternalQueryRepresentation());
+              //     access == AccessibilityLevel::ALLOW
+              PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
+              new ConstantValue(body, var__virtual_0_, org.mondo.collaboration.policy.rules.AccessibilityLevel.get("allow"));
+              new Equality(body, var_access, var__virtual_0_);
+              //     priority == 1
+              PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
+              new ConstantValue(body, var__virtual_1_, 1);
+              new Equality(body, var_priority, var__virtual_1_);
               bodies.add(body);
           }
           {
@@ -306,8 +376,8 @@ public final class ExplicitJudgementOnObjectQuerySpecification extends BaseGener
                  new ExportedParameter(body, var_access, parameter_pAccess),
                  new ExportedParameter(body, var_priority, parameter_pPriority)
               ));
-              // //  rule default    find objectAllObjects(object)
-              new PositivePatternCall(body, new FlatTuple(var_object), ObjectAllObjectsQuerySpecification.instance().getInternalQueryRepresentation());
+              // //  rule default    find objectAsset(object)
+              new PositivePatternCall(body, new FlatTuple(var_object), ObjectAssetQuerySpecification.instance().getInternalQueryRepresentation());
               //     find allUsers(user)
               new PositivePatternCall(body, new FlatTuple(var_user), AllUsersQuerySpecification.instance().getInternalQueryRepresentation());
               //     find readWriteOperation(operation)
@@ -331,7 +401,7 @@ public final class ExplicitJudgementOnObjectQuerySpecification extends BaseGener
               
                   @Override
                   public Object evaluateExpression(IValueProvider provider) throws Exception {
-                      return evaluateExpression_5_1();
+                      return evaluateExpression_7_1();
                   }
               },  var__virtual_1_ ); 
               new Equality(body, var_priority, var__virtual_1_);
@@ -361,6 +431,14 @@ public final class ExplicitJudgementOnObjectQuerySpecification extends BaseGener
   }
   
   private static int evaluateExpression_5_1() {
+    return 1;
+  }
+  
+  private static int evaluateExpression_6_1() {
+    return 1;
+  }
+  
+  private static int evaluateExpression_7_1() {
     return (-1);
   }
 }

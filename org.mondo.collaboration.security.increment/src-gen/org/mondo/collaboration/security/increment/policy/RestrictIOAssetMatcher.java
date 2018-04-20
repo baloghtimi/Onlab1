@@ -30,7 +30,7 @@ import org.mondo.collaboration.security.increment.policy.util.RestrictIOAssetQue
  * <p>Original source:
  * <code><pre>
  * pattern restrictIOAsset(object : EObject) {
- *     	    find objectIO(object);
+ *     	    find inputOutput(object);
  * }
  * </pre></code>
  * 

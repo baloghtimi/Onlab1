@@ -10,8 +10,8 @@ pattern readWriteOperation(operation) = {
 	operation == OperationType::WRITE;
 }
 
-pattern restrictRootAsset(root : EObject) {
-    	    find objectRoot(root);
+pattern restrictRootAsset(object : EObject) {
+    	    find findRoot(object);
 }
 pattern restrictRootUser(user: java String) {
 	user == "PrincipalEngineer";
@@ -22,24 +22,40 @@ pattern restrictRootUser(user: java String) {
 }
 
 
+pattern enableNonRootAsset(object : EObject) {
+    	    find findObjectAssetWithoutRoot(object);
+}
+pattern enableNonRootUser(user: java String) {
+	user == "PrincipalEngineer";
+}
+
+
 pattern enableIOAsset(object : EObject) {
-    	    find objectIO(object);
+    	    find inputOutput(object);
 }
 pattern enableIOUser(user: java String) {
 	user == "IOManager";
 }
 
 
-pattern restrictNotIOAsset(object : EObject) {
-    	    find objectNotIO(object);
+pattern restrictNonIOAsset(object : EObject) {
+    	    find nonInputOutput(object);
 }
-pattern restrictNotIOUser(user: java String) {
+pattern restrictNonIOUser(user: java String) {
 	user == "IOManager";
 }
 
 
+pattern enableNonIOAsset(object : EObject) {
+    	    find nonInputOutput(object);
+}
+pattern enableNonIOUser(user: java String) {
+	user == "SubsystemManager";
+}
+
+
 pattern restrictIOAsset(object : EObject) {
-    	    find objectIO(object);
+    	    find inputOutput(object);
 }
 pattern restrictIOUser(user: java String) {
 	user == "SubsystemManager";
