@@ -1,0 +1,10 @@
+
+org\.mondo\.collaboration\.policy\.ui/src-gen/
+
+org\.mondo\.collaboration\.policy\.ide/src-gen/
+
+org\.mondo\.collaboration\.policy/src-gen/
+
+org\.mondo\.collaboration\.policy/model/
+
+*.xml_gen
