@@ -29,7 +29,8 @@ import org.eclipse.viatra.query.runtime.matchers.tuple.FlatTuple;
 import org.eclipse.viatra.query.runtime.matchers.tuple.Tuples;
 import org.mondo.collaboration.security.increment.policy.EffectiveJudgementOnReference_at_weakMatch;
 import org.mondo.collaboration.security.increment.policy.EffectiveJudgementOnReference_at_weakMatcher;
-import org.mondo.collaboration.security.increment.policy.util.DominationOnReference_of_weakQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.DominatedJudgementOnReferenceByHigherPriority_at_weakQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.DominatedJudgementOnReferenceBySamePriority_at_weakQuerySpecification;
 import org.mondo.collaboration.security.increment.policy.util.JudgementOnReference_at_weakQuerySpecification;
 
 /**
@@ -115,9 +116,9 @@ public final class EffectiveJudgementOnReference_at_weakQuerySpecification exten
     
     private final PParameter parameter_pReference = new PParameter("reference", "org.eclipse.emf.ecore.EReference", new EClassTransitiveInstancesKey((EClass)getClassifierLiteralSafe("http://www.eclipse.org/emf/2002/Ecore", "EReference")), PParameterDirection.INOUT);
     
-    private final PParameter parameter_pOperation = new PParameter("operation", "java.lang.Object", (IInputKey)null, PParameterDirection.INOUT);
+    private final PParameter parameter_pOperation = new PParameter("operation", "org.mondo.collaboration.policy.rules.OperationType", (IInputKey)null, PParameterDirection.INOUT);
     
-    private final PParameter parameter_pAccess = new PParameter("access", "java.lang.Object", (IInputKey)null, PParameterDirection.INOUT);
+    private final PParameter parameter_pAccess = new PParameter("access", "org.mondo.collaboration.policy.rules.AccessibilityLevel", (IInputKey)null, PParameterDirection.INOUT);
     
     private final List<PParameter> parameters = Arrays.asList(parameter_pUser, parameter_pSource, parameter_pTarget, parameter_pReference, parameter_pOperation, parameter_pAccess);
     
@@ -162,8 +163,10 @@ public final class EffectiveJudgementOnReference_at_weakQuerySpecification exten
               ));
               //     find judgementOnReference_at_weak(user, source, target, reference, operation, access)
               new PositivePatternCall(body, new FlatTuple(var_user, var_source, var_target, var_reference, var_operation, var_access), JudgementOnReference_at_weakQuerySpecification.instance().getInternalQueryRepresentation());
-              //     neg find dominationOnReference_of_weak(user, source, target, reference, operation)
-              new NegativePatternCall(body, new FlatTuple(var_user, var_source, var_target, var_reference, var_operation), DominationOnReference_of_weakQuerySpecification.instance().getInternalQueryRepresentation());
+              //     neg find dominatedJudgementOnReferenceByHigherPriority_at_weak(user, source, target, reference, operation)
+              new NegativePatternCall(body, new FlatTuple(var_user, var_source, var_target, var_reference, var_operation), DominatedJudgementOnReferenceByHigherPriority_at_weakQuerySpecification.instance().getInternalQueryRepresentation());
+              //     neg find dominatedJudgementOnReferenceBySamePriority_at_weak(user, source, target, reference, operation, access)
+              new NegativePatternCall(body, new FlatTuple(var_user, var_source, var_target, var_reference, var_operation, var_access), DominatedJudgementOnReferenceBySamePriority_at_weakQuerySpecification.instance().getInternalQueryRepresentation());
               bodies.add(body);
           }
       } catch (ViatraQueryException ex) {

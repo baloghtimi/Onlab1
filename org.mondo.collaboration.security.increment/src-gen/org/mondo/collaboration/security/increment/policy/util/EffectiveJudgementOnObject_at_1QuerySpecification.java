@@ -18,6 +18,7 @@ import org.eclipse.viatra.query.runtime.matchers.context.common.JavaTransitiveIn
 import org.eclipse.viatra.query.runtime.matchers.psystem.PBody;
 import org.eclipse.viatra.query.runtime.matchers.psystem.PVariable;
 import org.eclipse.viatra.query.runtime.matchers.psystem.basicdeferred.ExportedParameter;
+import org.eclipse.viatra.query.runtime.matchers.psystem.basicdeferred.NegativePatternCall;
 import org.eclipse.viatra.query.runtime.matchers.psystem.basicdeferred.TypeFilterConstraint;
 import org.eclipse.viatra.query.runtime.matchers.psystem.basicenumerables.PositivePatternCall;
 import org.eclipse.viatra.query.runtime.matchers.psystem.basicenumerables.TypeConstraint;
@@ -28,6 +29,7 @@ import org.eclipse.viatra.query.runtime.matchers.tuple.FlatTuple;
 import org.eclipse.viatra.query.runtime.matchers.tuple.Tuples;
 import org.mondo.collaboration.security.increment.policy.EffectiveJudgementOnObject_at_1Match;
 import org.mondo.collaboration.security.increment.policy.EffectiveJudgementOnObject_at_1Matcher;
+import org.mondo.collaboration.security.increment.policy.util.DominatedJudgementOnObjectBySamePriority_at_1QuerySpecification;
 import org.mondo.collaboration.security.increment.policy.util.JudgementOnObject_at_1QuerySpecification;
 
 /**
@@ -109,9 +111,9 @@ public final class EffectiveJudgementOnObject_at_1QuerySpecification extends Bas
     
     private final PParameter parameter_pObject = new PParameter("object", "org.eclipse.emf.ecore.EObject", new EClassTransitiveInstancesKey((EClass)getClassifierLiteralSafe("http://www.eclipse.org/emf/2002/Ecore", "EObject")), PParameterDirection.INOUT);
     
-    private final PParameter parameter_pOperation = new PParameter("operation", "java.lang.Object", (IInputKey)null, PParameterDirection.INOUT);
+    private final PParameter parameter_pOperation = new PParameter("operation", "org.mondo.collaboration.policy.rules.OperationType", (IInputKey)null, PParameterDirection.INOUT);
     
-    private final PParameter parameter_pAccess = new PParameter("access", "java.lang.Object", (IInputKey)null, PParameterDirection.INOUT);
+    private final PParameter parameter_pAccess = new PParameter("access", "org.mondo.collaboration.policy.rules.AccessibilityLevel", (IInputKey)null, PParameterDirection.INOUT);
     
     private final List<PParameter> parameters = Arrays.asList(parameter_pUser, parameter_pObject, parameter_pOperation, parameter_pAccess);
     
@@ -150,6 +152,8 @@ public final class EffectiveJudgementOnObject_at_1QuerySpecification extends Bas
               ));
               //     find judgementOnObject_at_1(user, object, operation, access)
               new PositivePatternCall(body, new FlatTuple(var_user, var_object, var_operation, var_access), JudgementOnObject_at_1QuerySpecification.instance().getInternalQueryRepresentation());
+              //     neg find dominatedJudgementOnObjectBySamePriority_at_1(user, object, operation, access)
+              new NegativePatternCall(body, new FlatTuple(var_user, var_object, var_operation, var_access), DominatedJudgementOnObjectBySamePriority_at_1QuerySpecification.instance().getInternalQueryRepresentation());
               bodies.add(body);
           }
       } catch (ViatraQueryException ex) {

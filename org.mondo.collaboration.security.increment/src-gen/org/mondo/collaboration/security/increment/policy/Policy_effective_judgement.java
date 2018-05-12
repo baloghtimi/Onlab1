@@ -13,6 +13,7 @@ import org.mondo.collaboration.security.increment.policy.EffectiveJudgementOnAtt
 import org.mondo.collaboration.security.increment.policy.EffectiveJudgementOnObjectMatcher;
 import org.mondo.collaboration.security.increment.policy.EffectiveJudgementOnObject_at_1Matcher;
 import org.mondo.collaboration.security.increment.policy.EffectiveJudgementOnObject_at_defaultMatcher;
+import org.mondo.collaboration.security.increment.policy.EffectiveJudgementOnObject_at_weakMatcher;
 import org.mondo.collaboration.security.increment.policy.EffectiveJudgementOnReferenceMatcher;
 import org.mondo.collaboration.security.increment.policy.EffectiveJudgementOnReference_at_1Matcher;
 import org.mondo.collaboration.security.increment.policy.EffectiveJudgementOnReference_at_defaultMatcher;
@@ -24,6 +25,7 @@ import org.mondo.collaboration.security.increment.policy.util.EffectiveJudgement
 import org.mondo.collaboration.security.increment.policy.util.EffectiveJudgementOnObjectQuerySpecification;
 import org.mondo.collaboration.security.increment.policy.util.EffectiveJudgementOnObject_at_1QuerySpecification;
 import org.mondo.collaboration.security.increment.policy.util.EffectiveJudgementOnObject_at_defaultQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.EffectiveJudgementOnObject_at_weakQuerySpecification;
 import org.mondo.collaboration.security.increment.policy.util.EffectiveJudgementOnReferenceQuerySpecification;
 import org.mondo.collaboration.security.increment.policy.util.EffectiveJudgementOnReference_at_1QuerySpecification;
 import org.mondo.collaboration.security.increment.policy.util.EffectiveJudgementOnReference_at_defaultQuerySpecification;
@@ -39,6 +41,7 @@ import org.mondo.collaboration.security.increment.policy.util.EffectiveJudgement
  * <p> From package org.mondo.collaboration.security.increment.policy, the group contains the definition of the following patterns: <ul>
  * <li>effectiveJudgementOnObject</li>
  * <li>effectiveJudgementOnObject_at_default</li>
+ * <li>effectiveJudgementOnObject_at_weak</li>
  * <li>effectiveJudgementOnObject_at_1</li>
  * <li>effectiveJudgementOnAttribute</li>
  * <li>effectiveJudgementOnAttribute_at_default</li>
@@ -74,6 +77,7 @@ public final class Policy_effective_judgement extends BaseGeneratedPatternGroup 
   private Policy_effective_judgement() throws ViatraQueryException {
     querySpecifications.add(EffectiveJudgementOnObjectQuerySpecification.instance());
     querySpecifications.add(EffectiveJudgementOnObject_at_defaultQuerySpecification.instance());
+    querySpecifications.add(EffectiveJudgementOnObject_at_weakQuerySpecification.instance());
     querySpecifications.add(EffectiveJudgementOnObject_at_1QuerySpecification.instance());
     querySpecifications.add(EffectiveJudgementOnAttributeQuerySpecification.instance());
     querySpecifications.add(EffectiveJudgementOnAttribute_at_defaultQuerySpecification.instance());
@@ -99,6 +103,14 @@ public final class Policy_effective_judgement extends BaseGeneratedPatternGroup 
   
   public EffectiveJudgementOnObject_at_defaultMatcher getEffectiveJudgementOnObject_at_default(final ViatraQueryEngine engine) throws ViatraQueryException {
     return EffectiveJudgementOnObject_at_defaultMatcher.on(engine);
+  }
+  
+  public EffectiveJudgementOnObject_at_weakQuerySpecification getEffectiveJudgementOnObject_at_weak() throws ViatraQueryException {
+    return EffectiveJudgementOnObject_at_weakQuerySpecification.instance();
+  }
+  
+  public EffectiveJudgementOnObject_at_weakMatcher getEffectiveJudgementOnObject_at_weak(final ViatraQueryEngine engine) throws ViatraQueryException {
+    return EffectiveJudgementOnObject_at_weakMatcher.on(engine);
   }
   
   public EffectiveJudgementOnObject_at_1QuerySpecification getEffectiveJudgementOnObject_at_1() throws ViatraQueryException {

@@ -35,7 +35,7 @@ import org.mondo.collaboration.security.increment.policy.util.EffectiveJudgement
  * pattern effectiveJudgementOnAttribute_at_default(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation, access)
  * {
  * 	find judgementOnAttribute_at_default(user, source, value, attribute, operation, access);
- * 	neg find dominationOnAttribute_of_default(user, source, value, attribute, operation);
+ * 	neg find dominatedJudgementOnAttributeByHigherPriority_at_default(user, source, value, attribute, operation);
  * }
  * </pre></code>
  * 

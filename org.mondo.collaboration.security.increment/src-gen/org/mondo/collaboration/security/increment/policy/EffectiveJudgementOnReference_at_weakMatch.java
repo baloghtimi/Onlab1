@@ -38,13 +38,13 @@ public abstract class EffectiveJudgementOnReference_at_weakMatch extends BasePat
   
   private EReference fReference;
   
-  private Object fOperation;
+  private OperationType fOperation;
   
-  private Object fAccess;
+  private AccessibilityLevel fAccess;
   
   private static List<String> parameterNames = makeImmutableList("user", "source", "target", "reference", "operation", "access");
   
-  private EffectiveJudgementOnReference_at_weakMatch(final String pUser, final EObject pSource, final EObject pTarget, final EReference pReference, final Object pOperation, final Object pAccess) {
+  private EffectiveJudgementOnReference_at_weakMatch(final String pUser, final EObject pSource, final EObject pTarget, final EReference pReference, final OperationType pOperation, final AccessibilityLevel pAccess) {
     this.fUser = pUser;
     this.fSource = pSource;
     this.fTarget = pTarget;
@@ -80,11 +80,11 @@ public abstract class EffectiveJudgementOnReference_at_weakMatch extends BasePat
     return this.fReference;
   }
   
-  public Object getOperation() {
+  public OperationType getOperation() {
     return this.fOperation;
   }
   
-  public Object getAccess() {
+  public AccessibilityLevel getAccess() {
     return this.fAccess;
   }
   
@@ -138,12 +138,12 @@ public abstract class EffectiveJudgementOnReference_at_weakMatch extends BasePat
     this.fReference = pReference;
   }
   
-  public void setOperation(final Object pOperation) {
+  public void setOperation(final OperationType pOperation) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fOperation = pOperation;
   }
   
-  public void setAccess(final Object pAccess) {
+  public void setAccess(final AccessibilityLevel pAccess) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fAccess = pAccess;
   }
@@ -239,7 +239,7 @@ public abstract class EffectiveJudgementOnReference_at_weakMatch extends BasePat
    * @return the new, mutable (partial) match object.
    * 
    */
-  public static EffectiveJudgementOnReference_at_weakMatch newMutableMatch(final String pUser, final EObject pSource, final EObject pTarget, final EReference pReference, final Object pOperation, final Object pAccess) {
+  public static EffectiveJudgementOnReference_at_weakMatch newMutableMatch(final String pUser, final EObject pSource, final EObject pTarget, final EReference pReference, final OperationType pOperation, final AccessibilityLevel pAccess) {
     return new Mutable(pUser, pSource, pTarget, pReference, pOperation, pAccess);
   }
   
@@ -256,12 +256,12 @@ public abstract class EffectiveJudgementOnReference_at_weakMatch extends BasePat
    * @return the (partial) match object.
    * 
    */
-  public static EffectiveJudgementOnReference_at_weakMatch newMatch(final String pUser, final EObject pSource, final EObject pTarget, final EReference pReference, final Object pOperation, final Object pAccess) {
+  public static EffectiveJudgementOnReference_at_weakMatch newMatch(final String pUser, final EObject pSource, final EObject pTarget, final EReference pReference, final OperationType pOperation, final AccessibilityLevel pAccess) {
     return new Immutable(pUser, pSource, pTarget, pReference, pOperation, pAccess);
   }
   
   private static final class Mutable extends EffectiveJudgementOnReference_at_weakMatch {
-    Mutable(final String pUser, final EObject pSource, final EObject pTarget, final EReference pReference, final Object pOperation, final Object pAccess) {
+    Mutable(final String pUser, final EObject pSource, final EObject pTarget, final EReference pReference, final OperationType pOperation, final AccessibilityLevel pAccess) {
       super(pUser, pSource, pTarget, pReference, pOperation, pAccess);
     }
     
@@ -272,7 +272,7 @@ public abstract class EffectiveJudgementOnReference_at_weakMatch extends BasePat
   }
   
   private static final class Immutable extends EffectiveJudgementOnReference_at_weakMatch {
-    Immutable(final String pUser, final EObject pSource, final EObject pTarget, final EReference pReference, final Object pOperation, final Object pAccess) {
+    Immutable(final String pUser, final EObject pSource, final EObject pTarget, final EReference pReference, final OperationType pOperation, final AccessibilityLevel pAccess) {
       super(pUser, pSource, pTarget, pReference, pOperation, pAccess);
     }
     

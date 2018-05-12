@@ -1,8 +1,39 @@
+import "C:\\Bulisuli\\1\\Onlab1\\Onlab1\\org.mondo.collaboration.security.increment\\src\\org\\mondo\\collaboration\\security\\increment\\policy\\policy.vql"
+
 user PrincipalEngineer
 user IOManager
 user SubsystemManager
 
 policy DemoPolicy allow RW by default {
+//	rule effective deny R to IOManager {
+//		from query "inputOutput"
+//		select obj(object)
+//	} with 2 priority
+//	
+//	rule dominated allow R to IOManager {
+//		from query "inputOutput"
+//		select obj(object)
+//	} with 1 priority
+//	
+//	rule wanted deny R to IOManager {
+//		from query "findRoot"
+//		select obj(object)
+//	} with 1 priority
+//	
+//	
+//	
+//	rule child allow R to IOManager {
+//		from query "inputOutput"
+//		select obj(object)
+//	} with 1 priority
+//	
+//	rule parent allow R to IOManager {
+//		from query "findRoot"
+//		select obj(object)
+//	} with 1 priority
+	
+	
+	
 
     rule restrictRoot deny W to PrincipalEngineer, IOManager, SubsystemManager {
 		from query "findRoot"
@@ -18,6 +49,16 @@ policy DemoPolicy allow RW by default {
 		from query "inputOutput"
 		select obj(object)
 	} with 1 priority
+	
+//	rule explicitVsExplicitTest deny RW to IOManager {
+//		from query "inputOutput"
+//		select obj(object)
+//	} with 1 priority
+	
+//	rule strongVsExpolicitTest deny R to IOManager {
+//		from query "findRoot"
+//		select obj(object)
+//	} with 1 priority
 
     rule restrictNonIO deny R to IOManager {
     	from query "nonInputOutput"

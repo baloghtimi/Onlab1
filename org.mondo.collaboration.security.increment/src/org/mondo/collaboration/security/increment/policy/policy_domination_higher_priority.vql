@@ -4,33 +4,40 @@ import "http://www.eclipse.org/emf/2002/Ecore"
 import "http://www.mondo.org/collaboration/policy/Rules"
 import "http://WTSpec4M/5.0M"
 
-pattern dominationOnObject_of_default(user: java String, object: EObject, operation)
+pattern dominatedJudgementOnObjectByHigherPriority_at_default(user: java String, object: EObject, operation)
 {
-find effectiveJudgementOnObject_at_1(user, object, operation, _access);
+	find effectiveJudgementOnObject_at_weak(user, object, operation, _access);
+} or {
+    find effectiveJudgementOnObject_at_1(user, object, operation, _access);
+}
+
+pattern dominatedJudgementOnObjectByHigherPriority_at_weak(user: java String, object: EObject, operation)
+{
+    find effectiveJudgementOnObject_at_1(user, object, operation, _access);
 }
     
     
-pattern dominationOnAttribute_of_default(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation)
+pattern dominatedJudgementOnAttributeByHigherPriority_at_default(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation)
 {
 	find effectiveJudgementOnAttribute_at_weak(user, source, value, attribute, operation, _access);
 } or {
     find effectiveJudgementOnAttribute_at_1(user, source, value, attribute, operation, _access);
 }
 
-pattern dominationOnAttribute_of_weak(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation)
+pattern dominatedJudgementOnAttributeByHigherPriority_at_weak(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation)
 {
     find effectiveJudgementOnAttribute_at_1(user, source, value, attribute, operation, _access);
 }
     
       
-pattern dominationOnReference_of_default(user: java String, source: EObject, target: EObject, reference: EReference, operation)
+pattern dominatedJudgementOnReferenceByHigherPriority_at_default(user: java String, source: EObject, target: EObject, reference: EReference, operation)
 {
    find effectiveJudgementOnReference_at_weak(user, source, target, reference, operation, _access);
 } or {
     find effectiveJudgementOnReference_at_1(user, source, target, reference, operation, _access);
 }
      
-pattern dominationOnReference_of_weak(user: java String, source: EObject, target: EObject, reference: EReference, operation)
+pattern dominatedJudgementOnReferenceByHigherPriority_at_weak(user: java String, source: EObject, target: EObject, reference: EReference, operation)
 {
     find effectiveJudgementOnReference_at_1(user, source, target, reference, operation, _access);
 }     

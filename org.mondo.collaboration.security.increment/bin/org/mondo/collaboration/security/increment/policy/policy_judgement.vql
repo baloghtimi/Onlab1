@@ -19,36 +19,42 @@ pattern judgementOnReference_at_default(user: java String, source: EObject, targ
     find explicitJudgementOnReference(user, source, target, reference, operation, access, eval(-1));
 }
 
+pattern judgementOnObject_at_weak(user: java String, object: EObject, operation, access)
+{
+	find strongConsequenceJudgementOnObject_at_weak(user, object, operation, access);
+}
+
 pattern judgementOnAttribute_at_weak(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation, access)
 {
-   find weakConsequenceOnAttribute(user, source, value, attribute, operation, access);
+	find strongConsequenceJudgementOnAttribute_at_weak(user, source, value, attribute, operation, access);
+} or {
+    find weakConsequenceJudgementOnAttribute(user, source, value, attribute, operation, access);
 }
     
 pattern judgementOnReference_at_weak(user: java String, source: EObject, target: EObject, reference: EReference, operation, access)
 {
-    find weakConsequenceOnReference(user, source, target, reference, operation, access);
+	find strongConsequenceJudgementOnReference_at_weak(user, source, target, reference, operation, access);
+} or {
+    find weakConsequenceJudgementOnReference(user, source, target, reference, operation, access);
 }
 
 pattern judgementOnObject_at_1(user: java String, object: EObject, operation, access)
 {
     find explicitJudgementOnObject(user, object, operation, access, 1);
-    neg find dominatedExplicitJudgementOnObject_at_1(user, object, operation, access);
 } or {
-    find strongConsequenceOnObject_at_1(user, object, operation, access);
+    find strongConsequenceJudgementOnObject_at_1(user, object, operation, access);
 }
     
 pattern judgementOnAttribute_at_1(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation, access)
 {
     find explicitJudgementOnAttribute(user, source, value, attribute, operation, access, 1);
-    neg find dominatedExplicitJudgementOnAttribute_at_1(user, source, value, attribute, operation, access);
 } or {
-    find strongConsequenceOnAttribute_at_1(user, source, value, attribute, operation, access);
+    find strongConsequenceJudgementOnAttribute_at_1(user, source, value, attribute, operation, access);
 }
         
 pattern judgementOnReference_at_1(user: java String, source: EObject, target: EObject, reference: EReference, operation, access)
 {
     find explicitJudgementOnReference(user, source, target, reference, operation, access, 1);
-    neg find dominatedExplicitJudgementOnReference_at_1(user, source, target, reference, operation, access);
 } or {
-    find strongConsequenceOnReference_at_1(user, source, target, reference, operation, access);
+    find strongConsequenceJudgementOnReference_at_1(user, source, target, reference, operation, access);
 }

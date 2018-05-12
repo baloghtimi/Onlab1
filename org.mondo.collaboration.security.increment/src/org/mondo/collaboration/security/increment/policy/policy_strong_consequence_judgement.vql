@@ -1,0 +1,283 @@
+package org.mondo.collaboration.security.increment.policy
+
+import "http://www.eclipse.org/emf/2002/Ecore"
+import "http://www.mondo.org/collaboration/policy/Rules"
+import "http://WTSpec4M/5.0M"
+
+pattern strongConsequenceJudgementOnObject_at_weak(user: java String, object: EObject, operation, access)
+{
+	// allow W -> allow R, object -> object
+	find judgementOnObject_at_weak(user, object, OperationType::WRITE, AccessibilityLevel::ALLOW);
+	operation == OperationType::READ;
+	access == AccessibilityLevel::ALLOW;
+} or {
+	// deny R -> deny W, object -> object
+	find judgementOnObject_at_weak(user, object, OperationType::READ, AccessibilityLevel::DENY);
+	operation == OperationType::WRITE;
+	access == AccessibilityLevel::DENY;
+} or {
+	// allow R -> obfuscate R, child -> parent
+	find judgementOnObject_at_weak(user, child, OperationType::READ, AccessibilityLevel::ALLOW);
+	find contains(object, child);
+	neg find judgementOnObject_at_weak(user, object, OperationType::READ, AccessibilityLevel::ALLOW);
+	operation == OperationType::READ;
+	access == AccessibilityLevel::OBFUSCATE;
+} or {
+	// allow R -> obfuscate R, attribute -> source
+	find judgementOnAttribute_at_weak(user, object, _value, _attribute, OperationType::READ, AccessibilityLevel::ALLOW);
+	neg find judgementOnObject_at_weak(user, object, OperationType::READ, AccessibilityLevel::ALLOW);
+	operation == OperationType::READ;
+	access == AccessibilityLevel::OBFUSCATE;
+} or {
+    // deny R, ID attribute -> source
+    find judgementOnAttribute_at_weak(user, object, anyValue, anyAttribute, OperationType::READ, AccessibilityLevel::DENY);
+    find idAttribute(object, anyValue, anyAttribute);
+    operation == OperationType::READ;
+    access == AccessibilityLevel::DENY;
+} or {
+    // allow R -> obfuscate R, reference -> source
+    find judgementOnReference_at_weak(user, object, _target, _reference, OperationType::READ, AccessibilityLevel::ALLOW);
+    neg find judgementOnObject_at_weak(user, object, OperationType::READ, AccessibilityLevel::ALLOW);
+    operation == OperationType::READ;
+    access == AccessibilityLevel::OBFUSCATE;
+} or {
+    // allow R -> obfuscate R, reference -> target
+    find judgementOnReference_at_weak(user, _source, object, _reference, OperationType::READ, AccessibilityLevel::ALLOW);
+    neg find judgementOnObject_at_weak(user, object, OperationType::READ, AccessibilityLevel::ALLOW);
+    operation == OperationType::READ;
+    access == AccessibilityLevel::OBFUSCATE;
+} or {
+    // deny R, containment reference -> target
+    find judgementOnReference_at_weak(user, anySource, object, anyReference, OperationType::READ, AccessibilityLevel::DENY);
+    find containmentReference(anySource, object, anyReference);
+    operation == OperationType::READ;
+    access == AccessibilityLevel::DENY;
+} or {
+    // allow W, containment reference -> target
+    find judgementOnReference_at_weak(user, anySource, object, anyReference, OperationType::WRITE, AccessibilityLevel::ALLOW);
+    find containmentReference(anySource, object, anyReference);
+    operation == OperationType::WRITE;
+    access == AccessibilityLevel::ALLOW;
+}
+
+pattern strongConsequenceJudgementOnAttribute_at_weak(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation, access)
+{
+	// allow W -> allow R, attribute -> attribute
+	find judgementOnAttribute_at_weak(user, source, value, attribute, OperationType::WRITE, AccessibilityLevel::ALLOW);
+	operation == OperationType::READ;
+	access == AccessibilityLevel::ALLOW;
+} or {
+	// deny R -> deny W, attribute -> attribute
+	find judgementOnAttribute_at_weak(user, source, value, attribute, OperationType::READ, AccessibilityLevel::DENY);
+	operation == OperationType::WRITE;
+	access == AccessibilityLevel::DENY;
+} or {
+    // allow R, object -> ID attribute
+    find judgementOnObject_at_weak(user, source, OperationType::READ, AccessibilityLevel::ALLOW);
+    find idAttribute(source, value, attribute);
+    operation == OperationType::READ;
+    access == AccessibilityLevel::ALLOW;
+} or {
+    // deny W, containment reference -> attribute
+    find judgementOnReference_at_weak(user, anySource, source, anyReference, OperationType::WRITE, AccessibilityLevel::DENY);
+    find containmentReference(anySource, source, anyReference);
+    find attributeAsset(source, value, attribute);
+    operation == OperationType::WRITE;
+    access == AccessibilityLevel::DENY;
+} or {
+	// obfuscate R, object -> ID attribute
+	find judgementOnObject_at_weak(user, source, OperationType::READ, AccessibilityLevel::OBFUSCATE);
+	find idAttribute(source, value, attribute);
+	operation == OperationType::READ;
+	access == AccessibilityLevel::OBFUSCATE;
+} or {
+    // obfuscate R -> deny R, object -> nonID attribute
+    find judgementOnObject_at_weak(user, source, OperationType::READ, AccessibilityLevel::OBFUSCATE);
+    find attributeAsset(source, value, attribute);
+    neg find idAttribute(source, value, attribute);
+    operation == OperationType::READ;
+    access == AccessibilityLevel::DENY;
+}
+
+pattern strongConsequenceJudgementOnReference_at_weak(user: java String, source: EObject, target: EObject, reference: EReference, operation, access)
+{
+	// allow W -> allow R, reference -> reference
+	find judgementOnReference_at_weak(user, source, target, reference, OperationType::WRITE, AccessibilityLevel::ALLOW);
+	operation == OperationType::READ;
+	access == AccessibilityLevel::ALLOW;
+} or {
+	// deny R -> deny W, reference -> reference
+	find judgementOnReference_at_weak(user, source, target, reference, OperationType::READ, AccessibilityLevel::DENY);
+	operation == OperationType::WRITE;
+	access == AccessibilityLevel::DENY;
+} or {
+    // allow R, object -> container reference
+    find judgementOnObject_at_weak(user, target, OperationType::READ, AccessibilityLevel::ALLOW);
+    find containmentReference(source, target, reference);
+    operation == OperationType::READ;
+    access == AccessibilityLevel::ALLOW;
+} or {
+    // deny R, object -> incoming reference
+    find judgementOnObject_at_weak(user, target, OperationType::READ, AccessibilityLevel::DENY);
+    find referenceAsset(source, target, reference);
+    operation == OperationType::READ;
+    access == AccessibilityLevel::DENY;
+} or {
+    // deny R, object -> outgoing reference
+    find judgementOnObject_at_weak(user, source, OperationType::READ, AccessibilityLevel::DENY);
+    find referenceAsset(source, target, reference);
+    operation == OperationType::READ;
+    access == AccessibilityLevel::DENY;
+} or {
+    // allow W, object -> container reference
+    find judgementOnObject_at_weak(user, target, OperationType::WRITE, AccessibilityLevel::ALLOW);
+    find containmentReference(source, target, reference);
+    operation == OperationType::WRITE;
+    access == AccessibilityLevel::ALLOW;
+} or {
+    // deny R, ID attribute -> source
+    find judgementOnAttribute_at_weak(user, target, anyValue, anyAttribute, OperationType::READ, AccessibilityLevel::DENY);
+    find idAttribute(target, anyValue, anyAttribute);
+    find referenceAsset(source, target, reference);
+    operation == OperationType::READ;
+    access == AccessibilityLevel::DENY;
+}
+    
+pattern strongConsequenceJudgementOnObject_at_1(user: java String, object: EObject, operation, access)
+{
+	// allow W -> allow R, object -> object
+	find judgementOnObject_at_1(user, object, OperationType::WRITE, AccessibilityLevel::ALLOW);
+	operation == OperationType::READ;
+	access == AccessibilityLevel::ALLOW;
+} or {
+	// deny R -> deny W, object -> object
+	find judgementOnObject_at_1(user, object, OperationType::READ, AccessibilityLevel::DENY);
+	operation == OperationType::WRITE;
+	access == AccessibilityLevel::DENY;
+} or {
+	// allow R -> obfuscate R, child -> parent
+	find judgementOnObject_at_1(user, child, OperationType::READ, AccessibilityLevel::ALLOW);
+	find contains(object, child);
+	neg find judgementOnObject_at_1(user, object, OperationType::READ, AccessibilityLevel::ALLOW);
+	operation == OperationType::READ;
+	access == AccessibilityLevel::OBFUSCATE;
+} or {
+	// allow R -> obfuscate R, attribute -> source
+	find judgementOnAttribute_at_1(user, object, _value, _attribute, OperationType::READ, AccessibilityLevel::ALLOW);
+	neg find judgementOnObject_at_1(user, object, OperationType::READ, AccessibilityLevel::ALLOW);
+	operation == OperationType::READ;
+	access == AccessibilityLevel::OBFUSCATE;
+} or {
+    // deny R, ID attribute -> source
+    find judgementOnAttribute_at_1(user, object, anyValue, anyAttribute, OperationType::READ, AccessibilityLevel::DENY);
+    find idAttribute(object, anyValue, anyAttribute);
+    operation == OperationType::READ;
+    access == AccessibilityLevel::DENY;
+} or {
+    // allow R -> obfuscate R, reference -> source
+    find judgementOnReference_at_1(user, object, _target, _reference, OperationType::READ, AccessibilityLevel::ALLOW);
+    neg find judgementOnObject_at_1(user, object, OperationType::READ, AccessibilityLevel::ALLOW);
+    operation == OperationType::READ;
+    access == AccessibilityLevel::OBFUSCATE;
+} or {
+    // allow R -> obfuscate R, reference -> target
+    find judgementOnReference_at_1(user, _source, object, _reference, OperationType::READ, AccessibilityLevel::ALLOW);
+    neg find judgementOnObject_at_1(user, object, OperationType::READ, AccessibilityLevel::ALLOW);
+    operation == OperationType::READ;
+    access == AccessibilityLevel::OBFUSCATE;
+} or {
+    // deny R, containment reference -> target
+    find judgementOnReference_at_1(user, anySource, object, anyReference, OperationType::READ, AccessibilityLevel::DENY);
+    find containmentReference(anySource, object, anyReference);
+    operation == OperationType::READ;
+    access == AccessibilityLevel::DENY;
+} or {
+    // allow W, containment reference -> target
+    find judgementOnReference_at_1(user, anySource, object, anyReference, OperationType::WRITE, AccessibilityLevel::ALLOW);
+    find containmentReference(anySource, object, anyReference);
+    operation == OperationType::WRITE;
+    access == AccessibilityLevel::ALLOW;
+}
+    
+pattern strongConsequenceJudgementOnAttribute_at_1(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation, access)
+{
+	// allow W -> allow R, attribute -> attribute
+	find judgementOnAttribute_at_1(user, source, value, attribute, OperationType::WRITE, AccessibilityLevel::ALLOW);
+	operation == OperationType::READ;
+	access == AccessibilityLevel::ALLOW;
+} or {
+	// deny R -> deny W, attribute -> attribute
+	find judgementOnAttribute_at_1(user, source, value, attribute, OperationType::READ, AccessibilityLevel::DENY);
+	operation == OperationType::WRITE;
+	access == AccessibilityLevel::DENY;
+} or {
+    // allow R, object -> ID attribute
+    find judgementOnObject_at_1(user, source, OperationType::READ, AccessibilityLevel::ALLOW);
+    find idAttribute(source, value, attribute);
+    operation == OperationType::READ;
+    access == AccessibilityLevel::ALLOW;
+} or {
+    // deny W, containment reference -> attribute
+    find judgementOnReference_at_1(user, anySource, source, anyReference, OperationType::WRITE, AccessibilityLevel::DENY);
+    find containmentReference(anySource, source, anyReference);
+    find attributeAsset(source, value, attribute);
+    operation == OperationType::WRITE;
+    access == AccessibilityLevel::DENY;
+} or {
+	// obfuscate R, object -> ID attribute
+	find judgementOnObject_at_1(user, source, OperationType::READ, AccessibilityLevel::OBFUSCATE);
+	find idAttribute(source, value, attribute);
+	operation == OperationType::READ;
+	access == AccessibilityLevel::OBFUSCATE;
+} or {
+    // obfuscate R -> deny R, object -> nonID attribute
+    find judgementOnObject_at_1(user, source, OperationType::READ, AccessibilityLevel::OBFUSCATE);
+    find attributeAsset(source, value, attribute);
+    neg find idAttribute(source, value, attribute);
+    operation == OperationType::READ;
+    access == AccessibilityLevel::DENY;
+}
+    
+pattern strongConsequenceJudgementOnReference_at_1(user: java String, source: EObject, target: EObject, reference: EReference, operation, access)
+{
+	// allow W -> allow R, reference -> reference
+	find judgementOnReference_at_1(user, source, target, reference, OperationType::WRITE, AccessibilityLevel::ALLOW);
+	operation == OperationType::READ;
+	access == AccessibilityLevel::ALLOW;
+} or {
+	// deny R -> deny W, reference -> reference
+	find judgementOnReference_at_1(user, source, target, reference, OperationType::READ, AccessibilityLevel::DENY);
+	operation == OperationType::WRITE;
+	access == AccessibilityLevel::DENY;
+} or {
+    // allow R, object -> container reference
+    find judgementOnObject_at_1(user, target, OperationType::READ, AccessibilityLevel::ALLOW);
+    find containmentReference(source, target, reference);
+    operation == OperationType::READ;
+    access == AccessibilityLevel::ALLOW;
+} or {
+    // deny R, object -> incoming reference
+    find judgementOnObject_at_1(user, target, OperationType::READ, AccessibilityLevel::DENY);
+    find referenceAsset(source, target, reference);
+    operation == OperationType::READ;
+    access == AccessibilityLevel::DENY;
+} or {
+    // deny R, object -> outgoing reference
+    find judgementOnObject_at_1(user, source, OperationType::READ, AccessibilityLevel::DENY);
+    find referenceAsset(source, target, reference);
+    operation == OperationType::READ;
+    access == AccessibilityLevel::DENY;
+} or {
+    // allow W, object -> container reference
+    find judgementOnObject_at_1(user, target, OperationType::WRITE, AccessibilityLevel::ALLOW);
+    find containmentReference(source, target, reference);
+    operation == OperationType::WRITE;
+    access == AccessibilityLevel::ALLOW;
+} or {
+    // deny R, ID attribute -> source
+    find judgementOnAttribute_at_1(user, target, anyValue, anyAttribute, OperationType::READ, AccessibilityLevel::DENY);
+    find idAttribute(target, anyValue, anyAttribute);
+    find referenceAsset(source, target, reference);
+    operation == OperationType::READ;
+    access == AccessibilityLevel::DENY;
+}

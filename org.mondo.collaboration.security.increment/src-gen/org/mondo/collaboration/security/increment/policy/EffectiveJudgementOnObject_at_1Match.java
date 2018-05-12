@@ -33,13 +33,13 @@ public abstract class EffectiveJudgementOnObject_at_1Match extends BasePatternMa
   
   private EObject fObject;
   
-  private Object fOperation;
+  private OperationType fOperation;
   
-  private Object fAccess;
+  private AccessibilityLevel fAccess;
   
   private static List<String> parameterNames = makeImmutableList("user", "object", "operation", "access");
   
-  private EffectiveJudgementOnObject_at_1Match(final String pUser, final EObject pObject, final Object pOperation, final Object pAccess) {
+  private EffectiveJudgementOnObject_at_1Match(final String pUser, final EObject pObject, final OperationType pOperation, final AccessibilityLevel pAccess) {
     this.fUser = pUser;
     this.fObject = pObject;
     this.fOperation = pOperation;
@@ -63,11 +63,11 @@ public abstract class EffectiveJudgementOnObject_at_1Match extends BasePatternMa
     return this.fObject;
   }
   
-  public Object getOperation() {
+  public OperationType getOperation() {
     return this.fOperation;
   }
   
-  public Object getAccess() {
+  public AccessibilityLevel getAccess() {
     return this.fAccess;
   }
   
@@ -103,12 +103,12 @@ public abstract class EffectiveJudgementOnObject_at_1Match extends BasePatternMa
     this.fObject = pObject;
   }
   
-  public void setOperation(final Object pOperation) {
+  public void setOperation(final OperationType pOperation) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fOperation = pOperation;
   }
   
-  public void setAccess(final Object pAccess) {
+  public void setAccess(final AccessibilityLevel pAccess) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fAccess = pAccess;
   }
@@ -200,7 +200,7 @@ public abstract class EffectiveJudgementOnObject_at_1Match extends BasePatternMa
    * @return the new, mutable (partial) match object.
    * 
    */
-  public static EffectiveJudgementOnObject_at_1Match newMutableMatch(final String pUser, final EObject pObject, final Object pOperation, final Object pAccess) {
+  public static EffectiveJudgementOnObject_at_1Match newMutableMatch(final String pUser, final EObject pObject, final OperationType pOperation, final AccessibilityLevel pAccess) {
     return new Mutable(pUser, pObject, pOperation, pAccess);
   }
   
@@ -215,12 +215,12 @@ public abstract class EffectiveJudgementOnObject_at_1Match extends BasePatternMa
    * @return the (partial) match object.
    * 
    */
-  public static EffectiveJudgementOnObject_at_1Match newMatch(final String pUser, final EObject pObject, final Object pOperation, final Object pAccess) {
+  public static EffectiveJudgementOnObject_at_1Match newMatch(final String pUser, final EObject pObject, final OperationType pOperation, final AccessibilityLevel pAccess) {
     return new Immutable(pUser, pObject, pOperation, pAccess);
   }
   
   private static final class Mutable extends EffectiveJudgementOnObject_at_1Match {
-    Mutable(final String pUser, final EObject pObject, final Object pOperation, final Object pAccess) {
+    Mutable(final String pUser, final EObject pObject, final OperationType pOperation, final AccessibilityLevel pAccess) {
       super(pUser, pObject, pOperation, pAccess);
     }
     
@@ -231,7 +231,7 @@ public abstract class EffectiveJudgementOnObject_at_1Match extends BasePatternMa
   }
   
   private static final class Immutable extends EffectiveJudgementOnObject_at_1Match {
-    Immutable(final String pUser, final EObject pObject, final Object pOperation, final Object pAccess) {
+    Immutable(final String pUser, final EObject pObject, final OperationType pOperation, final AccessibilityLevel pAccess) {
       super(pUser, pObject, pOperation, pAccess);
     }
     

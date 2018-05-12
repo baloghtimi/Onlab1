@@ -6,6 +6,8 @@ package org.mondo.collaboration.security.increment.policy.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.viatra.query.runtime.api.IMatchProcessor;
+import org.mondo.collaboration.policy.rules.AccessibilityLevel;
+import org.mondo.collaboration.policy.rules.OperationType;
 import org.mondo.collaboration.security.increment.policy.EffectiveJudgementOnReference_at_weakMatch;
 
 /**
@@ -26,7 +28,7 @@ public abstract class EffectiveJudgementOnReference_at_weakProcessor implements 
    * @param pAccess the value of pattern parameter access in the currently processed match
    * 
    */
-  public abstract void process(final String pUser, final EObject pSource, final EObject pTarget, final EReference pReference, final Object pOperation, final Object pAccess);
+  public abstract void process(final String pUser, final EObject pSource, final EObject pTarget, final EReference pReference, final OperationType pOperation, final AccessibilityLevel pAccess);
   
   @Override
   public void process(final EffectiveJudgementOnReference_at_weakMatch match) {

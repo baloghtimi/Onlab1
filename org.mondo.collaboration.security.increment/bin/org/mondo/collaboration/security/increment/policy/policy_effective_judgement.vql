@@ -8,18 +8,29 @@ pattern effectiveJudgementOnObject(user: java String, object: EObject, operation
 {
 	find effectiveJudgementOnObject_at_default(user, object, operation, access);
 } or {
+	find effectiveJudgementOnObject_at_weak(user, object, operation, access);
+} or {
 	find effectiveJudgementOnObject_at_1(user, object, operation, access);
 }
 
 pattern effectiveJudgementOnObject_at_default(user: java String, object: EObject, operation, access)
 {
 	find judgementOnObject_at_default(user, object, operation, access);
-	neg find dominationOnObject_of_default(user, object, operation);
+	neg find dominatedJudgementOnObjectByHigherPriority_at_default(user, object, operation);
 }
+
+pattern effectiveJudgementOnObject_at_weak(user: java String, object: EObject, operation, access)
+{
+    find judgementOnObject_at_weak(user, object, operation, access);
+    neg find dominatedJudgementOnObjectByHigherPriority_at_weak(user, object, operation);
+    neg find dominatedJudgementOnObjectBySamePriority_at_weak(user, object, operation, access);
+}
+
 
 pattern effectiveJudgementOnObject_at_1(user: java String, object: EObject, operation, access)
 {
     find judgementOnObject_at_1(user, object, operation, access);
+    neg find dominatedJudgementOnObjectBySamePriority_at_1(user, object, operation, access);
 }
 
 pattern effectiveJudgementOnAttribute(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation, access)
@@ -34,18 +45,21 @@ pattern effectiveJudgementOnAttribute(user: java String, source: EObject, value:
 pattern effectiveJudgementOnAttribute_at_default(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation, access)
 {
 	find judgementOnAttribute_at_default(user, source, value, attribute, operation, access);
-	neg find dominationOnAttribute_of_default(user, source, value, attribute, operation);
+	neg find dominatedJudgementOnAttributeByHigherPriority_at_default(user, source, value, attribute, operation);
 }
 
 pattern effectiveJudgementOnAttribute_at_weak(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation, access)
 {
     find judgementOnAttribute_at_weak(user, source, value, attribute, operation, access);
-    neg find dominationOnAttribute_of_weak(user, source, value, attribute, operation);
+    neg find dominatedJudgementOnAttributeByHigherPriority_at_weak(user, source, value, attribute, operation);
+    neg find dominatedJudgementOnAttributeBySamePriority_at_weak(user, source, value, attribute, operation, access);
 }
+
 
 pattern effectiveJudgementOnAttribute_at_1(user: java String, source: EObject, value: java Object, attribute:EAttribute, operation, access)
 {
     find judgementOnAttribute_at_1(user, source, value, attribute, operation, access);
+    neg find dominatedJudgementOnAttributeBySamePriority_at_1(user, source, value, attribute, operation, access);
 }
     
 pattern effectiveJudgementOnReference(user: java String, source: EObject, target: EObject, reference:EReference, operation, access) 
@@ -60,16 +74,19 @@ pattern effectiveJudgementOnReference(user: java String, source: EObject, target
 pattern effectiveJudgementOnReference_at_default(user: java String, source: EObject, target: EObject, reference:EReference, operation, access)
 {
     find judgementOnReference_at_default(user, source, target, reference, operation, access);
-    neg find dominationOnReference_of_default(user, source, target, reference, operation);
+    neg find dominatedJudgementOnReferenceByHigherPriority_at_default(user, source, target, reference, operation);
 }
 
 pattern effectiveJudgementOnReference_at_weak(user: java String, source: EObject, target: EObject, reference:EReference, operation, access)
 {
     find judgementOnReference_at_weak(user, source, target, reference, operation, access);
-    neg find dominationOnReference_of_weak(user, source, target, reference, operation);
+    neg find dominatedJudgementOnReferenceByHigherPriority_at_weak(user, source, target, reference, operation);
+    neg find dominatedJudgementOnReferenceBySamePriority_at_weak(user, source, target, reference, operation, access);
 }
+
 
 pattern effectiveJudgementOnReference_at_1(user: java String, source: EObject, target: EObject, reference:EReference, operation, access)
 {
     find judgementOnReference_at_1(user, source, target, reference, operation, access);
+    neg find dominatedJudgementOnReferenceBySamePriority_at_1(user, source, target, reference, operation, access);
 }

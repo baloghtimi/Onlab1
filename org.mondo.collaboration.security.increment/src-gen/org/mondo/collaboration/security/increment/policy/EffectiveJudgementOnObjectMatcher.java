@@ -35,6 +35,8 @@ import org.mondo.collaboration.security.increment.policy.util.EffectiveJudgement
  * {
  * 	find effectiveJudgementOnObject_at_default(user, object, operation, access);
  * } or {
+ * 	find effectiveJudgementOnObject_at_weak(user, object, operation, access);
+ * } or {
  * 	find effectiveJudgementOnObject_at_1(user, object, operation, access);
  * }
  * </pre></code>

@@ -38,6 +38,14 @@ pattern enableIOUser(user: java String) {
 }
 
 
+pattern explicitVsExplicitTestAsset(object : EObject) {
+    	    find inputOutput(object);
+}
+pattern explicitVsExplicitTestUser(user: java String) {
+	user == "IOManager";
+}
+
+
 pattern restrictNonIOAsset(object : EObject) {
     	    find nonInputOutput(object);
 }

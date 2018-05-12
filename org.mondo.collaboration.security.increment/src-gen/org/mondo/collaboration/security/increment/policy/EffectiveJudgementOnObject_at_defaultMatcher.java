@@ -34,7 +34,7 @@ import org.mondo.collaboration.security.increment.policy.util.EffectiveJudgement
  * pattern effectiveJudgementOnObject_at_default(user: java String, object: EObject, operation, access)
  * {
  * 	find judgementOnObject_at_default(user, object, operation, access);
- * 	neg find dominationOnObject_of_default(user, object, operation);
+ * 	neg find dominatedJudgementOnObjectByHigherPriority_at_default(user, object, operation);
  * }
  * </pre></code>
  * 

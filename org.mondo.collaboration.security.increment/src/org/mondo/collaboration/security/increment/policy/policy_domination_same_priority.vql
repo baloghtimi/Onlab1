@@ -6,33 +6,54 @@ import "http://WTSpec4M/5.0M"
 
 pattern resolution(dominatedAccess, prevailingAccess)
 {
-    dominatedAccess == AccessibilityLevel::ALLOW;
-    prevailingAccess == AccessibilityLevel::DENY;
+    dominatedAccess == AccessibilityLevel::DENY;
+    prevailingAccess == AccessibilityLevel::ALLOW;
 } or {
-	dominatedAccess == AccessibilityLevel::ALLOW;
-	prevailingAccess == AccessibilityLevel::OBFUSCATE;
+    dominatedAccess == AccessibilityLevel::DENY;
+    prevailingAccess == AccessibilityLevel::OBFUSCATE;
 } or {
-	dominatedAccess == AccessibilityLevel::OBFUSCATE;
-	prevailingAccess == AccessibilityLevel::DENY;
+    dominatedAccess == AccessibilityLevel::OBFUSCATE;
+    prevailingAccess == AccessibilityLevel::ALLOW;
 }
 
-pattern dominatedExplicitJudgementOnObject_at_1(user: java String, object: EObject, operation, dominatedAccess) 
+pattern dominatedJudgementOnObjectBySamePriority_at_weak(user: java String, object: EObject, operation, dominatedAccess) 
 {
-    find explicitJudgementOnObject(user, object, operation, dominatedAccess, 1);
-    find explicitJudgementOnObject(user, object, operation, prevailingAccess, 1);
+    find judgementOnObject_at_weak(user, object, operation, dominatedAccess);
+    find judgementOnObject_at_weak(user, object, operation, prevailingAccess);
+    find resolution(dominatedAccess, prevailingAccess);
+}
+        
+pattern dominatedJudgementOnAttributeBySamePriority_at_weak(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation, dominatedAccess) 
+{
+    find judgementOnAttribute_at_weak(user, source, value, attribute, operation, dominatedAccess);
+    find judgementOnAttribute_at_weak(user, source, value, attribute, operation, prevailingAccess);
+    find resolution(dominatedAccess, prevailingAccess);
+}
+            
+pattern dominatedJudgementOnReferenceBySamePriority_at_weak(user: java String, source: EObject, target: EObject, reference: EReference, operation, dominatedAccess) 
+{
+    find judgementOnReference_at_weak(user, source, target, reference, operation, dominatedAccess);
+    find judgementOnReference_at_weak(user, source, target, reference, operation, prevailingAccess);
     find resolution(dominatedAccess, prevailingAccess);
 }
 
-pattern dominatedExplicitJudgementOnAttribute_at_1(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation, prevailingAccess) 
+pattern dominatedJudgementOnObjectBySamePriority_at_1(user: java String, object: EObject, operation, dominatedAccess) 
 {
-    find explicitJudgementOnAttribute(user, source, value, attribute, operation, dominatedAccess, 1);
-    find explicitJudgementOnAttribute(user, source, value, attribute, operation, prevailingAccess, 1);
+    find judgementOnObject_at_1(user, object, operation, dominatedAccess);
+    find judgementOnObject_at_1(user, object, operation, prevailingAccess);
+    find resolution(dominatedAccess, prevailingAccess);
+}
+
+pattern dominatedJudgementOnAttributeBySamePriority_at_1(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation, dominatedAccess) 
+{
+    find judgementOnAttribute_at_1(user, source, value, attribute, operation, dominatedAccess);
+    find judgementOnAttribute_at_1(user, source, value, attribute, operation, prevailingAccess);
     find resolution(dominatedAccess, prevailingAccess);
 }
     
-pattern dominatedExplicitJudgementOnReference_at_1(user: java String, source: EObject, target: EObject, reference: EReference, operation, prevailingAccess) 
+pattern dominatedJudgementOnReferenceBySamePriority_at_1(user: java String, source: EObject, target: EObject, reference: EReference, operation, dominatedAccess) 
 {
-    find explicitJudgementOnReference(user, source, target, reference, operation, dominatedAccess, 1);
-        find explicitJudgementOnReference(user, source, target, reference, operation, prevailingAccess, 1);
+    find judgementOnReference_at_1(user, source, target, reference, operation, dominatedAccess);
+    find judgementOnReference_at_1(user, source, target, reference, operation, prevailingAccess);
     find resolution(dominatedAccess, prevailingAccess);
 }

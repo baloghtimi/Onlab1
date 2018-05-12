@@ -34,6 +34,7 @@ import org.mondo.collaboration.security.increment.policy.util.EffectiveJudgement
  * pattern effectiveJudgementOnObject_at_1(user: java String, object: EObject, operation, access)
  * {
  *     find judgementOnObject_at_1(user, object, operation, access);
+ *     neg find dominatedJudgementOnObjectBySamePriority_at_1(user, object, operation, access);
  * }
  * </pre></code>
  * 
@@ -102,7 +103,7 @@ public class EffectiveJudgementOnObject_at_1Matcher extends BaseMatcher<Effectiv
    * @return matches represented as a EffectiveJudgementOnObject_at_1Match object.
    * 
    */
-  public Collection<EffectiveJudgementOnObject_at_1Match> getAllMatches(final String pUser, final EObject pObject, final Object pOperation, final Object pAccess) {
+  public Collection<EffectiveJudgementOnObject_at_1Match> getAllMatches(final String pUser, final EObject pObject, final OperationType pOperation, final AccessibilityLevel pAccess) {
     return rawGetAllMatches(new Object[]{pUser, pObject, pOperation, pAccess});
   }
   
@@ -116,7 +117,7 @@ public class EffectiveJudgementOnObject_at_1Matcher extends BaseMatcher<Effectiv
    * @return a match represented as a EffectiveJudgementOnObject_at_1Match object, or null if no match is found.
    * 
    */
-  public EffectiveJudgementOnObject_at_1Match getOneArbitraryMatch(final String pUser, final EObject pObject, final Object pOperation, final Object pAccess) {
+  public EffectiveJudgementOnObject_at_1Match getOneArbitraryMatch(final String pUser, final EObject pObject, final OperationType pOperation, final AccessibilityLevel pAccess) {
     return rawGetOneArbitraryMatch(new Object[]{pUser, pObject, pOperation, pAccess});
   }
   
@@ -130,7 +131,7 @@ public class EffectiveJudgementOnObject_at_1Matcher extends BaseMatcher<Effectiv
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final String pUser, final EObject pObject, final Object pOperation, final Object pAccess) {
+  public boolean hasMatch(final String pUser, final EObject pObject, final OperationType pOperation, final AccessibilityLevel pAccess) {
     return rawHasMatch(new Object[]{pUser, pObject, pOperation, pAccess});
   }
   
@@ -143,7 +144,7 @@ public class EffectiveJudgementOnObject_at_1Matcher extends BaseMatcher<Effectiv
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final String pUser, final EObject pObject, final Object pOperation, final Object pAccess) {
+  public int countMatches(final String pUser, final EObject pObject, final OperationType pOperation, final AccessibilityLevel pAccess) {
     return rawCountMatches(new Object[]{pUser, pObject, pOperation, pAccess});
   }
   
@@ -156,7 +157,7 @@ public class EffectiveJudgementOnObject_at_1Matcher extends BaseMatcher<Effectiv
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final String pUser, final EObject pObject, final Object pOperation, final Object pAccess, final IMatchProcessor<? super EffectiveJudgementOnObject_at_1Match> processor) {
+  public void forEachMatch(final String pUser, final EObject pObject, final OperationType pOperation, final AccessibilityLevel pAccess, final IMatchProcessor<? super EffectiveJudgementOnObject_at_1Match> processor) {
     rawForEachMatch(new Object[]{pUser, pObject, pOperation, pAccess}, processor);
   }
   
@@ -171,7 +172,7 @@ public class EffectiveJudgementOnObject_at_1Matcher extends BaseMatcher<Effectiv
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final String pUser, final EObject pObject, final Object pOperation, final Object pAccess, final IMatchProcessor<? super EffectiveJudgementOnObject_at_1Match> processor) {
+  public boolean forOneArbitraryMatch(final String pUser, final EObject pObject, final OperationType pOperation, final AccessibilityLevel pAccess, final IMatchProcessor<? super EffectiveJudgementOnObject_at_1Match> processor) {
     return rawForOneArbitraryMatch(new Object[]{pUser, pObject, pOperation, pAccess}, processor);
   }
   
@@ -186,7 +187,7 @@ public class EffectiveJudgementOnObject_at_1Matcher extends BaseMatcher<Effectiv
    * @return the (partial) match object.
    * 
    */
-  public EffectiveJudgementOnObject_at_1Match newMatch(final String pUser, final EObject pObject, final Object pOperation, final Object pAccess) {
+  public EffectiveJudgementOnObject_at_1Match newMatch(final String pUser, final EObject pObject, final OperationType pOperation, final AccessibilityLevel pAccess) {
     return EffectiveJudgementOnObject_at_1Match.newMatch(pUser, pObject, pOperation, pAccess);
   }
   
@@ -224,7 +225,7 @@ public class EffectiveJudgementOnObject_at_1Matcher extends BaseMatcher<Effectiv
    * @return the Set of all values or empty set if there are no matches
    * 
    */
-  public Set<String> getAllValuesOfuser(final EObject pObject, final Object pOperation, final Object pAccess) {
+  public Set<String> getAllValuesOfuser(final EObject pObject, final OperationType pOperation, final AccessibilityLevel pAccess) {
     return rawAccumulateAllValuesOfuser(new Object[]{
     null, 
     pObject, 
@@ -267,7 +268,7 @@ public class EffectiveJudgementOnObject_at_1Matcher extends BaseMatcher<Effectiv
    * @return the Set of all values or empty set if there are no matches
    * 
    */
-  public Set<EObject> getAllValuesOfobject(final String pUser, final Object pOperation, final Object pAccess) {
+  public Set<EObject> getAllValuesOfobject(final String pUser, final OperationType pOperation, final AccessibilityLevel pAccess) {
     return rawAccumulateAllValuesOfobject(new Object[]{
     pUser, 
     null, 
@@ -281,8 +282,8 @@ public class EffectiveJudgementOnObject_at_1Matcher extends BaseMatcher<Effectiv
    * @return the Set of all values or empty set if there are no matches
    * 
    */
-  protected Set<Object> rawAccumulateAllValuesOfoperation(final Object[] parameters) {
-    Set<Object> results = new HashSet<Object>();
+  protected Set<OperationType> rawAccumulateAllValuesOfoperation(final Object[] parameters) {
+    Set<OperationType> results = new HashSet<OperationType>();
     rawAccumulateAllValues(POSITION_OPERATION, parameters, results);
     return results;
   }
@@ -292,7 +293,7 @@ public class EffectiveJudgementOnObject_at_1Matcher extends BaseMatcher<Effectiv
    * @return the Set of all values or empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfoperation() {
+  public Set<OperationType> getAllValuesOfoperation() {
     return rawAccumulateAllValuesOfoperation(emptyArray());
   }
   
@@ -301,7 +302,7 @@ public class EffectiveJudgementOnObject_at_1Matcher extends BaseMatcher<Effectiv
    * @return the Set of all values or empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfoperation(final EffectiveJudgementOnObject_at_1Match partialMatch) {
+  public Set<OperationType> getAllValuesOfoperation(final EffectiveJudgementOnObject_at_1Match partialMatch) {
     return rawAccumulateAllValuesOfoperation(partialMatch.toArray());
   }
   
@@ -310,7 +311,7 @@ public class EffectiveJudgementOnObject_at_1Matcher extends BaseMatcher<Effectiv
    * @return the Set of all values or empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfoperation(final String pUser, final EObject pObject, final Object pAccess) {
+  public Set<OperationType> getAllValuesOfoperation(final String pUser, final EObject pObject, final AccessibilityLevel pAccess) {
     return rawAccumulateAllValuesOfoperation(new Object[]{
     pUser, 
     pObject, 
@@ -324,8 +325,8 @@ public class EffectiveJudgementOnObject_at_1Matcher extends BaseMatcher<Effectiv
    * @return the Set of all values or empty set if there are no matches
    * 
    */
-  protected Set<Object> rawAccumulateAllValuesOfaccess(final Object[] parameters) {
-    Set<Object> results = new HashSet<Object>();
+  protected Set<AccessibilityLevel> rawAccumulateAllValuesOfaccess(final Object[] parameters) {
+    Set<AccessibilityLevel> results = new HashSet<AccessibilityLevel>();
     rawAccumulateAllValues(POSITION_ACCESS, parameters, results);
     return results;
   }
@@ -335,7 +336,7 @@ public class EffectiveJudgementOnObject_at_1Matcher extends BaseMatcher<Effectiv
    * @return the Set of all values or empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfaccess() {
+  public Set<AccessibilityLevel> getAllValuesOfaccess() {
     return rawAccumulateAllValuesOfaccess(emptyArray());
   }
   
@@ -344,7 +345,7 @@ public class EffectiveJudgementOnObject_at_1Matcher extends BaseMatcher<Effectiv
    * @return the Set of all values or empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfaccess(final EffectiveJudgementOnObject_at_1Match partialMatch) {
+  public Set<AccessibilityLevel> getAllValuesOfaccess(final EffectiveJudgementOnObject_at_1Match partialMatch) {
     return rawAccumulateAllValuesOfaccess(partialMatch.toArray());
   }
   
@@ -353,7 +354,7 @@ public class EffectiveJudgementOnObject_at_1Matcher extends BaseMatcher<Effectiv
    * @return the Set of all values or empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfaccess(final String pUser, final EObject pObject, final Object pOperation) {
+  public Set<AccessibilityLevel> getAllValuesOfaccess(final String pUser, final EObject pObject, final OperationType pOperation) {
     return rawAccumulateAllValuesOfaccess(new Object[]{
     pUser, 
     pObject, 

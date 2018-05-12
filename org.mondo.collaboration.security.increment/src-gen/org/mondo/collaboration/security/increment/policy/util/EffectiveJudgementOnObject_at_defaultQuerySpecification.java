@@ -29,7 +29,7 @@ import org.eclipse.viatra.query.runtime.matchers.tuple.FlatTuple;
 import org.eclipse.viatra.query.runtime.matchers.tuple.Tuples;
 import org.mondo.collaboration.security.increment.policy.EffectiveJudgementOnObject_at_defaultMatch;
 import org.mondo.collaboration.security.increment.policy.EffectiveJudgementOnObject_at_defaultMatcher;
-import org.mondo.collaboration.security.increment.policy.util.DominationOnObject_of_defaultQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.DominatedJudgementOnObjectByHigherPriority_at_defaultQuerySpecification;
 import org.mondo.collaboration.security.increment.policy.util.JudgementOnObject_at_defaultQuerySpecification;
 
 /**
@@ -152,8 +152,8 @@ public final class EffectiveJudgementOnObject_at_defaultQuerySpecification exten
               ));
               // 	find judgementOnObject_at_default(user, object, operation, access)
               new PositivePatternCall(body, new FlatTuple(var_user, var_object, var_operation, var_access), JudgementOnObject_at_defaultQuerySpecification.instance().getInternalQueryRepresentation());
-              // 	neg find dominationOnObject_of_default(user, object, operation)
-              new NegativePatternCall(body, new FlatTuple(var_user, var_object, var_operation), DominationOnObject_of_defaultQuerySpecification.instance().getInternalQueryRepresentation());
+              // 	neg find dominatedJudgementOnObjectByHigherPriority_at_default(user, object, operation)
+              new NegativePatternCall(body, new FlatTuple(var_user, var_object, var_operation), DominatedJudgementOnObjectByHigherPriority_at_defaultQuerySpecification.instance().getInternalQueryRepresentation());
               bodies.add(body);
           }
       } catch (ViatraQueryException ex) {

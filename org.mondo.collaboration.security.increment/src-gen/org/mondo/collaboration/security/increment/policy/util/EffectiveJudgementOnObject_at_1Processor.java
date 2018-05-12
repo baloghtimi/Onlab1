@@ -5,6 +5,8 @@ package org.mondo.collaboration.security.increment.policy.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.viatra.query.runtime.api.IMatchProcessor;
+import org.mondo.collaboration.policy.rules.AccessibilityLevel;
+import org.mondo.collaboration.policy.rules.OperationType;
 import org.mondo.collaboration.security.increment.policy.EffectiveJudgementOnObject_at_1Match;
 
 /**
@@ -23,7 +25,7 @@ public abstract class EffectiveJudgementOnObject_at_1Processor implements IMatch
    * @param pAccess the value of pattern parameter access in the currently processed match
    * 
    */
-  public abstract void process(final String pUser, final EObject pObject, final Object pOperation, final Object pAccess);
+  public abstract void process(final String pUser, final EObject pObject, final OperationType pOperation, final AccessibilityLevel pAccess);
   
   @Override
   public void process(final EffectiveJudgementOnObject_at_1Match match) {

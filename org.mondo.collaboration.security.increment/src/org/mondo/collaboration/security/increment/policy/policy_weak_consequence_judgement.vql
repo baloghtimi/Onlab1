@@ -1,0 +1,26 @@
+package org.mondo.collaboration.security.increment.policy
+
+import "http://www.eclipse.org/emf/2002/Ecore"
+import "http://www.mondo.org/collaboration/policy/Rules"
+import "http://WTSpec4M/5.0M"
+
+pattern weakConsequenceJudgementOnAttribute(user: java String, source: EObject, value: java Object, attribute: EAttribute, operation, access)
+{
+	find effectiveJudgementOnObject_at_1(user, source, operation, access);
+	find attributeAsset(source, value, attribute);
+}
+            
+pattern weakConsequenceJudgementOnReference(user: java String, source: EObject, target: EObject, reference: EReference, operation, access)
+{
+	find effectiveJudgementOnObject_at_1(user, source, operation, AccessibilityLevel::ALLOW);
+	find referenceAsset(source, target, reference);
+	access == AccessibilityLevel::ALLOW;
+    } or {
+	find effectiveJudgementOnObject_at_1(user, source, operation, AccessibilityLevel::DENY);
+        find referenceAsset(source, target, reference);
+        access == AccessibilityLevel::DENY;
+    } or {
+	find effectiveJudgementOnObject_at_1(user, source, operation, AccessibilityLevel::OBFUSCATE);
+	find referenceAsset(source, target, reference);
+	access == AccessibilityLevel::DENY;
+}
