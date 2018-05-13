@@ -1,0 +1,220 @@
+package org.mondo.collaboration.security.increment.policy
+
+import "http://www.eclipse.org/emf/2002/Ecore"
+import "http://www.mondo.org/collaboration/policy/Rules"
+import "http://WTSpec4M/5.0M"
+
+pattern explicitJudgement_reference_allow(user : java String, source : EObject, target : EObject, reference : EReference, operation, priority: java Integer)
+{
+//  rule default
+    find referenceAsset(source, target, reference);
+    find allUsers(user);
+    find readWriteOperation(operation);
+    priority == eval(-1);
+}
+
+pattern effectiveJudgement_reference(user: java String, source: EObject, target: EObject, reference:EReference, priority: java Integer, operation, access)
+{
+   find effectiveJudgement_reference_default(user, source, target, reference, operation, access);
+   priority == eval(-1);
+} or {
+   find effectiveJudgement_reference_weak(user, source, target, reference, operation, access);
+   priority == 0;
+} or {
+    find effectiveJudgement_reference_1(user, source, target, reference, operation, access);
+    priority == 1;
+}
+    
+pattern effectiveJudgement_reference_default(user: java String, source: EObject, target: EObject, reference:EReference, operation, access)
+{
+    find explicitJudgement_reference_allow(user, source, target, reference, operation, eval(-1));
+    access == AccessibilityLevel::ALLOW;
+    neg find dominationByPriority_reference_default(user, source, target, reference, operation);
+}
+
+pattern effectiveJudgement_reference_weak(user: java String, source: EObject, target: EObject, reference:EReference, operation, access)
+{
+	find effectiveJudgement_reference_weak_allow(user, source, target, reference, operation);
+	access == AccessibilityLevel::ALLOW;
+} or {
+	find effectiveJudgement_reference_weak_deny(user, source, target, reference, operation);
+	access == AccessibilityLevel::DENY;
+}
+
+pattern effectiveJudgement_reference_weak_allow(user: java String, source: EObject, target: EObject, reference:EReference, operation)
+{
+	find judgement_reference_weak_allow(user, source, target, reference, operation);
+    neg find dominationByPriority_reference_weak(user, source, target, reference, operation);
+    neg find dominationByAccess_reference_weak(user, source, target, reference, operation);
+}
+
+pattern effectiveJudgement_reference_weak_deny(user: java String, source: EObject, target: EObject, reference:EReference, operation)
+{
+    find judgement_reference_weak_deny(user, source, target, reference, operation);
+    neg find dominationByPriority_reference_weak(user, source, target, reference, operation);
+}
+
+pattern effectiveJudgement_reference_1(user: java String, source: EObject, target: EObject, reference:EReference, operation, access)
+{
+	find effectiveJudgement_reference_1_allow(user, source, target, reference, operation);
+	access == AccessibilityLevel::ALLOW;
+} or {
+	find effectiveJudgement_reference_1_deny(user, source, target, reference, operation);
+	access == AccessibilityLevel::DENY;
+}
+
+pattern effectiveJudgement_reference_1_allow(user: java String, source: EObject, target: EObject, reference:EReference, operation)
+{
+    find judgement_reference_1_allow(user, source, target, reference, operation);
+    neg find dominationByAccess_reference_1(user, source, target, reference, operation);
+}
+        
+pattern effectiveJudgement_reference_1_deny(user: java String, source: EObject, target: EObject, reference:EReference, operation)
+{
+    find judgement_reference_1_deny(user, source, target, reference, operation);
+}
+
+pattern dominationByPriority_reference_default(user: java String, source: EObject, target: EObject, reference: EReference, operation)
+{
+    find effectiveJudgement_reference_weak(user, source, target, reference, operation, _access);
+} or {
+    find effectiveJudgement_reference_1(user, source, target, reference, operation, _access);
+}
+
+pattern dominationByPriority_reference_weak(user: java String, source: EObject, target: EObject, reference: EReference, operation)
+{
+    find effectiveJudgement_reference_1(user, source, target, reference, operation, _access);
+}
+
+    
+pattern dominationByAccess_reference_weak(user: java String, source: EObject, target: EObject, reference: EReference, operation)
+{
+    find judgement_reference_weak_deny(user, source, target, reference, operation);
+}
+            
+pattern dominationByAccess_reference_1(user: java String, source: EObject, target: EObject, reference: EReference, operation)
+{
+    find judgement_reference_1_deny(user, source, target, reference, operation);
+}
+
+pattern judgement_reference_weak_allow(user: java String, source: EObject, target: EObject, reference: EReference, operation)
+{
+    find strongConsequenceJudgement_reference_weak_allow(user, source, target, reference, operation);
+} or {
+    find weakConsequenceJudgement_reference_allow(user, source, target, reference, operation);
+}
+        
+pattern judgement_reference_weak_deny(user: java String, source: EObject, target: EObject, reference: EReference, operation)
+{
+    find strongConsequenceJudgement_reference_weak_deny(user, source, target, reference, operation);
+} or {
+    find weakConsequenceJudgement_reference_deny(user, source, target, reference, operation);
+}
+
+pattern judgement_reference_1_allow(user: java String, source: EObject, target: EObject, reference: EReference, operation)
+{
+	find strongConsequenceJudgement_reference_1_allow(user, source, target, reference, operation);
+}
+    
+pattern judgement_reference_1_deny(user: java String, source: EObject, target: EObject, reference: EReference, operation)
+{
+    find strongConsequenceJudgement_reference_1_deny(user, source, target, reference, operation);
+}
+
+pattern strongConsequenceJudgement_reference_weak_allow(user: java String, source: EObject, target: EObject, reference: EReference, operation)
+{
+    // reference W -> reference R
+    find effectiveJudgement_reference_weak_allow(user, source, target, reference, OperationType::WRITE);
+    operation == OperationType::READ;
+} or {
+	// object R -> containment reference R
+	find effectiveJudgement_object_weak_allow(user, target, OperationType::READ);
+	find containmentReference(source, target, reference);
+	operation == OperationType::READ;
+} or {
+	// object W -> containment reference W
+    find effectiveJudgement_object_weak_allow(user, target, OperationType::WRITE);
+	find containmentReference(source, target, reference);
+	operation == OperationType::WRITE;
+}
+
+pattern strongConsequenceJudgement_reference_weak_deny(user: java String, source: EObject, target: EObject, reference: EReference, operation)
+{
+	// reference !R -> reference !W
+	find effectiveJudgement_reference_weak_deny(user, source, target, reference, OperationType::READ);
+	operation == OperationType::WRITE;
+} or {
+	// object !R -> incoming reference !R
+	find effectiveJudgement_object_weak_deny(user, target, OperationType::READ);
+	find referenceAsset(source, target, reference);
+	operation == OperationType::READ;
+} or {
+	// object !R -> outgoing reference !R
+	find effectiveJudgement_object_weak_deny(user, source, OperationType::READ);
+	find referenceAsset(source, target, reference);
+	operation == OperationType::READ;
+} or {
+	// ID attribute !R -> source !R
+	find effectiveJudgement_attribute_weak_deny(user, target, anyValue, anyAttribute, OperationType::READ);
+	find idAttribute(target, anyValue, anyAttribute);
+    find referenceAsset(source, target, reference);
+	operation == OperationType::READ;
+}
+    
+pattern strongConsequenceJudgement_reference_1_allow(user: java String, source: EObject, target: EObject, reference: EReference, operation)
+{
+    // reference W -> reference R
+    find effectiveJudgement_reference_1_allow(user, source, target, reference, OperationType::WRITE);
+    operation == OperationType::READ;
+} or {
+	// object R -> containment reference R
+	find effectiveJudgement_object_1_allow(user, target, OperationType::READ);
+	find containmentReference(source, target, reference);
+	operation == OperationType::READ;
+} or {
+	// object W -> containment reference W
+    find effectiveJudgement_object_1_allow(user, target, OperationType::WRITE);
+	find containmentReference(source, target, reference);
+	operation == OperationType::WRITE;
+}
+
+pattern strongConsequenceJudgement_reference_1_deny(user: java String, source: EObject, target: EObject, reference: EReference, operation)
+{
+	// reference !R -> reference !W
+	find effectiveJudgement_reference_1_deny(user, source, target, reference, OperationType::READ);
+	operation == OperationType::WRITE;
+} or {
+	// object !R -> incoming reference !R
+	find effectiveJudgement_object_1_deny(user, target, OperationType::READ);
+	find referenceAsset(source, target, reference);
+	operation == OperationType::READ;
+} or {
+	// object !R -> outgoing reference !R
+	find effectiveJudgement_object_1_deny(user, source, OperationType::READ);
+	find referenceAsset(source, target, reference);
+	operation == OperationType::READ;
+} or {
+	// ID attribute !R -> source !R
+	find effectiveJudgement_attribute_1_deny(user, target, anyValue, anyAttribute, OperationType::READ);
+	find idAttribute(target, anyValue, anyAttribute);
+    find referenceAsset(source, target, reference);
+	operation == OperationType::READ;
+}
+
+pattern weakConsequenceJudgement_reference_allow(user: java String, source: EObject, target: EObject, reference: EReference, operation)
+{
+	find effectiveJudgement_object_weak_allow(user, source, operation);
+	find referenceAsset(source, target, reference);
+} or {
+    find effectiveJudgement_object_1_allow(user, source, operation);
+    find referenceAsset(source, target, reference);
+}
+    
+pattern weakConsequenceJudgement_reference_deny(user: java String, source: EObject, target: EObject, reference: EReference, operation)
+{
+    find effectiveJudgement_object_weak_deny(user, source, operation);
+    find referenceAsset(source, target, reference);
+} or {
+    find effectiveJudgement_object_1_deny(user, source, operation);
+    find referenceAsset(source, target, reference);
+}

@@ -21,36 +21,15 @@ import org.eclipse.viatra.query.runtime.api.IPatternMatch;
 import org.eclipse.viatra.query.runtime.api.ViatraQueryEngine;
 import org.eclipse.viatra.query.runtime.emf.EMFScope;
 import org.eclipse.viatra.query.runtime.exception.ViatraQueryException;
-import org.mondo.collaboration.security.increment.policy.EffectiveJudgementOnAttributeMatch;
-import org.mondo.collaboration.security.increment.policy.EffectiveJudgementOnAttributeMatcher;
-import org.mondo.collaboration.security.increment.policy.EffectiveJudgementOnObjectMatch;
-import org.mondo.collaboration.security.increment.policy.EffectiveJudgementOnObjectMatcher;
-import org.mondo.collaboration.security.increment.policy.EffectiveJudgementOnReferenceMatch;
-import org.mondo.collaboration.security.increment.policy.EffectiveJudgementOnReferenceMatcher;
-import org.mondo.collaboration.security.increment.policy.JudgementOnAttribute_at_1Match;
-import org.mondo.collaboration.security.increment.policy.JudgementOnAttribute_at_1Matcher;
-import org.mondo.collaboration.security.increment.policy.StrongConsequenceJudgementOnAttribute_at_1Match;
-import org.mondo.collaboration.security.increment.policy.StrongConsequenceJudgementOnAttribute_at_1Matcher;
-import org.mondo.collaboration.security.increment.policy.StrongConsequenceJudgementOnAttribute_at_weakMatch;
-import org.mondo.collaboration.security.increment.policy.StrongConsequenceJudgementOnAttribute_at_weakMatcher;
-import org.mondo.collaboration.security.increment.policy.StrongConsequenceJudgementOnObject_at_weakMatch;
-import org.mondo.collaboration.security.increment.policy.StrongConsequenceJudgementOnObject_at_weakMatcher;
-import org.mondo.collaboration.security.increment.policy.StrongConsequenceJudgementOnReference_at_weakMatch;
-import org.mondo.collaboration.security.increment.policy.StrongConsequenceJudgementOnReference_at_weakMatcher;
-import org.mondo.collaboration.security.increment.policy.WeakConsequenceJudgementOnAttributeMatch;
-import org.mondo.collaboration.security.increment.policy.WeakConsequenceJudgementOnAttributeMatcher;
-import org.mondo.collaboration.security.increment.policy.WeakConsequenceJudgementOnReferenceMatch;
-import org.mondo.collaboration.security.increment.policy.WeakConsequenceJudgementOnReferenceMatcher;
-import org.mondo.collaboration.security.increment.policy.util.EffectiveJudgementOnAttributeQuerySpecification;
-import org.mondo.collaboration.security.increment.policy.util.EffectiveJudgementOnObjectQuerySpecification;
-import org.mondo.collaboration.security.increment.policy.util.EffectiveJudgementOnReferenceQuerySpecification;
-import org.mondo.collaboration.security.increment.policy.util.JudgementOnAttribute_at_1QuerySpecification;
-import org.mondo.collaboration.security.increment.policy.util.StrongConsequenceJudgementOnAttribute_at_1QuerySpecification;
-import org.mondo.collaboration.security.increment.policy.util.StrongConsequenceJudgementOnAttribute_at_weakQuerySpecification;
-import org.mondo.collaboration.security.increment.policy.util.StrongConsequenceJudgementOnObject_at_weakQuerySpecification;
-import org.mondo.collaboration.security.increment.policy.util.StrongConsequenceJudgementOnReference_at_weakQuerySpecification;
-import org.mondo.collaboration.security.increment.policy.util.WeakConsequenceJudgementOnAttributeQuerySpecification;
-import org.mondo.collaboration.security.increment.policy.util.WeakConsequenceJudgementOnReferenceQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.EffectiveJudgement_attributeMatch;
+import org.mondo.collaboration.security.increment.policy.EffectiveJudgement_attributeMatcher;
+import org.mondo.collaboration.security.increment.policy.EffectiveJudgement_objectMatch;
+import org.mondo.collaboration.security.increment.policy.EffectiveJudgement_objectMatcher;
+import org.mondo.collaboration.security.increment.policy.EffectiveJudgement_referenceMatch;
+import org.mondo.collaboration.security.increment.policy.EffectiveJudgement_referenceMatcher;
+import org.mondo.collaboration.security.increment.policy.util.EffectiveJudgement_attributeQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.EffectiveJudgement_objectQuerySpecification;
+import org.mondo.collaboration.security.increment.policy.util.EffectiveJudgement_referenceQuerySpecification;
 
 import com.google.common.collect.Lists;
 
@@ -83,159 +62,24 @@ public class Application {
 		String user = "IOManager";
 		
 		int numOfEff = 0;
-//		listWeakConsequenceJudgementOnAttribute(engine, user);
-//		listWeakConsequenceJudgementOnReference(engine, user);
-//		listStrongConsequenceJudgementOnObjectAtWeak(engine, user);
-//		listStrongConsequenceJudgementOnAttributeAtWeak(engine, user);
-//		listStrongConsequenceJudgementOnReferenceAtWeak(engine, user);
-		
-//		listStrongConsequenceJudgementOnAttributeAtOne(engine, user);
-//		listJudgementOnAttributeAtOne(engine, user);
-		
 		numOfEff += listEffectiveJudgementsOnObjects(engine, user);
 		numOfEff += listEffectiveJudgementsOnAttributes(engine, user);
 		numOfEff += listEffectiveJudgementsOnReferences(engine, user);
 		logger.info("All judgements: " + numOfEff);
 	}
 	
-	private static void listStrongConsequenceJudgementOnObjectAtWeak(ViatraQueryEngine engine, String user) throws ViatraQueryException {
-		StrongConsequenceJudgementOnObject_at_weakQuerySpecification querySpecification = StrongConsequenceJudgementOnObject_at_weakQuerySpecification.instance();
-		StrongConsequenceJudgementOnObject_at_weakMatcher matcher = engine.getMatcher(querySpecification);
-		StrongConsequenceJudgementOnObject_at_weakMatch filter = matcher.newEmptyMatch();
-		filter.setUser(user);
-		int numOfEff = matcher.countMatches(filter);
-		logger.info("strong consequences on objects at weak: " + numOfEff);
-		
-		final List<IPatternMatch> matches = Lists.newArrayList();
-		matcher.forEachMatch(filter, new IMatchProcessor<StrongConsequenceJudgementOnObject_at_weakMatch>() {
-			@Override
-			public void process(StrongConsequenceJudgementOnObject_at_weakMatch match) {
-				matches.add(match);
-			}
-		});
-		sortAndPrintMatches(matches);
-	}
-	
-	private static void listStrongConsequenceJudgementOnReferenceAtWeak(ViatraQueryEngine engine, String user) throws ViatraQueryException {
-		StrongConsequenceJudgementOnReference_at_weakQuerySpecification querySpecification = StrongConsequenceJudgementOnReference_at_weakQuerySpecification.instance();
-		StrongConsequenceJudgementOnReference_at_weakMatcher matcher = engine.getMatcher(querySpecification);
-		StrongConsequenceJudgementOnReference_at_weakMatch filter = matcher.newEmptyMatch();
-		filter.setUser(user);
-		int numOfEff = matcher.countMatches(filter);
-		logger.info("strong consequences on references at weak: " + numOfEff);
-		
-		final List<IPatternMatch> matches = Lists.newArrayList();
-		matcher.forEachMatch(filter, new IMatchProcessor<StrongConsequenceJudgementOnReference_at_weakMatch>() {
-			@Override
-			public void process(StrongConsequenceJudgementOnReference_at_weakMatch match) {
-				matches.add(match);
-			}
-		});
-		sortAndPrintMatches(matches);
-	}
-	
-	private static void listWeakConsequenceJudgementOnAttribute(ViatraQueryEngine engine, String user) throws ViatraQueryException {
-		WeakConsequenceJudgementOnAttributeQuerySpecification querySpecification = WeakConsequenceJudgementOnAttributeQuerySpecification.instance();
-		WeakConsequenceJudgementOnAttributeMatcher matcher = engine.getMatcher(querySpecification);
-		WeakConsequenceJudgementOnAttributeMatch filter = matcher.newEmptyMatch();
-		filter.setUser(user);
-		int numOfEff = matcher.countMatches(filter);
-		logger.info("weak consequences on attributes: " + numOfEff);
-		
-		final List<IPatternMatch> matches = Lists.newArrayList();
-		matcher.forEachMatch(filter, new IMatchProcessor<WeakConsequenceJudgementOnAttributeMatch>() {
-			@Override
-			public void process(WeakConsequenceJudgementOnAttributeMatch match) {
-				matches.add(match);
-			}
-		});
-		sortAndPrintMatches(matches);
-	}
-	
-	private static void listWeakConsequenceJudgementOnReference(ViatraQueryEngine engine, String user) throws ViatraQueryException {
-		WeakConsequenceJudgementOnReferenceQuerySpecification querySpecification = WeakConsequenceJudgementOnReferenceQuerySpecification.instance();
-		WeakConsequenceJudgementOnReferenceMatcher matcher = engine.getMatcher(querySpecification);
-		WeakConsequenceJudgementOnReferenceMatch filter = matcher.newEmptyMatch();
-		filter.setUser(user);
-		int numOfEff = matcher.countMatches(filter);
-		logger.info("weak consequences on references: " + numOfEff);
-		
-		final List<IPatternMatch> matches = Lists.newArrayList();
-		matcher.forEachMatch(filter, new IMatchProcessor<WeakConsequenceJudgementOnReferenceMatch>() {
-			@Override
-			public void process(WeakConsequenceJudgementOnReferenceMatch match) {
-				matches.add(match);
-			}
-		});
-		sortAndPrintMatches(matches);
-	}
-	
-	private static void listStrongConsequenceJudgementOnAttributeAtWeak(ViatraQueryEngine engine, String user) throws ViatraQueryException {
-		StrongConsequenceJudgementOnAttribute_at_weakQuerySpecification querySpecification = StrongConsequenceJudgementOnAttribute_at_weakQuerySpecification.instance();
-		StrongConsequenceJudgementOnAttribute_at_weakMatcher matcher = engine.getMatcher(querySpecification);
-		StrongConsequenceJudgementOnAttribute_at_weakMatch filter = matcher.newEmptyMatch();
-		filter.setUser(user);
-		int numOfEff = matcher.countMatches(filter);
-		logger.info("strong consequences on attributes at weak: " + numOfEff);
-		
-		final List<IPatternMatch> matches = Lists.newArrayList();
-		matcher.forEachMatch(filter, new IMatchProcessor<StrongConsequenceJudgementOnAttribute_at_weakMatch>() {
-			@Override
-			public void process(StrongConsequenceJudgementOnAttribute_at_weakMatch match) {
-				matches.add(match);
-			}
-		});
-		sortAndPrintMatches(matches);
-	}
-	
-	private static void listStrongConsequenceJudgementOnAttributeAtOne(ViatraQueryEngine engine, String user) throws ViatraQueryException {
-		StrongConsequenceJudgementOnAttribute_at_1QuerySpecification querySpecification = StrongConsequenceJudgementOnAttribute_at_1QuerySpecification.instance();
-		StrongConsequenceJudgementOnAttribute_at_1Matcher matcher = engine.getMatcher(querySpecification);
-		StrongConsequenceJudgementOnAttribute_at_1Match filter = matcher.newEmptyMatch();
-		filter.setUser(user);
-		int numOfEff = matcher.countMatches(filter);
-		logger.info("strong consequences on attributes at 1: " + numOfEff);
-		
-		final List<IPatternMatch> matches = Lists.newArrayList();
-		matcher.forEachMatch(filter, new IMatchProcessor<StrongConsequenceJudgementOnAttribute_at_1Match>() {
-			@Override
-			public void process(StrongConsequenceJudgementOnAttribute_at_1Match match) {
-				matches.add(match);
-			}
-		});
-		sortAndPrintMatches(matches);
-	}
-	
-	private static void listJudgementOnAttributeAtOne(ViatraQueryEngine engine, String user) throws ViatraQueryException {
-		JudgementOnAttribute_at_1QuerySpecification querySpecification = JudgementOnAttribute_at_1QuerySpecification.instance();
-		JudgementOnAttribute_at_1Matcher matcher = engine.getMatcher(querySpecification);
-		JudgementOnAttribute_at_1Match filter = matcher.newEmptyMatch();
-		filter.setUser(user);
-		int numOfEff = matcher.countMatches(filter);
-		logger.info("judgements on attributes at 1: " + numOfEff);
-		
-		final List<IPatternMatch> matches = Lists.newArrayList();
-		matcher.forEachMatch(filter, new IMatchProcessor<JudgementOnAttribute_at_1Match>() {
-			@Override
-			public void process(JudgementOnAttribute_at_1Match match) {
-				matches.add(match);
-			}
-		});
-		sortAndPrintMatches(matches);
-	}
-	
 	private static int listEffectiveJudgementsOnObjects(ViatraQueryEngine engine, String user) throws ViatraQueryException {
-		EffectiveJudgementOnObjectQuerySpecification querySpecification = EffectiveJudgementOnObjectQuerySpecification.instance();
-		EffectiveJudgementOnObjectMatcher matcher = engine.getMatcher(querySpecification);
-		EffectiveJudgementOnObjectMatch filter = matcher.newEmptyMatch();
+		EffectiveJudgement_objectQuerySpecification querySpecification = EffectiveJudgement_objectQuerySpecification.instance();
+		EffectiveJudgement_objectMatcher matcher = engine.getMatcher(querySpecification);
+		EffectiveJudgement_objectMatch filter = matcher.newEmptyMatch();
 		filter.setUser(user);
 		int numOfEff = matcher.countMatches(filter);
 		logger.info("Object judgements: " + numOfEff);
 		
 		final List<IPatternMatch> matches = Lists.newArrayList();
-		matcher.forEachMatch(filter, new IMatchProcessor<EffectiveJudgementOnObjectMatch>() {
+		matcher.forEachMatch(filter, new IMatchProcessor<EffectiveJudgement_objectMatch>() {
 			@Override
-			public void process(EffectiveJudgementOnObjectMatch match) {
+			public void process(EffectiveJudgement_objectMatch match) {
 				matches.add(match);
 			}
 		});
@@ -244,17 +88,17 @@ public class Application {
 	}
 	
 	private static int listEffectiveJudgementsOnAttributes(ViatraQueryEngine engine, String user) throws ViatraQueryException {
-		EffectiveJudgementOnAttributeQuerySpecification querySpecification = EffectiveJudgementOnAttributeQuerySpecification.instance();
-		EffectiveJudgementOnAttributeMatcher matcher = engine.getMatcher(querySpecification);
-		EffectiveJudgementOnAttributeMatch filter = matcher.newEmptyMatch();
+		EffectiveJudgement_attributeQuerySpecification querySpecification = EffectiveJudgement_attributeQuerySpecification.instance();
+		EffectiveJudgement_attributeMatcher matcher = engine.getMatcher(querySpecification);
+		EffectiveJudgement_attributeMatch filter = matcher.newEmptyMatch();
 		filter.setUser(user);
 	    int numOfEff = matcher.countMatches(filter);
 		logger.info("Attribute judgements: " + numOfEff);
 		
 		final List<IPatternMatch> matches = Lists.newArrayList();
-		matcher.forEachMatch(filter, new IMatchProcessor<EffectiveJudgementOnAttributeMatch>() {
+		matcher.forEachMatch(filter, new IMatchProcessor<EffectiveJudgement_attributeMatch>() {
 			@Override
-			public void process(EffectiveJudgementOnAttributeMatch match) {
+			public void process(EffectiveJudgement_attributeMatch match) {
 				matches.add(match);
 			}
 		});
@@ -263,17 +107,17 @@ public class Application {
 	}
 	
 	private static int listEffectiveJudgementsOnReferences(ViatraQueryEngine engine, String user) throws ViatraQueryException {
-		EffectiveJudgementOnReferenceQuerySpecification querySpecification = EffectiveJudgementOnReferenceQuerySpecification.instance();
-		EffectiveJudgementOnReferenceMatcher matcher = engine.getMatcher(querySpecification);
-		EffectiveJudgementOnReferenceMatch filter = matcher.newEmptyMatch();
+		EffectiveJudgement_referenceQuerySpecification querySpecification = EffectiveJudgement_referenceQuerySpecification.instance();
+		EffectiveJudgement_referenceMatcher matcher = engine.getMatcher(querySpecification);
+		EffectiveJudgement_referenceMatch filter = matcher.newEmptyMatch();
 		filter.setUser(user);
 		int numOfEff = matcher.countMatches(filter);
 		logger.info("Reference judgements: " + numOfEff);
 		
 		final List<IPatternMatch> matches = Lists.newArrayList();
-		matcher.forEachMatch(filter, new IMatchProcessor<EffectiveJudgementOnReferenceMatch>() {
+		matcher.forEachMatch(filter, new IMatchProcessor<EffectiveJudgement_referenceMatch>() {
 			@Override
-			public void process(EffectiveJudgementOnReferenceMatch match) {
+			public void process(EffectiveJudgement_referenceMatch match) {
 				matches.add(match);
 			}
 		});
